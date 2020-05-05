@@ -19,3 +19,8 @@
 | revert        | Откат на предыдущие коммиты |
 | style         | Правки по кодстайлу (табы, отступы, точки, запятые и т.д.) |
 | test          | Добавление тестов |
+
+### Commit example
+```
+git commit -m 'build(integration): add public API'
+```
