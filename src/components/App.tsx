@@ -1,14 +1,11 @@
 import * as React from 'react';
 
 import '../styles/App.scss';
+import HelloContainer from './containers/HelloContainer';
 
 class App extends React.Component {
     render() {
-        return (
-            <div>
-                <h1>My React App!</h1>
-            </div>
-        );
+        return <HelloContainer message="World!" />;
     }
 }
 
