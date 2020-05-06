@@ -1,6 +1,6 @@
 {
-    "arrowParens": "avoid",
-    "bracketSpacing": false,
+    "arrowParens": "always",
+    "bracketSpacing": true,
     "endOfLine": "lf",
     "htmlWhitespaceSensitivity": "css",
     "jsxBracketSameLine": false,
@@ -14,11 +14,11 @@
     "useTabs": false,
     "vueIndentScriptAndStyle": true,
     "overrides": [
-    {
-      "files": "*.json",
-      "options": {
-        "printWidth": 200
-      }
-    }
-  ]
+        {
+            "files": "*.json",
+            "options": {
+                "printWidth": 200
+            }
+        }
+    ]
 }
