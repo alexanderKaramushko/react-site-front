@@ -8,7 +8,7 @@ module.exports = {
         filename: 'index-bundle.js',
     },
     resolve: {
-        extensions: ['.js', '.ts', '.tsx'],
+        extensions: ['.js', '.ts', '.tsx', '.scss'],
     },
     module: {
         rules: [
@@ -18,8 +18,18 @@ module.exports = {
                 use: ['babel-loader'],
             },
             {
-                test: /\.s[ac]ss$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                test: /\.s(a|c)ss$/i,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                            modules: true,
+                        },
+                    },
+                    'sass-loader',
+                ],
             },
             {
                 test: /\.ts(x?)$/,
