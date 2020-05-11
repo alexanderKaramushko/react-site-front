@@ -5,6 +5,7 @@
 + Redux
 + Typescript
 + Sass
++ Atomic structure
 
 ### Commit rules:
 | Commit type   | Description |
