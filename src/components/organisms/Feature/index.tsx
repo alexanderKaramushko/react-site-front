@@ -3,8 +3,6 @@ import classnames from 'classnames';
 
 import * as styles from './style.scss';
 
-console.log(styles.feature);
-
 type Props = {
     children?: React.ReactNode;
     className?: string;
