@@ -3,24 +3,26 @@
 ### This project represents the SPA made with the help of the following technologies:
 + React
 + Redux
++ Redux-saga
 + Typescript
 + Sass
 + Atomic structure
++ Storybook
 
 ### Commit rules:
 | Commit type   | Description |
 | ------------- |:-------------:|
-| build         | Сборка проекта или изменения внешних зависимостей |
-| ci            | Настройка CI и работа со скриптами |
-| docs          | Обновление документации |
-| feat          | Добавление нового функционала |
-| fix           | Исправление ошибок |
-| perf          | Изменения направленные на улучшение производительности |
-| refactor      | Правки кода без исправления ошибок или добавления новых функций |
-| revert        | Откат на предыдущие коммиты |
-| style         | Правки по кодстайлу (табы, отступы, точки, запятые и т.д.) |
-| test          | Добавление тестов |
-| upd           | Обновления в коде без добавления нового функционала |
+| build         | Build a project or change external dependencies |
+| ci            | CI configuration and scripting |
+| docs          | Documentation update |
+| feat          | Adding new functionality |
+| fix           | Error fixes |
+| perf          | Changes which are aimed at improving performance |
+| refactor      | Editing code without fixing bugs or adding new features |
+| revert        | Rollback to previous commits |
+| style         | Code style edits (tabs, indents, periods, commas, etc.) |
+| test          | Adding Tests |
+| upd           | Updates in the code without adding new functionality |
 
 ### Commit example
 ```
