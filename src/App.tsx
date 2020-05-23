@@ -1,15 +1,12 @@
 import * as React from 'react';
-import { Provider } from 'react-redux';
-import { store } from './store';
 
 import Feature from './components/organisms/Feature';
 import { BlockContainer } from './components/molecules/Block';
-import view from './components/templates/default/style.scss';
+import * as view from './components/templates/default/style.scss';
 
 const App: React.FunctionComponent = () => {
     return (
-        <Provider store={store}>
-            <h1>Test</h1>
+        <div className={view.default}>
             <Feature
                 className={view.hero}
                 image="https://i.pinimg.com/originals/7e/d6/1a/7ed61a337b0cccb1598fe5fd1b9724bf.jpg"
@@ -25,7 +22,7 @@ const App: React.FunctionComponent = () => {
                     </p>
                 </BlockContainer>
             </Feature>
-        </Provider>
+        </div>
     );
 };
 

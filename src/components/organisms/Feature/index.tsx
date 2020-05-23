@@ -19,7 +19,6 @@ const Feature: React.FunctionComponent<Props> = (props: Props) => {
     const { children, className, image } = props;
     const classNames: string = classnames(styles.feature, className);
 
-    console.log(classNames);
     return (
         <div
             style={{ backgroundImage: `url(${image})` }}
