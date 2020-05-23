@@ -45,6 +45,12 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'source-map-loader',
             },
+            {
+                exclude: /\.test.tsx?$/,
+                include: /ClientApp/,
+                test: /\.tsx?$/,
+                use: 'awesome-typescript-loader?silent=true',
+            },
         ],
     },
     plugins: [
