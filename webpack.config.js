@@ -2,13 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.tsx',
     output: {
         path: path.join(__dirname, '/dist'),
         filename: 'index-bundle.js',
     },
     resolve: {
-        extensions: ['.js', '.ts', '.tsx', '.scss'],
+        extensions: ['.ts', '.tsx', '.js', '.css', '.scss'],
     },
     module: {
         rules: [
