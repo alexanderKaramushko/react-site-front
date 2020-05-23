@@ -1,5 +1,10 @@
 {
+    "include": ["./typings", "./src"],
     "compilerOptions": {
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "checkJs": true,
+        "esModuleInterop": true,
         "jsx": "react",
         "module": "commonjs",
         "noImplicitAny": true,
