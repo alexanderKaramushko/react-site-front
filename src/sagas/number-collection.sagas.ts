@@ -10,7 +10,7 @@ export function* watchNewGeneratedNumberRequestStart() {
     );
 }
 
-function* requestNewGeneratedNumber() {
+export function* requestNewGeneratedNumber() {
     const generatedNumber = yield call(generateNewNumber);
     yield put(numberRequestCompletedAction(generatedNumber));
 }

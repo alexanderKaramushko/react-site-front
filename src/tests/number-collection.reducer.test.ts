@@ -1,6 +1,7 @@
 import { numberCollectionReducer } from '../reducers/number-collection.reducer';
 
 describe('With snapshots ', () => {
+    // TODO: resolve async behaviour
     it('+++ reducer with shapshot', () => {
         const action = {
             payload: 1,
