@@ -28,3 +28,11 @@
 ```
 git commit -m 'build(integration): add public API'
 ```
+
+### Tests
+Show test coverage:
+```
+npm test -- --coverage
+```
+Presentational report: 
+`react-boilerplate/coverage/lcov-report/index.html`
