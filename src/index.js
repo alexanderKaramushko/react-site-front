@@ -1,27 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './components/App';
-import AboutUs from './components/AboutUs';
-import Contacts from './components/Contacts';
-
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import {
-    BrowserRouter  as Router,
-    Route,
+    BrowserRouter as Router,
     Switch,
     Link,
 } from 'react-router-dom';
 
+import { routesArr, createRoutes } from './routes';
 import { rootReducer } from './store';
 
 const store = createStore(rootReducer);
 
 ReactDOM.render(
     <Provider store={store}>
-
         <Router>
             <nav>
                 <ul>
@@ -37,15 +32,7 @@ ReactDOM.render(
                 </ul>
             </nav>
             <Switch>
-                <Route path='/about-us'>
-                    <AboutUs />
-                </Route>
-                <Route path='/contacts'>
-                    <Contacts />
-                </Route>
-                <Route path='/'>
-                    <App />
-                </Route>
+                {createRoutes(routesArr)}
             </Switch>
         </Router>
     </Provider>,
