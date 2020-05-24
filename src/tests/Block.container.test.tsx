@@ -3,12 +3,13 @@ import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import BlockContainer, { Block } from '../components/molecules/Block';
+import { numberRequestStartAction } from '../actions';
 
 describe('>>>B L O C K --- REACT-REDUX (Shallow + passing the {store} directly)', () => {
     const initialState = { numberCollectionReducer: [0] };
     const mockStore = configureStore();
 
-    let store;
+    let store: any;
     let wrapper: any;
 
     beforeEach(() => {
@@ -27,6 +28,17 @@ describe('>>>B L O C K --- REACT-REDUX (Shallow + passing the {store} directly)'
     it('+++ check Prop matches with initialState', () => {
         expect(wrapper.find(Block).prop('clicks')).toEqual(
             initialState.numberCollectionReducer,
+        );
+    });
+
+    it('+++ check action on dispatching ', () => {
+        let action;
+
+        store.dispatch(numberRequestStartAction());
+        action = store.getActions();
+
+        expect(action[0].type).toBe(
+            '[0] Request a new number to the NumberGenerator async service.',
         );
     });
 });
