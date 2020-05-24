@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Block } from '../components/molecules/Block';
+import { Block } from '../';
 
 describe('>>>H O M E --- Shallow Render REACT COMPONENTS', () => {
     let block: any;

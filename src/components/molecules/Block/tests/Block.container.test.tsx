@@ -2,8 +2,8 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import BlockContainer, { Block } from '../components/molecules/Block';
-import { numberRequestStartAction } from '../actions';
+import BlockContainer, { Block } from '../';
+import { numberRequestStartAction } from '../../../../actions';
 
 describe('>>>B L O C K --- REACT-REDUX (Shallow + passing the {store} directly)', () => {
     const initialState = { numberCollectionReducer: [0] };
