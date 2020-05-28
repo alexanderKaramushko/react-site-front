@@ -30,7 +30,7 @@ export const routesArr = [
     },
 ];
 
-export const createRoutes = (routesArray : route[]) : any => {
+export const createRoutes = (routesArray : route[]) : React.ReactNode => {
     return routesArray.map((elem, i) => (
         <Route key={i} path={elem.path} component={elem.component} exact={elem.isExact}/>
     ))
