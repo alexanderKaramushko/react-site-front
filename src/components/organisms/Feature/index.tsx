@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import classnames from 'classnames';
 
 import * as styles from './style.scss';
@@ -10,9 +10,9 @@ type Props = {
 };
 
 const defaultProps = {
-    image: '',
-    className: '',
     children: '',
+    className: '',
+    image: '',
 };
 
 const Feature: React.FunctionComponent<Props> = (props: Props) => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import Button, { ButtonTheme, ButtonSize } from './';
+import Button, { ButtonTheme, ButtonSize } from '.';
 
 storiesOf('Button', module)
     .add('default', () => (
@@ -30,8 +30,11 @@ storiesOf('Button', module)
     ))
     .add('disabled', () => (
         <Button
+            // eslint-disable-next-line react/jsx-indent-props
             theme={ButtonTheme.ROUNDED}
+            // eslint-disable-next-line react/jsx-indent-props
             disabled
+            // eslint-disable-next-line react/jsx-indent-props
             onClick={action('clicked')}
         >
             Learn more

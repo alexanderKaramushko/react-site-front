@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import BlockContainer, { Block } from '../';
+import BlockContainer, { Block } from '..';
 import { numberRequestStartAction } from '../../../../actions';
 
 describe('>>>B L O C K --- REACT-REDUX (Shallow + passing the {store} directly)', () => {
@@ -32,10 +32,8 @@ describe('>>>B L O C K --- REACT-REDUX (Shallow + passing the {store} directly)'
     });
 
     it('+++ check action on dispatching ', () => {
-        let action;
-
         store.dispatch(numberRequestStartAction());
-        action = store.getActions();
+        const action = store.getActions();
 
         expect(action[0].type).toBe(
             '[0] Request a new number to the NumberGenerator async service.',

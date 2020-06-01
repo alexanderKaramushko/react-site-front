@@ -1,13 +1,13 @@
 import { BaseAction, actionIds } from './common';
 
 export const numberRequestStartAction = (): BaseAction => ({
-    type: actionIds.GET_NUMBER_REQUEST_START,
     payload: null,
+    type: actionIds.GET_NUMBER_REQUEST_START,
 });
 
 export const numberRequestCompletedAction = (
     numberGenerated: number,
 ): BaseAction => ({
-    type: actionIds.GET_NUMBER_REQUEST_COMPLETED,
     payload: numberGenerated,
+    type: actionIds.GET_NUMBER_REQUEST_COMPLETED,
 });

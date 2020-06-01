@@ -3,7 +3,7 @@ import { withInfo, setDefaults } from '@storybook/addon-info';
 
 import './style.scss';
 
-const req = require.context('../src', true, /\.stories\.js$/);
+const req = require.context('../src', true, /\.stories\.jsx$/);
 
 function loadStories() {
     req.keys().forEach(req);

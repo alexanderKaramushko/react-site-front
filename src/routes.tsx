@@ -6,7 +6,7 @@ import AboutUs from './components/pages/AboutUs';
 import Contacts from './components/pages/Contacts';
 import Main from './components/pages/Main';
 
-interface route {
+interface Routes {
     component: React.ComponentType<any>;
     isExact?: boolean;
     path: string;
@@ -14,21 +14,21 @@ interface route {
 
 export const routesArr = [
     {
-        path: '/',
-        isExact: true,
         component: Main,
+        isExact: true,
+        path: '/',
     },
     {
-        path: '/about-us',
         component: AboutUs,
+        path: '/about-us',
     },
     {
-        path: '/contacts',
         component: Contacts,
+        path: '/contacts',
     },
 ];
 
-export const createRoutes = (routesArray: route[]): React.ReactNode => routesArray.map((route) => {
+export const createRoutes = (routesArray: Routes[]): React.ReactNode => routesArray.map((route) => {
     const { component, isExact, path } = route;
     return <Route key={path} path={path} component={component} exact={isExact} />;
 });

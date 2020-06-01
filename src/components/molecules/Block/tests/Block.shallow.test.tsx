@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Block } from '../';
+import { Block } from '..';
 
 describe('>>>H O M E --- Shallow Render REACT COMPONENTS', () => {
     let block: any;
@@ -9,7 +9,7 @@ describe('>>>H O M E --- Shallow Render REACT COMPONENTS', () => {
     };
 
     beforeEach(() => {
-        block = shallow(<Block {...blockData} />);
+        block = shallow(<Block title={blockData.title} />);
     });
 
     it('+++ render the DUMB component', () => {

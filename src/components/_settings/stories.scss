@@ -70,14 +70,14 @@
     background-color: $success;
 }
 
-.--atenttion:before {
+.--attention:before {
     content: '';
     display: inline-block;
     width: 15px;
     height: 15px;
     border-radius: 3px;
     margin-right: 0.5em;
-    background-color: $atenttion;
+    background-color: $attention;
 }
 
 .--wait:before {

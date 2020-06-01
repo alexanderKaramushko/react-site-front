@@ -1,9 +1,10 @@
 import React from 'react';
 import Button from '../../atoms/Button';
+
 import Card from '../../atoms/Card';
 
 type Props = {
-    button?: string;
+	button?: string;
     children?: React.ReactNode;
     className?: string;
     clicks?: number;

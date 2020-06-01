@@ -1,16 +1,16 @@
-import * as React from 'react';
+import React from 'react';
 import classnames from 'classnames';
 
 import * as styles from './style.scss';
 
 type Props = {
     className?: string;
-    children?: any;
+    children?: React.ReactNode;
 };
 
 const defaultProps = {
-    className: '',
     children: '',
+    className: '',
 };
 
 const Card: React.FunctionComponent<Props> = (props: Props) => {

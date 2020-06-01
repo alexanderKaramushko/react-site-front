@@ -6,12 +6,17 @@
     "author": "",
     "license": "ISC",
     "scripts": {
-        "test": "cross-env TS_NODE_FILES=true jest",
-        "start": "webpack-dev-server --mode development --open --hot",
         "build": "webpack --mode production",
+        "build-storybook": "build-storybook",
+        "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx src",
+        "eslint:dump": "eslint --print-config ./.eslintrc.json",
+        "start": "webpack-dev-server --mode development --open --hot",
         "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "test": "cross-env TS_NODE_FILES=true jest"
     },
+    "pre-commit": [
+        "eslint"
+    ],
     "devDependencies": {
         "@babel/core": "^7.9.6",
         "@babel/preset-env": "^7.9.6",
@@ -43,6 +48,7 @@
         "enzyme-adapter-react-16": "^1.15.2",
         "eslint": "^6.8.0",
         "eslint-config-airbnb": "^18.1.0",
+        "eslint-import-resolver-node": "^0.3.3",
         "eslint-plugin-import": "^2.20.1",
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-react": "^7.19.0",
@@ -50,6 +56,7 @@
         "html-webpack-plugin": "^4.3.0",
         "jest": "^26.0.1",
         "jest-transform-stub": "^2.0.0",
+        "pre-commit": "^1.2.2",
         "redux-mock-store": "^1.5.4",
         "sass": "^1.26.5",
         "sass-loader": "^8.0.2",
