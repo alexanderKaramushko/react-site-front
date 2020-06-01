@@ -3,6 +3,8 @@ import Feature from '../organisms/Feature';
 import BlockContainer from '../molecules/Block';
 import view from '../templates/default/style.scss';
 
+import '../_settings/_base.scss';
+
 const Main: React.FunctionComponent = () => (
     <>
         <h1>Test</h1>

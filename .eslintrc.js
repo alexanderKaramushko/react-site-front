@@ -46,6 +46,7 @@ const config = {
 		}],
 		quotes: ['error', 'single'],
 		'no-tabs': 0,
+		'@typescript-eslint/no-var-requires': 0,
 	},
 	settings: {
 		'import/extensions': ['.ts', '.tsx', '.json'],

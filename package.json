@@ -27,6 +27,7 @@
         "@storybook/addon-links": "^5.3.18",
         "@storybook/addons": "^5.3.18",
         "@storybook/react": "^5.3.18",
+        "@svgr/webpack": "^5.4.0",
         "@types/classnames": "^2.2.10",
         "@types/enzyme": "^3.10.5",
         "@types/enzyme-adapter-react-16": "^1.0.6",
