@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>>>B L O C K --- Snapshot +++capturing Snapshot of Block 1`] = `
+<div
+  className=""
+>
+  <h2>
+    Test
+  </h2>
+  
+  0
+</div>
+`;

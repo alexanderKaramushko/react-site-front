@@ -1,24 +1,22 @@
-import App from './components/App';
-import AboutUs from './components/AboutUs';
-import Contacts from './components/Contacts';
 import {
     Route,
 } from 'react-router-dom';
-
-import * as React from 'react';
+import React from 'react';
+import AboutUs from './components/pages/AboutUs';
+import Contacts from './components/pages/Contacts';
+import Main from './components/pages/Main';
 
 interface route {
-    path: string,
-    component: React.ComponentType<any>,
-    isExact?: boolean,
+    component: React.ComponentType<any>;
+    isExact?: boolean;
+    path: string;
 }
-
 
 export const routesArr = [
     {
         path: '/',
         isExact: true,
-        component: App,
+        component: Main,
     },
     {
         path: '/about-us',
@@ -30,8 +28,7 @@ export const routesArr = [
     },
 ];
 
-export const createRoutes = (routesArray : route[]) : React.ReactNode => {
-    return routesArray.map((elem, i) => (
-        <Route key={i} path={elem.path} component={elem.component} exact={elem.isExact}/>
-    ))
-}
+export const createRoutes = (routesArray: route[]): React.ReactNode => routesArray.map((route) => {
+    const { component, isExact, path } = route;
+    return <Route key={path} path={path} component={component} exact={isExact} />;
+});
