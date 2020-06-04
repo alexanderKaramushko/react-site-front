@@ -11,8 +11,8 @@ import Header from './components/organisms/Header';
 
 const App: React.FunctionComponent = () => (
     <Provider store={store}>
-        <Header />
         <Router>
+            <Header />
             <nav>
                 <ul>
                     <li>
