@@ -30,9 +30,13 @@ git commit -m 'build(integration): add public API'
 ```
 
 ### Tests
-Show test coverage:
-```
-npm test -- --coverage
-```
-Presentational report: 
-`react-boilerplate/coverage/lcov-report/index.html`
+Show test coverage: `npm test -- --coverage`
+
+Presentational report: `react-boilerplate/coverage/lcov-report/index.html`
+
+### Linting
+Linting is set on the precommit script.
+
+Eslint errors and warnings: `npm run eslint`
+
+Eslint config: `npm run eslint:dump`
