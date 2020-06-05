@@ -5,7 +5,7 @@ import Label from '../../atoms/Label';
 
 import * as styles from './style.scss';
 
-type imagePositionsType = 'left' | 'right';
+export type imagePositionsType = 'left' | 'right';
 
 interface Props {
     children: React.ReactNode;
