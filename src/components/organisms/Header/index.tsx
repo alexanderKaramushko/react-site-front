@@ -27,7 +27,7 @@ const Header: React.FunctionComponent<Props> = (props) => {
     return (
         <header className={classProps}>
             <Link to="/" className="logo-link">
-                <LabeledImage imagePosition="left" label="Logo"><Logo width="50px" /></LabeledImage>
+                <LabeledImage imagePosition="left" label="Logo"><Logo className="design_svg__animated" width="50px" /></LabeledImage>
             </Link>
         </header>
     );
