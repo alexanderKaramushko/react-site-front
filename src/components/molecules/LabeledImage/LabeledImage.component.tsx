@@ -5,14 +5,17 @@ import Label from '../../atoms/Label';
 
 import * as styles from './style.scss';
 
+type imagePositionsType = 'left' | 'right';
+
 interface Props {
     children: React.ReactNode;
-    imagePosition?: string;
+    imagePosition?: imagePositionsType;
     label: string;
 }
 
 const defaultProps = {
-    imagePosition: 'right',
+    children: '',
+    imagePosition: 'left' as imagePositionsType,
     label: '',
 };
 
