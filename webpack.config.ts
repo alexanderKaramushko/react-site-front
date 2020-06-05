@@ -7,35 +7,38 @@ module.exports = {
         rules: [{
             exclude: /node_modules/,
             test: /\.js$/,
-            use: ['babel-loader'],
+            use: ['babel-loader']
         }, {
             test: /\.s(a|c)ss$/i,
             use: ['style-loader', {
                 loader: 'css-loader',
                 options: {
                     importLoaders: 1,
-                    modules: true,
-                },
-            }, 'sass-loader'],
+                    modules: true
+                }
+            }, 'sass-loader']
         }, {
             exclude: /node_modules/,
             test: /\.ts(x?)$/,
             use: [{
-                loader: 'ts-loader',
-            }],
+                loader: 'ts-loader'
+            }]
         }, {
             enforce: 'pre',
             loader: 'source-map-loader',
-            test: /\.js$/,
+            test: /\.js$/
         }, {
             exclude: /\.test.tsx?$/,
             include: /ClientApp/,
             test: /\.tsx?$/,
-            use: 'awesome-typescript-loader?silent=true',
+            use: 'awesome-typescript-loader?silent=true'
         }, {
             test: /\.svg$/,
-            use: ['@svgr/webpack'],
-        }],
+            use: ['@svgr/webpack']
+        }, {
+            test: /\.css$/i,
+            use: ['style-loader', 'css-loader'],
+        }]
     },
     output: {
         filename: 'index-bundle.js',
