@@ -17,7 +17,7 @@ const config = {
 			tsx: 'never',
 		}],
 		'import/prefer-default-export': 'off',
-		'linebreak-style': ['error', 'unix'],
+		'linebreak-style': ['error', 'windows'],
 		'max-len': ['error', {
 			code: 120,
 			ignoreStrings: true,
