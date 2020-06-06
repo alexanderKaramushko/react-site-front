@@ -7,7 +7,7 @@ type Props = {
 	button?: string;
     children?: React.ReactNode;
     className?: string;
-    clicks?: number;
+    clicks?: number[];
     onRequestNewNumber?: () => void;
     title: string;
 };
@@ -16,7 +16,7 @@ const defaultProps = {
     button: '',
     children: '',
     className: '',
-    clicks: 0,
+    clicks: [0],
     title: '',
 };
 

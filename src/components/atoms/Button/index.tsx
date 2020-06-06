@@ -20,15 +20,16 @@ export const ButtonSize = {
     SMALL: 'small',
 };
 
+type buttonTypeAttr = 'button' | 'reset' | 'submit';
+
 interface Props {
-    children?: React.ReactNode;
-    className?: string;
-    disabled?: boolean;
-    onClick?: () => void;
-    size?: string;
-    theme?: string;
-    // TODO: incompatible types
-    type?: any;
+  children?: React.ReactNode;
+  className?: string;
+  disabled?: boolean;
+  onClick?: () => void;
+  size?: string;
+  theme?: string;
+  type?: buttonTypeAttr;
 }
 
 const defaultProps = {
@@ -37,7 +38,7 @@ const defaultProps = {
     onClick: (): void => undefined,
     size: ButtonSize.MEDIUM,
     theme: ButtonTheme.DEFAULT,
-    type: ButtonType.BUTTON,
+    type: ButtonType.BUTTON as buttonTypeAttr,
 };
 
 const Button: React.FunctionComponent<Props> = (props) => {
