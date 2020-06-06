@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import { store } from './store';
 import { routesArr, createRoutes } from './routes';
-import Header from './components/organisms/Header';
+import Header from './components/organisms/Header/header.container';
 
 const App: React.FunctionComponent = () => (
     <Provider store={store}>

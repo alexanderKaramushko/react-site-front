@@ -8,6 +8,7 @@ import * as styles from './style.scss';
 export type imagePositionsType = 'left' | 'right';
 
 interface Props {
+    theme?: string;
     children: React.ReactNode;
     imagePosition?: imagePositionsType;
     label: string;
@@ -17,16 +18,19 @@ const defaultProps = {
     children: '',
     imagePosition: 'left' as imagePositionsType,
     label: '',
+    theme: 'light',
 };
 
 const LabeledImage: React.FunctionComponent<Props> = (props) => {
-    const { children, label, imagePosition } = props;
+    const {
+        children, label, imagePosition, theme,
+    } = props;
     const classProps = classnames(styles.labeledImage);
 
     return (
         <span className={classProps}>
             {imagePosition === 'left' && children && children}
-            <Label>{label}</Label>
+            <Label theme={theme}>{label}</Label>
             {imagePosition === 'right' && children && children}
         </span>
     );

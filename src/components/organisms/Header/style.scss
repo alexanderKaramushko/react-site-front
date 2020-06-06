@@ -1,10 +1,11 @@
 @import '../../_settings/variables';
 
 .header {
+    align-items: center;
+    border-bottom: 1px solid $grey-3;
     display: flex;
     height: 50px;
     justify-content: space-between;
-    align-items: center;
     padding: 20px;
 }
 
@@ -15,5 +16,8 @@
 
 .light {
     background-color: $white;
-    border-bottom: 1px solid $grey-3;
+}
+
+.dark {
+    background-color: $dark;
 }

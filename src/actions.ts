@@ -1,4 +1,5 @@
-import { BaseAction, actionIds } from './common';
+import { actionIds, ThemeAction, BaseAction } from './common';
+import { ThemeType } from './components/organisms/Header/header.component';
 
 export const numberRequestStartAction = (): BaseAction => ({
     payload: null,
@@ -10,4 +11,9 @@ export const numberRequestCompletedAction = (
 ): BaseAction => ({
     payload: numberGenerated,
     type: actionIds.GET_NUMBER_REQUEST_COMPLETED,
+});
+
+export const toggleThemeAction = (themeName: ThemeType): ThemeAction => ({
+    payload: themeName,
+    type: actionIds.TOGGLE_THEME,
 });
