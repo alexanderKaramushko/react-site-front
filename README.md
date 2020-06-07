@@ -40,3 +40,10 @@ Linting is set on the precommit script.
 Eslint errors and warnings: `npm run eslint`
 
 Eslint config: `npm run eslint:dump`
+
+VSCode Eslint config:
+`
+"editor.codeActionsOnSave": {
+  "source.fixAll": true
+}
+`

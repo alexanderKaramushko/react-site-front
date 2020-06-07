@@ -1,0 +1,35 @@
+@import '../../_settings/variables';
+
+.header {
+    align-items: center;
+    border-bottom: 1px solid $grey-3;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.settingsIcon {
+    cursor: pointer;
+}
+
+.themeToggler {
+    align-items: center;
+    display: flex;
+}
+
+.light {
+    background-color: $white;
+}
+
+.light.tip {
+    background-color: $grey-3;
+}
+
+.dark {
+    background-color: $dark;
+}
+
+.dark.tip {
+    background-color: $brand;
+}
