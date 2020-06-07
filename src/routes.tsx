@@ -7,7 +7,7 @@ import Contacts from './components/pages/Contacts';
 import Main from './components/pages/Main';
 
 interface Routes {
-    component: React.ComponentType<any>;
+    component: React.ComponentType;
     isExact?: boolean;
     path: string;
 }

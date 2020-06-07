@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, ShallowWrapper } from 'enzyme';
 import { Block } from '..';
 
 describe('>>>H O M E --- Shallow Render REACT COMPONENTS', () => {
-    let block: any;
+    let block: ShallowWrapper;
     const blockData = {
         title: 'Test',
     };
