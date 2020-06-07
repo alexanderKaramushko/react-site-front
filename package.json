@@ -71,6 +71,7 @@
         "webpack-dev-server": "^3.10.3"
     },
     "dependencies": {
+        "@tippyjs/react": "^4.0.2",
         "@types/react-toggle": "^4.0.2",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",

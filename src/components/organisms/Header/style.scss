@@ -9,6 +9,10 @@
     padding: 20px;
 }
 
+.settingsIcon {
+    cursor: pointer;
+}
+
 .themeToggler {
     align-items: center;
     display: flex;
@@ -18,6 +22,14 @@
     background-color: $white;
 }
 
+.light.tip {
+    background-color: $grey-3;
+}
+
 .dark {
     background-color: $dark;
+}
+
+.dark.tip {
+    background-color: $brand;
 }
