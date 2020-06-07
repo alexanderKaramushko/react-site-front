@@ -1,5 +1,5 @@
 import { actionIds, ThemeAction, BaseAction } from './common';
-import { ThemeType } from './components/organisms/Header/header.component';
+import { ThemeType } from './common/settings';
 
 export const numberRequestStartAction = (): BaseAction => ({
     payload: null,

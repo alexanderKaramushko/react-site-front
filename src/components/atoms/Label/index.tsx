@@ -2,10 +2,11 @@ import React from 'react';
 import classnames from 'classnames';
 
 import * as styles from './style.scss';
+import { ThemeType } from '../../../common/settings';
 
 export const LabelTheme = {
-    DARK: 'dark',
-    LIGHT: 'light',
+    DARK: 'dark' as ThemeType,
+    LIGHT: 'light' as ThemeType,
 };
 
 export const LabelSize = {
@@ -15,7 +16,7 @@ export const LabelSize = {
 };
 
 interface Props {
-    theme?: string;
+    theme?: ThemeType;
     children: React.ReactNode;
     size?: string;
 }
@@ -23,7 +24,7 @@ interface Props {
 const defaultProps = {
     children: 'label',
     size: 'medium',
-    theme: 'light',
+    theme: 'light' as ThemeType,
 };
 
 const Label: React.FunctionComponent<Props> = (props) => {

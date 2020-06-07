@@ -1,6 +1,6 @@
 import { themeReducer } from '../reducers/theme.reducer';
 import { actionIds } from '../common';
-import { ThemeType } from '../components/organisms/Header/header.component';
+import { ThemeType } from '../common/settings';
 
 describe('With snapshots ', () => {
     it('+++ reducer with shapshot', () => {

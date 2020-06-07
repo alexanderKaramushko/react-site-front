@@ -1,4 +1,4 @@
-import { ThemeType } from '../components/organisms/Header/header.component';
+import { ThemeType } from './settings';
 
 export const actionIds = {
     GET_NUMBER_REQUEST_COMPLETED:

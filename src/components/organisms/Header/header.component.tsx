@@ -10,8 +10,7 @@ import Logo from '../../../assets/icons/design.svg';
 
 import 'react-toggle/style.css';
 import * as styles from './style.scss';
-
-export type ThemeType = 'light' | 'dark';
+import { ThemeType } from '../../../common/settings';
 
 interface Props {
     themeName: ThemeType;

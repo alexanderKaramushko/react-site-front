@@ -3,7 +3,8 @@ import { Dispatch } from 'redux';
 import { ThemeAction } from '../../../common';
 import { toggleThemeAction } from '../../../actions';
 
-import Header, { ThemeType } from './header.component';
+import Header from './header.component';
+import { ThemeType } from '../../../common/settings';
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
     toggleTheme: (themeName: ThemeType): ThemeAction => dispatch(toggleThemeAction(themeName)),
