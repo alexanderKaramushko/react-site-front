@@ -27,6 +27,7 @@
         "@storybook/addon-links": "^5.3.18",
         "@storybook/addons": "^5.3.18",
         "@storybook/react": "^5.3.18",
+        "@svgr/webpack": "^5.4.0",
         "@types/classnames": "^2.2.10",
         "@types/enzyme": "^3.10.5",
         "@types/enzyme-adapter-react-16": "^1.0.6",
@@ -70,12 +71,15 @@
         "webpack-dev-server": "^3.10.3"
     },
     "dependencies": {
+        "@tippyjs/react": "^4.0.2",
+        "@types/react-toggle": "^4.0.2",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-redux": "^7.2.0",
         "react-router": "^5.2.0",
         "react-router-dom": "^5.2.0",
         "react-test-renderer": "^16.13.1",
+        "react-toggle": "^4.1.1",
         "redux": "^4.0.5",
         "redux-devtools-extension": "^2.13.8",
         "redux-saga": "^1.1.3",
