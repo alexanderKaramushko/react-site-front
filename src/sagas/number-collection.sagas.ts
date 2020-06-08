@@ -8,7 +8,7 @@ export function* requestNewGeneratedNumber() {
     yield put(numberRequestCompletedAction(generatedNumber));
 }
 
-export function* watchNewGeneratedNumberRequestStart() {
+export function* watchNewGeneratedNumberRequestStart(): Generator {
     yield takeEvery(
         actionIds.GET_NUMBER_REQUEST_START,
         requestNewGeneratedNumber,
