@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import { ThemeType } from '../../../common/settings';
 
-import LabeledImage from '../../molecules/LabeledImage';
-import Label from '../../atoms/Label';
+import LabeledImage from '../../molecules/LabeledImage/LabeledImage.container';
+import Label from '../../atoms/Label/Label.container';
 
 import Logo from '../../../assets/icons/design.svg';
 import SettingsIcon from '../../../assets/icons/settings.svg';
@@ -17,18 +17,18 @@ import 'tippy.js/animations/shift-toward.css';
 import * as styles from './style.scss';
 
 interface Props {
-    themeName: ThemeType;
-    toggleTheme: (themeName: ThemeType) => void;
+    theme: ThemeType;
+    toggleTheme: (theme: ThemeType) => void;
 }
 
 const defaultProps = {
-    themeName: 'light' as ThemeType,
+    theme: 'light' as ThemeType,
 };
 
 const Header: React.FunctionComponent<Props> = (props) => {
-    const { themeName, toggleTheme } = props;
-    const classProps = classnames(styles.header, styles[themeName]);
-    const tipClassProps = classnames(styles[themeName], styles.tip);
+    const { theme, toggleTheme } = props;
+    const classProps = classnames(styles.header, styles[theme]);
+    const tipClassProps = classnames(styles[theme], styles.tip);
 
     const [visible, setVisible] = useState(false);
 
@@ -43,7 +43,7 @@ const Header: React.FunctionComponent<Props> = (props) => {
     return (
         <header className={classProps}>
             <Link to="/">
-                <LabeledImage imagePosition="left" label="Logo" theme={themeName}>
+                <LabeledImage imagePosition="left" label="Logo">
                     <Logo className="design_svg__animated" width="40px" />
                 </LabeledImage>
             </Link>
@@ -53,7 +53,7 @@ const Header: React.FunctionComponent<Props> = (props) => {
                     <div>
                         <div className={styles.themeToggler}>
 
-                            <Label theme={themeName} size="small">Night mode:</Label>
+                            <Label size="small">Night mode:</Label>
                             <Toggle
                                 onChange={handleCHange}
                                 icons={false}
