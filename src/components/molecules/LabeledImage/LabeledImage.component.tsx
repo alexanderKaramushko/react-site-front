@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import Label from '../../atoms/Label';
+import Label from '../../atoms/Label/Label.container';
 
 import * as styles from './style.scss';
 import { ThemeType } from '../../../common/settings';
@@ -24,14 +24,14 @@ const defaultProps = {
 
 const LabeledImage: React.FunctionComponent<Props> = (props) => {
     const {
-        children, label, imagePosition, theme,
+        children, label, imagePosition,
     } = props;
     const classProps = classnames(styles.labeledImage);
 
     return (
         <span className={classProps}>
             {imagePosition === 'left' && children && children}
-            <Label theme={theme}>{label}</Label>
+            <Label>{label}</Label>
             {imagePosition === 'right' && children && children}
         </span>
     );

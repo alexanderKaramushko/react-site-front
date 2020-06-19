@@ -7,8 +7,8 @@ import classnames from 'classnames';
 import { Translate } from 'react-redux-i18n';
 import { ThemeType } from '../../../common/settings';
 
-import LabeledImage from '../../molecules/LabeledImage';
-import Label from '../../atoms/Label';
+import LabeledImage from '../../molecules/LabeledImage/LabeledImage.container';
+import Label from '../../atoms/Label/Label.container';
 
 import Logo from '../../../assets/icons/design.svg';
 import SettingsIcon from '../../../assets/icons/settings.svg';
@@ -23,21 +23,21 @@ import { supportedLocales } from '../../../localization';
 interface Props {
     // TODO: !!!
     selectedLocale: string;
-    setLocaleWithFallback: (desiredLocale: string) => any;
-    themeName: ThemeType;
-    toggleTheme: (themeName: ThemeType) => void;
+    setLocaleWithFallback: (desiredLocale: string) => void;
+    theme: ThemeType;
+    toggleTheme: (theme: ThemeType) => void;
 }
 
 const defaultProps = {
-    themeName: 'light' as ThemeType,
+    theme: 'light' as ThemeType,
 };
 
 const Header: React.FunctionComponent<Props> = (props) => {
     const {
-        selectedLocale, setLocaleWithFallback, themeName, toggleTheme,
+        selectedLocale, setLocaleWithFallback, theme, toggleTheme,
     } = props;
-    const classProps = classnames(styles.header, styles[themeName]);
-    const tipClassProps = classnames(styles[themeName], styles.tip);
+    const classProps = classnames(styles.header, styles[theme]);
+    const tipClassProps = classnames(styles[theme], styles.tip);
 
     const [visible, setVisible] = useState(false);
 
@@ -57,7 +57,7 @@ const Header: React.FunctionComponent<Props> = (props) => {
     return (
         <header className={classProps}>
             <Link to="/">
-                <LabeledImage imagePosition="left" label="Logo" theme={themeName}>
+                <LabeledImage imagePosition="left" label="Logo">
                     <Logo className="design_svg__animated" width="40px" />
                 </LabeledImage>
             </Link>
@@ -66,7 +66,7 @@ const Header: React.FunctionComponent<Props> = (props) => {
                 content={(
                     <div>
                         <div className={styles.togglerContainer}>
-                            <Label theme={themeName} size="small">
+                            <Label size="small">
                                 <Translate value="settings.language" />
                             </Label>
                             <Dropdown
@@ -76,7 +76,7 @@ const Header: React.FunctionComponent<Props> = (props) => {
                             />
                         </div>
                         <div className={styles.togglerContainer}>
-                            <Label theme={themeName} size="small">
+                            <Label size="small">
                                 <Translate value="settings.nightMode" />
                             </Label>
                             <Toggle
