@@ -17,18 +17,18 @@ import 'tippy.js/animations/shift-toward.css';
 import * as styles from './style.scss';
 
 interface Props {
-    themeName: ThemeType;
-    toggleTheme: (themeName: ThemeType) => void;
+    theme: ThemeType;
+    toggleTheme: (theme: ThemeType) => void;
 }
 
 const defaultProps = {
-    themeName: 'light' as ThemeType,
+    theme: 'light' as ThemeType,
 };
 
 const Header: React.FunctionComponent<Props> = (props) => {
-    const { themeName, toggleTheme } = props;
-    const classProps = classnames(styles.header, styles[themeName]);
-    const tipClassProps = classnames(styles[themeName], styles.tip);
+    const { theme, toggleTheme } = props;
+    const classProps = classnames(styles.header, styles[theme]);
+    const tipClassProps = classnames(styles[theme], styles.tip);
 
     const [visible, setVisible] = useState(false);
 

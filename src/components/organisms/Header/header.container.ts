@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
+import { getActiveTheme } from '../../../selectors/settingsSelectors';
 import { ThemeAction } from '../../../common';
 import { toggleThemeAction } from '../../../actions';
 
@@ -12,7 +13,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
 });
 
 const mapStateToProps = (state: RootState) => ({
-    themeName: state.settingsReducer.themeName,
+    theme: getActiveTheme(state),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
