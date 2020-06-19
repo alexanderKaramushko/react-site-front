@@ -1,8 +1,10 @@
 import React, { ChangeEvent, useState } from 'react';
 import Toggle from 'react-toggle';
 import Tippy from '@tippyjs/react';
+import Dropdown, { Option } from 'react-dropdown';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
+import { Translate } from 'react-redux-i18n';
 import { ThemeType } from '../../../common/settings';
 
 import LabeledImage from '../../molecules/LabeledImage/LabeledImage.container';
@@ -14,9 +16,14 @@ import SettingsIcon from '../../../assets/icons/settings.svg';
 import 'react-toggle/style.css';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/shift-toward.css';
+import 'react-dropdown/style.css';
 import * as styles from './style.scss';
+import { supportedLocales } from '../../../localization';
 
 interface Props {
+    // TODO: !!!
+    selectedLocale: string;
+    setLocaleWithFallback: (desiredLocale: string) => void;
     theme: ThemeType;
     toggleTheme: (theme: ThemeType) => void;
 }
@@ -26,15 +33,22 @@ const defaultProps = {
 };
 
 const Header: React.FunctionComponent<Props> = (props) => {
-    const { theme, toggleTheme } = props;
+    const {
+        selectedLocale, setLocaleWithFallback, theme, toggleTheme,
+    } = props;
     const classProps = classnames(styles.header, styles[theme]);
     const tipClassProps = classnames(styles[theme], styles.tip);
 
     const [visible, setVisible] = useState(false);
 
-    function handleCHange(event: ChangeEvent<HTMLInputElement>): void {
+    function handleThemeChange(event: ChangeEvent<HTMLInputElement>): void {
         const { target } = event;
         toggleTheme(target.checked ? 'dark' : 'light');
+    }
+
+    function handleLocaleChange(option: Option) {
+        const { value } = option;
+        setLocaleWithFallback(value);
     }
 
     const show = (): void => setVisible(true);
@@ -51,13 +65,24 @@ const Header: React.FunctionComponent<Props> = (props) => {
             <Tippy
                 content={(
                     <div>
-                        <div className={styles.themeToggler}>
-
-                            <Label size="small">Night mode:</Label>
+                        <div className={styles.togglerContainer}>
+                            <Label size="small">
+                                <Translate value="settings.language" />
+                            </Label>
+                            <Dropdown
+                                onChange={handleLocaleChange}
+                                options={Object.keys(supportedLocales)}
+                                value={selectedLocale}
+                            />
+                        </div>
+                        <div className={styles.togglerContainer}>
+                            <Label size="small">
+                                <Translate value="settings.nightMode" />
+                            </Label>
                             <Toggle
-                                onChange={handleCHange}
-                                icons={false}
                                 defaultChecked={false}
+                                icons={false}
+                                onChange={handleThemeChange}
                             />
                         </div>
                     </div>
