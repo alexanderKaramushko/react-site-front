@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import { ThemeType } from '../../../common/settings';
 
-import LabeledImage from '../../molecules/LabeledImage';
-import Label from '../../atoms/Label';
+import LabeledImage from '../../molecules/LabeledImage/LabeledImage.container';
+import Label from '../../atoms/Label/Label.container';
 
 import Logo from '../../../assets/icons/design.svg';
 import SettingsIcon from '../../../assets/icons/settings.svg';
@@ -43,7 +43,7 @@ const Header: React.FunctionComponent<Props> = (props) => {
     return (
         <header className={classProps}>
             <Link to="/">
-                <LabeledImage imagePosition="left" label="Logo" theme={themeName}>
+                <LabeledImage imagePosition="left" label="Logo">
                     <Logo className="design_svg__animated" width="40px" />
                 </LabeledImage>
             </Link>
@@ -53,7 +53,7 @@ const Header: React.FunctionComponent<Props> = (props) => {
                     <div>
                         <div className={styles.themeToggler}>
 
-                            <Label theme={themeName} size="small">Night mode:</Label>
+                            <Label size="small">Night mode:</Label>
                             <Toggle
                                 onChange={handleCHange}
                                 icons={false}

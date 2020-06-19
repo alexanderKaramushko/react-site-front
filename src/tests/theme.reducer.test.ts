@@ -1,4 +1,4 @@
-import { themeReducer } from '../reducers/theme.reducer';
+import { settingsReducer } from '../reducers/settings.reducer';
 import { actionIds } from '../common';
 import { ThemeType } from '../common/settings';
 
@@ -9,12 +9,12 @@ describe('With snapshots ', () => {
             type: actionIds.TOGGLE_THEME,
         };
 
-        expect(themeReducer(undefined, action)).toMatchSnapshot();
+        expect(settingsReducer(undefined, action)).toMatchSnapshot();
     });
 
     it('+++ reducer for TOGGLE_THEME', () => {
-        let state = 'light';
-        state = themeReducer(state, {
+        let state = { themeName: 'dark' as ThemeType };
+        state = settingsReducer(state, {
             payload: 'dark' as ThemeType,
             type: actionIds.TOGGLE_THEME,
         });

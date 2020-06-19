@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import Label from '..';
+import Label from '../Label.component';
 
 describe('>>>L A B E L --- Shallow Render REACT COMPONENT', () => {
     let label: ShallowWrapper;
