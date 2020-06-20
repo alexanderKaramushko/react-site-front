@@ -4,10 +4,9 @@ import Tippy from '@tippyjs/react';
 import Dropdown, { Option } from 'react-dropdown';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
-import { Translate } from 'react-redux-i18n';
 import { ThemeType } from '../../../common/settings';
 
-import LabeledImage from '../../molecules/LabeledImage/LabeledImage.container';
+import BlockWithText from '../../molecules/BlockWithText/BlockWithText.container';
 import Label from '../../atoms/Label/Label.container';
 
 import Logo from '../../../assets/icons/design.svg';
@@ -57,34 +56,28 @@ const Header: React.FunctionComponent<Props> = (props) => {
     return (
         <header className={classProps}>
             <Link to="/">
-                <LabeledImage imagePosition="left" label="Logo">
+                <BlockWithText label="Logo" labelSize="medium" rowReverse>
                     <Logo className="design_svg__animated" width="40px" />
-                </LabeledImage>
+                </BlockWithText>
             </Link>
 
             <Tippy
                 content={(
                     <div>
-                        <div className={styles.togglerContainer}>
-                            <Label size="small">
-                                <Translate value="settings.language" />
-                            </Label>
+                        <BlockWithText label="settings.language" labelSize="small">
                             <Dropdown
                                 onChange={handleLocaleChange}
                                 options={Object.keys(supportedLocales)}
                                 value={selectedLocale}
                             />
-                        </div>
-                        <div className={styles.togglerContainer}>
-                            <Label size="small">
-                                <Translate value="settings.nightMode" />
-                            </Label>
+                        </BlockWithText>
+                        <BlockWithText label="settings.nightMode" labelSize="small">
                             <Toggle
                                 defaultChecked={false}
                                 icons={false}
                                 onChange={handleThemeChange}
                             />
-                        </div>
+                        </BlockWithText>
                     </div>
                 )}
                 animation="shift-toward"
