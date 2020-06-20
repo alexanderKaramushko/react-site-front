@@ -70,7 +70,7 @@ const Header: React.FunctionComponent<Props> = (props) => {
             >
                 <span>
                     <SettingsIcon
-                        className={`${styles.settingsIcon} settings_svg__animated`}
+                        className="settings_svg__animated"
                         height="40px"
                         onClick={visible ? hide : show}
                         width="40px"
