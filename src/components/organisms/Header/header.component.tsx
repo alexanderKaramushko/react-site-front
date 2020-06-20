@@ -18,6 +18,7 @@ import 'tippy.js/animations/shift-toward.css';
 import 'react-dropdown/style.css';
 import * as styles from './style.scss';
 import { supportedLocales } from '../../../localization';
+import UnorderedList from '../../molecules/UnorderedList/UnorderedList.component';
 
 interface Props {
     // TODO: !!!
@@ -40,6 +41,12 @@ const Header: React.FunctionComponent<Props> = (props) => {
 
     const [visible, setVisible] = useState(false);
 
+    const listItems = [
+        { link: '/', title: 'nav.main' },
+        { link: '/about-us', title: 'nav.about' },
+        { link: '/contacts', title: 'nav.contacts' },
+    ];
+
     function handleThemeChange(event: ChangeEvent<HTMLInputElement>): void {
         const { target } = event;
         toggleTheme(target.checked ? 'dark' : 'light');
@@ -60,6 +67,10 @@ const Header: React.FunctionComponent<Props> = (props) => {
                     <Logo className="design_svg__animated" width="40px" />
                 </BlockWithText>
             </Link>
+
+            <nav>
+                <UnorderedList listItems={listItems} horizontal />
+            </nav>
 
             <Tippy
                 content={(
