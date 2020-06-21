@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Label, { LabelSize, LabelTheme } from '.';
+import Label, { LabelSize, LabelTheme } from './Label.component';
 
 storiesOf('Label', module)
     .add('default', () => (

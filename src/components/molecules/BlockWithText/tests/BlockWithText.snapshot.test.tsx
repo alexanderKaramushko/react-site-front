@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import { MockStoreEnhanced } from 'redux-mock-store';
 import { mockStore } from '../../../../mocks';
-import Label from '../Label.container';
+import BlockWithText from '../BlockWithText.component';
 
 const store: MockStoreEnhanced = mockStore({
     settingsReducer: {
@@ -11,11 +11,15 @@ const store: MockStoreEnhanced = mockStore({
     },
 });
 
-describe('>>>L A B E L --- Snapshot', () => {
-    it('+++capturing Snapshot of Label', () => {
+describe('>>>BlockWithText --- Snapshot', () => {
+    it('+++capturing Snapshot of Block', () => {
         const renderedValue = renderer.create(
             <Provider store={store}>
-                <Label><span>Test label</span></Label>
+                <BlockWithText
+                    label="Test LabeledImage"
+                >
+                    <span>Test LabeledImage</span>
+                </BlockWithText>
             </Provider>,
         ).toJSON();
         expect(renderedValue).toMatchSnapshot();

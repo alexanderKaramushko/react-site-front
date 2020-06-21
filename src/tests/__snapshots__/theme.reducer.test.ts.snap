@@ -1,3 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`With snapshots  +++ reducer with shapshot 1`] = `"dark"`;
+exports[`With snapshots  +++ reducer with shapshot 1`] = `
+Object {
+  "themeName": "dark",
+}
+`;
