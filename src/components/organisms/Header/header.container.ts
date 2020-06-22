@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { getActiveTheme } from '../../../selectors/settingsSelectors';
+import { getActiveTheme, getSelectedLocale } from '../../../selectors/settingsSelectors';
 import { ThemeAction } from '../../../common';
 import { toggleThemeAction } from '../../../actions';
 import { setLocaleWithFallback } from '../../../localization';
@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
 });
 
 const mapStateToProps = (state: RootState) => ({
-    selectedLocale: state.i18n.locale,
+    selectedLocale: getSelectedLocale(state),
     theme: getActiveTheme(state),
 });
 
