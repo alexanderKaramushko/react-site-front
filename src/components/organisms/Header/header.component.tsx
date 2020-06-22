@@ -7,7 +7,6 @@ import classnames from 'classnames';
 import { ThemeType } from '../../../common/settings';
 
 import BlockWithText from '../../molecules/BlockWithText/BlockWithText.container';
-import Label from '../../atoms/Label/Label.container';
 
 import Logo from '../../../assets/icons/design.svg';
 import SettingsIcon from '../../../assets/icons/settings.svg';
