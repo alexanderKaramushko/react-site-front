@@ -4,12 +4,13 @@ import renderer from 'react-test-renderer';
 import { MockStoreEnhanced } from 'redux-mock-store';
 import { mockStore } from '../../../../mocks';
 import BlockWithText from '../BlockWithText.component';
+import { RootState } from '../../../../reducers';
 
 const store: MockStoreEnhanced = mockStore({
     settingsReducer: {
         themeName: 'light',
     },
-});
+} as RootState);
 
 describe('>>>BlockWithText --- Snapshot', () => {
     it('+++capturing Snapshot of Block', () => {
