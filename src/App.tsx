@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import {
     BrowserRouter as Router,
     Switch,
-    Link,
 } from 'react-router-dom';
 import { store } from './store';
 import Header from './components/organisms/Header/header.container';
