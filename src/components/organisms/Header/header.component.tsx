@@ -50,7 +50,7 @@ const Header: React.FunctionComponent<Props> = (props) => {
         toggleTheme(target.checked ? 'dark' : 'light');
     }
 
-    function handleLocaleChange(option: Option) {
+    function handleLocaleChange(option: Option): void {
         const { value } = option;
         setLocaleWithFallback(value);
     }

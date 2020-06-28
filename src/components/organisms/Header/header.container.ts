@@ -8,12 +8,22 @@ import { RootState } from '../../../reducers';
 import { toggleThemeAction } from '../../../actions/settings/actions';
 import { ThemeType } from '../../../common/settings';
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
+type mapDispatchReturn = {
+    setLocaleWithFallback: (desiredLocale: string) => void;
+    toggleTheme: (themeName: ThemeType) => ThemeAction;
+}
+
+const mapDispatchToProps = (dispatch: Dispatch): mapDispatchReturn => ({
     setLocaleWithFallback: setLocaleWithFallback(dispatch),
     toggleTheme: (themeName: ThemeType) => dispatch(toggleThemeAction(themeName)),
 });
 
-const mapStateToProps = (state: RootState) => ({
+type MapStateReturn = {
+    selectedLocale: string;
+    theme: ThemeType;
+}
+
+const mapStateToProps = (state: RootState): MapStateReturn => ({
     selectedLocale: getSelectedLocale(state),
     theme: getActiveTheme(state),
 });
