@@ -1,23 +1,25 @@
+import { getType } from 'typesafe-actions';
 import { settingsReducer } from '../reducers/settings.reducer';
-import { actionIds } from '../common';
 import { ThemeType } from '../common/settings';
+import { toggleThemeAction } from '../actions/settings/actions';
 
 describe('With snapshots ', () => {
     it('+++ reducer with shapshot', () => {
         const action = {
             payload: 'dark' as ThemeType,
-            type: actionIds.TOGGLE_THEME,
+            type: getType(toggleThemeAction),
         };
 
         expect(settingsReducer(undefined, action)).toMatchSnapshot();
     });
 
     it('+++ reducer for TOGGLE_THEME', () => {
-        let state = { themeName: 'dark' as ThemeType };
-        state = settingsReducer(state, {
+        const state = { themeName: 'dark' as ThemeType };
+        const themeReducer = settingsReducer(state, {
             payload: 'dark' as ThemeType,
-            type: actionIds.TOGGLE_THEME,
+            type: getType(toggleThemeAction),
         });
-        expect(state).toEqual('dark');
+
+        expect(themeReducer).toEqual(state);
     });
 });

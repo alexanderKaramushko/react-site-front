@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>>>ListItem --- Snapshot +++capturing Snapshot of ListItem 1`] = `
+<li
+  className=""
+>
+  <span>
+    Test ListItem
+  </span>
+</li>
+`;
