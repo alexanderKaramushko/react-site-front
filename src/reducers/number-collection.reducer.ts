@@ -1,15 +1,30 @@
-import { BaseAction, actionIds } from '../common';
+import { createReducer } from 'typesafe-actions';
+import { NumbersState } from '../actions/numbers/types';
+import { NumbersReducerActionTypes } from '../actions/numbers/actions.types';
+import { getNumberAsync } from '../actions/numbers/actions';
 
-export type NumberCollectionState = number[];
-
-export const numberCollectionReducer = (
-    state: NumberCollectionState = [0],
-    action: BaseAction,
-): NumberCollectionState => {
-    switch (action.type) {
-    case actionIds.GET_NUMBER_REQUEST_COMPLETED:
-        return [...state, action.payload];
-    default:
-        return state;
-    }
+const initialState: NumbersState = {
+    numbers: [],
+    numbersError: '',
+    numbersLoading: false,
 };
+
+export const numbersReducer = createReducer<NumbersState, NumbersReducerActionTypes>(initialState)
+    .handleAction(
+        getNumberAsync.request,
+        (state): NumbersState => ({
+            ...state, numbersError: null, numbersLoading: true,
+        }),
+    )
+    .handleAction(
+        getNumberAsync.success,
+        (state, action): NumbersState => ({
+            ...state, numbers: action.payload, numbersError: null, numbersLoading: false,
+        }),
+    )
+    .handleAction(
+        getNumberAsync.failure,
+        (state, action): NumbersState => ({
+            ...state, numbersError: action.payload, numbersLoading: false,
+        }),
+    );

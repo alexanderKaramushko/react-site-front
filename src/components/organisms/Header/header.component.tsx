@@ -20,7 +20,6 @@ import { supportedLocales } from '../../../localization';
 import UnorderedList from '../../molecules/UnorderedList/UnorderedList.component';
 
 interface Props {
-    // TODO: !!!
     selectedLocale: string;
     setLocaleWithFallback: (desiredLocale: string) => void;
     theme: ThemeType;
