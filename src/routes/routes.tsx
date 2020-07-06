@@ -2,29 +2,30 @@ import {
     Route,
 } from 'react-router-dom';
 import React from 'react';
-import AboutUs from './components/pages/AboutUs';
-import Contacts from './components/pages/Contacts';
-import Main from './components/pages/Main';
+import AboutUs from '../components/pages/AboutUs';
+import Contacts from '../components/pages/Contacts';
+import Main from '../components/pages/Main';
+import { ROUTE_WAYS } from './routes.types';
 
 interface Routes {
     component: React.ComponentType;
     isExact?: boolean;
-    path: string;
+    path: ROUTE_WAYS;
 }
 
 export const routesArr = [
     {
         component: Main,
         isExact: true,
-        path: '/',
+        path: ROUTE_WAYS.BASE,
     },
     {
         component: AboutUs,
-        path: '/about-us',
+        path: ROUTE_WAYS.ABOUT,
     },
     {
         component: Contacts,
-        path: '/contacts',
+        path: ROUTE_WAYS.CONTACTS,
     },
 ];
 

@@ -18,6 +18,7 @@ import 'react-dropdown/style.css';
 import * as styles from './style.scss';
 import { supportedLocales } from '../../../localization';
 import UnorderedList from '../../molecules/UnorderedList/UnorderedList.component';
+import { ROUTE_WAYS } from '../../../routes/routes.types';
 
 interface Props {
     // TODO: !!!
@@ -41,9 +42,9 @@ const Header: React.FunctionComponent<Props> = (props) => {
     const [visible, setVisible] = useState(false);
 
     const listItems = [
-        { link: '/', title: 'nav.main' },
-        { link: '/about-us', title: 'nav.about' },
-        { link: '/contacts', title: 'nav.contacts' },
+        { link: ROUTE_WAYS.BASE, title: 'nav.main' },
+        { link: ROUTE_WAYS.ABOUT, title: 'nav.about' },
+        { link: ROUTE_WAYS.CONTACTS, title: 'nav.contacts' },
     ];
 
     function handleThemeChange(event: ChangeEvent<HTMLInputElement>): void {
