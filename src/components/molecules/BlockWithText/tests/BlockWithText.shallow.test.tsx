@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 
 import BlockWithText from '../BlockWithText.component';
-import Label from '../../../atoms/Label/Label.component';
 
 describe('>>>BlockWithText --- Shallow Render REACT COMPONENT', () => {
     let blockWithText: ShallowWrapper;

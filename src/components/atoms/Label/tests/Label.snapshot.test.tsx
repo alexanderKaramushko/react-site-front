@@ -4,12 +4,13 @@ import renderer from 'react-test-renderer';
 import { MockStoreEnhanced } from 'redux-mock-store';
 import { mockStore } from '../../../../mocks';
 import Label from '../Label.container';
+import { RootState } from '../../../../reducers';
 
 const store: MockStoreEnhanced = mockStore({
     settingsReducer: {
         themeName: 'light',
     },
-});
+} as RootState);
 
 describe('>>>L A B E L --- Snapshot', () => {
     it('+++capturing Snapshot of Label', () => {

@@ -3,24 +3,21 @@ import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import { MockStoreEnhanced } from 'redux-mock-store';
 import { mockStore } from '../../../../mocks';
-import BlockWithText from '../BlockWithText.component';
-import { RootState } from '../../../../reducers';
+import ListItem from '../ListItem.container';
 
 const store: MockStoreEnhanced = mockStore({
     settingsReducer: {
         themeName: 'light',
     },
-} as RootState);
+});
 
-describe('>>>BlockWithText --- Snapshot', () => {
-    it('+++capturing Snapshot of Block', () => {
+describe('>>>ListItem --- Snapshot', () => {
+    it('+++capturing Snapshot of ListItem', () => {
         const renderedValue = renderer.create(
             <Provider store={store}>
-                <BlockWithText
-                    label="Test LabeledImage"
-                >
-                    <span>Test LabeledImage</span>
-                </BlockWithText>
+                <ListItem>
+                    <span>Test ListItem</span>
+                </ListItem>
             </Provider>,
         ).toJSON();
         expect(renderedValue).toMatchSnapshot();
