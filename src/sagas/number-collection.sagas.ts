@@ -1,7 +1,7 @@
-import {
-    call, put, takeEvery, PutEffect, CallEffect, ForkEffect,
-} from 'redux-saga/effects';
-import { generateNewNumber } from '../api';
+// import {
+//     call, put, takeEvery, PutEffect, CallEffect, ForkEffect,
+// } from 'redux-saga/effects';
+// import { generateNewNumber } from '../api';
 // import { actionIds } from '../common';
 
 // export function* requestNewGeneratedNumber() {

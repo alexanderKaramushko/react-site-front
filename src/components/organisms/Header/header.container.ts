@@ -7,25 +7,16 @@ import Header from './header.component';
 import { RootState } from '../../../reducers';
 import { toggleThemeAction } from '../../../actions/settings/actions';
 import { ThemeType } from '../../../common/settings';
+import { StateProps, DispatchProps, OwnProps } from './header.types';
 
-type mapDispatchReturn = {
-    setLocaleWithFallback: (desiredLocale: string) => void;
-    toggleTheme: (themeName: ThemeType) => ThemeAction;
-}
-
-const mapDispatchToProps = (dispatch: Dispatch): mapDispatchReturn => ({
-    setLocaleWithFallback: setLocaleWithFallback(dispatch),
-    toggleTheme: (themeName: ThemeType) => dispatch(toggleThemeAction(themeName)),
-});
-
-type MapStateReturn = {
-    selectedLocale: string;
-    theme: ThemeType;
-}
-
-const mapStateToProps = (state: RootState): MapStateReturn => ({
-    selectedLocale: getSelectedLocale(state),
-    theme: getActiveTheme(state),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect<StateProps, DispatchProps, OwnProps, RootState>(
+    (state) => ({
+        selectedLocale: getSelectedLocale(state),
+        theme: getActiveTheme(state),
+    }),
+    (dispatch: Dispatch) => ({
+        setLocaleWithFallback: setLocaleWithFallback(dispatch),
+        // TODO: fix any
+        toggleTheme: (themeName: ThemeType): any => dispatch(toggleThemeAction(themeName)),
+    }),
+)(Header);

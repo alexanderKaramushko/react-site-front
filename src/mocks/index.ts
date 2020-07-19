@@ -1,7 +1,6 @@
 import configureStore, { MockStoreEnhanced } from 'redux-mock-store';
-import { RootState } from '../reducers';
 
-export function mockStore(initialState: RootState): MockStoreEnhanced {
+export function mockStore<T>(initialState: T): MockStoreEnhanced {
     const configureMockStore = configureStore();
     const store = configureMockStore(initialState);
 
