@@ -74,6 +74,7 @@
         "webpack-dev-server": "^3.10.3"
     },
     "dependencies": {
+        "@types/react-transition-group": "^4.4.0",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-dropdown": "^1.7.0",
@@ -83,6 +84,7 @@
         "react-router-dom": "^5.2.0",
         "react-test-renderer": "^16.13.1",
         "react-toggle": "^4.1.1",
+        "react-transition-group": "^4.4.1",
         "redux": "^4.0.5",
         "redux-devtools-extension": "^2.13.8",
         "redux-saga": "^1.1.3",

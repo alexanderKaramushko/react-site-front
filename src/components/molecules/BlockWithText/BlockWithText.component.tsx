@@ -6,6 +6,7 @@ import Label from '../../atoms/Label/Label.container';
 
 import * as styles from './style.scss';
 import { ThemeType } from '../../../common/settings';
+import Fade from '../../transitions/Fade/Fade';
 
 type LabelSize = 'small' | 'medium' | 'large';
 
@@ -37,12 +38,14 @@ const BlockWithText: React.FunctionComponent<Props> = (props) => {
     );
 
     return (
-        <div className={labelClassProps}>
-            <Label size={labelSize}>
-                <Translate value={label} />
-            </Label>
-            {children}
-        </div>
+        <Fade>
+            <div className={labelClassProps}>
+                <Label size={labelSize}>
+                    <Translate value={label} />
+                </Label>
+                {children}
+            </div>
+        </Fade>
     );
 };
 
