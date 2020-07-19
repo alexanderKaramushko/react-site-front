@@ -18,6 +18,7 @@ import 'react-dropdown/style.css';
 import * as styles from './style.scss';
 import { supportedLocales } from '../../../localization';
 import UnorderedList from '../../molecules/UnorderedList/UnorderedList.component';
+import Fade from '../../transitions/Fade/Fade';
 import { listItems } from '../../../routes/routes';
 
 interface Props {
@@ -65,40 +66,42 @@ const Header: React.FunctionComponent<Props> = (props) => {
                 <UnorderedList listItems={listItems} horizontal />
             </nav>
 
-            <Tippy
-                content={(
-                    <div>
-                        <BlockWithText label="settings.language" labelSize="small">
-                            <Dropdown
-                                onChange={handleLocaleChange}
-                                options={Object.keys(supportedLocales)}
-                                value={selectedLocale}
-                            />
-                        </BlockWithText>
-                        <BlockWithText label="settings.nightMode" labelSize="small">
-                            <Toggle
-                                defaultChecked={false}
-                                icons={false}
-                                onChange={handleThemeChange}
-                            />
-                        </BlockWithText>
-                    </div>
-                )}
-                animation="shift-toward"
-                className={tipClassProps}
-                interactive
-                onClickOutside={hide}
-                visible={visible}
-            >
-                <span>
-                    <SettingsIcon
-                        className="settings_svg__animated"
-                        height="40px"
-                        onClick={visible ? hide : show}
-                        width="40px"
-                    />
-                </span>
-            </Tippy>
+            <Fade>
+                <Tippy
+                    content={(
+                        <div>
+                            <BlockWithText label="settings.language" labelSize="small">
+                                <Dropdown
+                                    onChange={handleLocaleChange}
+                                    options={Object.keys(supportedLocales)}
+                                    value={selectedLocale}
+                                />
+                            </BlockWithText>
+                            <BlockWithText label="settings.nightMode" labelSize="small">
+                                <Toggle
+                                    defaultChecked={false}
+                                    icons={false}
+                                    onChange={handleThemeChange}
+                                />
+                            </BlockWithText>
+                        </div>
+                    )}
+                    animation="shift-toward"
+                    className={tipClassProps}
+                    interactive
+                    onClickOutside={hide}
+                    visible={visible}
+                >
+                    <span>
+                        <SettingsIcon
+                            className="settings_svg__animated"
+                            height="40px"
+                            onClick={visible ? hide : show}
+                            width="40px"
+                        />
+                    </span>
+                </Tippy>
+            </Fade>
         </header>
     );
 };

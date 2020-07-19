@@ -3,6 +3,7 @@ import { Translate } from 'react-redux-i18n';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import ListItem from '../../atoms/ListItem/ListItem.container';
+import Fade from '../../transitions/Fade/Fade';
 
 import * as styles from './style.scss';
 
@@ -35,6 +36,7 @@ const UnorderedList: React.FunctionComponent<Props> = (props) => {
 
     function renderListItems(listItem: { link?: string; title: string }, index: number): ReactNode {
         const { link, title } = listItem;
+
         return (
             <ListItem key={index}>
                 {link ? (
@@ -47,7 +49,7 @@ const UnorderedList: React.FunctionComponent<Props> = (props) => {
 
     return (
         <ul className={classProps}>
-            {listItems.map(renderListItems)}
+            <Fade items={listItems.map(renderListItems)} />
         </ul>
     );
 };
