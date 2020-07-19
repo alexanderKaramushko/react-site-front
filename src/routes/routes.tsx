@@ -13,6 +13,12 @@ interface Routes {
     path: ROUTE_WAYS;
 }
 
+export const listItems = [
+    { link: ROUTE_WAYS.BASE, title: 'nav.main' },
+    { link: ROUTE_WAYS.ABOUT, title: 'nav.about' },
+    { link: ROUTE_WAYS.CONTACTS, title: 'nav.contacts' },
+];
+
 export const routesArr = [
     {
         component: Main,
