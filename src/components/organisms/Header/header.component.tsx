@@ -18,8 +18,8 @@ import 'react-dropdown/style.css';
 import * as styles from './style.scss';
 import { supportedLocales } from '../../../localization';
 import UnorderedList from '../../molecules/UnorderedList/UnorderedList.component';
-import { ROUTE_WAYS } from '../../../routes/routes.types';
 import Fade from '../../transitions/Fade/Fade';
+import { listItems } from '../../../routes/routes';
 
 interface Props {
     selectedLocale: string;
@@ -40,12 +40,6 @@ const Header: React.FunctionComponent<Props> = (props) => {
     const tipClassProps = classnames(styles[theme], styles.tip);
 
     const [visible, setVisible] = useState(false);
-
-    const listItems = [
-        { link: ROUTE_WAYS.BASE, title: 'nav.main' },
-        { link: ROUTE_WAYS.ABOUT, title: 'nav.about' },
-        { link: ROUTE_WAYS.CONTACTS, title: 'nav.contacts' },
-    ];
 
     function handleThemeChange(event: ChangeEvent<HTMLInputElement>): void {
         const { target } = event;
