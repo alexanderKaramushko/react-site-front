@@ -2,6 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    devServer: {
+        proxy: {
+            '/api': 'http://localhost:3000',
+        },
+    },
     entry: './src/index.tsx',
     module: {
         rules: [{
