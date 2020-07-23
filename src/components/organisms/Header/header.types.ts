@@ -10,6 +10,7 @@ export interface StateProps {
 export interface DispatchProps {
     setLocaleWithFallback: (desiredLocale: string) => void;
     toggleTheme: (themeName: ThemeType) => void;
+    getUsers: any;
 }
 
 export type Props = OwnProps & StateProps & DispatchProps;

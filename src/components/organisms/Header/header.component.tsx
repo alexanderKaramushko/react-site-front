@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useState, useEffect } from 'react';
 import Toggle from 'react-toggle';
 import Tippy from '@tippyjs/react';
 import Dropdown, { Option } from 'react-dropdown';
@@ -26,6 +26,7 @@ interface Props {
     setLocaleWithFallback: (desiredLocale: string) => void;
     theme: ThemeType;
     toggleTheme: (theme: ThemeType) => void;
+    getUsers: () => void;
 }
 
 const defaultProps = {
@@ -34,7 +35,7 @@ const defaultProps = {
 
 const Header: React.FunctionComponent<Props> = (props) => {
     const {
-        selectedLocale, setLocaleWithFallback, theme, toggleTheme,
+        selectedLocale, setLocaleWithFallback, theme, toggleTheme, getUsers,
     } = props;
     const classProps = classnames(styles.header, styles[theme]);
     const tipClassProps = classnames(styles[theme], styles.tip);
@@ -50,6 +51,10 @@ const Header: React.FunctionComponent<Props> = (props) => {
         const { value } = option;
         setLocaleWithFallback(value);
     }
+
+    useEffect(() => {
+        getUsers();
+    }, []);
 
     const show = (): void => setVisible(true);
     const hide = (): void => setVisible(false);

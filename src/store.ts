@@ -8,7 +8,7 @@ import {
 } from 'react-redux-i18n';
 import { translations } from './localization';
 import { rootReducer } from './reducers';
-import { rootSaga } from './sagas';
+import rootSaga from './api/sagas/rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 

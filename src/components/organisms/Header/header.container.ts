@@ -8,6 +8,7 @@ import { RootState } from '../../../reducers';
 import { toggleThemeAction } from '../../../actions/settings/actions';
 import { ThemeType } from '../../../common/settings';
 import { StateProps, DispatchProps, OwnProps } from './header.types';
+import { getUsersAsync } from '../../../actions/users/actions';
 
 export default connect<StateProps, DispatchProps, OwnProps, RootState>(
     (state) => ({
@@ -15,8 +16,8 @@ export default connect<StateProps, DispatchProps, OwnProps, RootState>(
         theme: getActiveTheme(state),
     }),
     (dispatch: Dispatch) => ({
+        getUsers: () => dispatch(getUsersAsync.request(null, null)),
         setLocaleWithFallback: setLocaleWithFallback(dispatch),
-        // TODO: fix any
         toggleTheme: (themeName: ThemeType): any => dispatch(toggleThemeAction(themeName)),
     }),
 )(Header);
