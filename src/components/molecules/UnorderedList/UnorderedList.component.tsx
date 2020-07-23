@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Translate } from 'react-redux-i18n';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
@@ -6,6 +6,7 @@ import ListItem from '../../atoms/ListItem/ListItem.container';
 import Fade from '../../transitions/Fade/Fade';
 
 import * as styles from './style.scss';
+import { ComponentWithId } from '../../../models/base/ui/components';
 
 interface Props {
     className?: string;
@@ -34,17 +35,21 @@ const UnorderedList: React.FunctionComponent<Props> = (props) => {
         className,
     );
 
-    function renderListItems(listItem: { link?: string; title: string }, index: number): ReactNode {
+    function renderListItems(listItem: { link?: string; title: string }): ComponentWithId {
         const { link, title } = listItem;
-
-        return (
-            <ListItem key={index}>
+        const component = (
+            <ListItem>
                 {link ? (
                     <Link to={link}><Translate value={title} /></Link>
                 )
                     : <Translate value={title} />}
             </ListItem>
         );
+
+        return {
+            component,
+            id: link,
+        };
     }
 
     return (
