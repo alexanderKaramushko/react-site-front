@@ -1,10 +1,11 @@
 import { createReducer } from 'typesafe-actions';
-import { ThemeReducerActionTypes } from '../actions/settings/actions.types';
-import { toggleThemeAction } from '../actions/settings/actions';
-import { SettingsState } from '../actions/settings/types';
+import { ThemeReducerActionTypes } from './actions.types';
+import { toggleThemeAction } from './actions';
+import { SettingsState } from './types';
+import { Themes } from '../../../common/settings';
 
 const initialState: SettingsState = {
-    themeName: 'light',
+    themeName: Themes.LIGHT,
 };
 
 export const settingsReducer = createReducer<SettingsState, ThemeReducerActionTypes>(initialState)

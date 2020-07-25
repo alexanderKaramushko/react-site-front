@@ -1,29 +1,18 @@
 import React from 'react';
 import classnames from 'classnames';
 import { Translate } from 'react-redux-i18n';
-
 import Label from '../../atoms/Label/Label.container';
-
-import * as styles from './style.scss';
-import { ThemeType } from '../../../common/settings';
+import { Themes } from '../../../common/settings';
 import Fade from '../../transitions/Fade/Fade';
-
-type LabelSize = 'small' | 'medium' | 'large';
-
-interface Props {
-    theme?: ThemeType;
-    rowReverse?: boolean;
-    labelSize?: LabelSize;
-    label: string;
-    children: React.ReactNode;
-}
+import { LabelSize, Props } from './BlockWithText.types';
+import * as styles from './style.scss';
 
 const defaultProps = {
     children: '',
     label: '',
-    labelSize: 'small' as LabelSize,
+    labelSize: LabelSize.SMALL,
     rowReverse: false,
-    theme: 'light' as ThemeType,
+    theme: Themes.LIGHT,
 };
 
 const BlockWithText: React.FunctionComponent<Props> = (props) => {

@@ -1,4 +1,4 @@
-import { Users } from '../../models/base/Users';
+import { Users } from '../../../models/base/Users';
 
 export enum USERS_TYPES {
     GET_USERS_ASYNC_REQUEST = 'GET_USERS_ASYNC_REQUEST',

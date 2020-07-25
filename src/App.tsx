@@ -4,8 +4,8 @@ import {
     BrowserRouter as Router,
     Switch,
 } from 'react-router-dom';
-import { store } from './store';
-import Header from './components/organisms/Header/header.container';
+import store from './store/store';
+import Header from './components/organisms/Header/Header.container';
 import { routesArr, createRoutes } from './routes/routes';
 
 const App: React.FunctionComponent = () => (

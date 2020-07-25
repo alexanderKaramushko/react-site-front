@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
-import { RootState } from '../../../reducers';
-import { getActiveTheme } from '../../../selectors';
 import Label from './Label.component';
+import { getActiveTheme } from '../../../store/reducers/settings/selectors';
+import { RootState } from '../../../store/reducers/rootReducer';
+import { StateProps, DispatchProps, OwnProps } from './Label.types';
 
-const mapStateToProps = (state: RootState): { theme: string } => ({
-    theme: getActiveTheme(state),
-});
-
-export default connect(mapStateToProps)(Label);
+export default connect<StateProps, DispatchProps, OwnProps, RootState>(
+    (state) => ({
+        theme: getActiveTheme(state),
+    }),
+)(Label);

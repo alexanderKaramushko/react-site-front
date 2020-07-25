@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import LabelItem, { ListItemTheme, ListItemSize } from './ListItem.component';
+import LabelItem, { ListItemSize } from './ListItem.component';
+import { Themes } from '../../../common/settings';
 
 storiesOf('LabelItem', module)
     .add('default', () => (
@@ -22,12 +23,12 @@ storiesOf('LabelItem', module)
         </LabelItem>
     ))
     .add('theme - light', () => (
-        <LabelItem theme={ListItemTheme.LIGHT}>
+        <LabelItem theme={Themes.LIGHT}>
             Test ListItem
         </LabelItem>
     ))
     .add('theme - dark', () => (
-        <LabelItem theme={ListItemTheme.DARK}>
+        <LabelItem theme={Themes.DARK}>
             Test ListItem
         </LabelItem>
     ));

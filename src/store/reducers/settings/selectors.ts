@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
-import { RootState } from '../reducers';
-import { SettingsState } from '../actions/settings/types';
+import { RootState } from '../rootReducer';
+import { SettingsState } from './types';
 
 const getSettings = (state: RootState): SettingsState => state.settingsReducer;
 const getLocale = (state: RootState): string => state.i18n.locale;

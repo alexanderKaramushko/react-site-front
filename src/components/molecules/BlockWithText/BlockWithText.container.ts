@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
-import { RootState } from '../../../reducers';
-import LabeledImage from './BlockWithText.component';
+import { RootState } from '../../../store/reducers/rootReducer';
+import { getActiveTheme } from '../../../store/reducers/settings/selectors';
+import { StateProps, DispatchProps, OwnProps } from './BlockWithText.types';
+import BlockWithText from './BlockWithText.component';
 
-const mapStateToProps = (state: RootState): { theme: string } => ({
-    theme: state.settingsReducer.themeName,
-});
-
-export default connect(mapStateToProps)(LabeledImage);
+export default connect<StateProps, DispatchProps, OwnProps, RootState>(
+    (state) => ({
+        theme: getActiveTheme(state),
+    }),
+)(BlockWithText);
