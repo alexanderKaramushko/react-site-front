@@ -1,8 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
-import * as styles from './style.scss';
 import { Themes } from '../../../common/settings';
-import { OwnProps } from './ListItem.types';
+import { Props } from './ListItem.types';
+import * as styles from './style.scss';
 
 export const ListItemTheme = {
     DARK: Themes.DARK,
@@ -21,7 +21,7 @@ const defaultProps = {
     theme: Themes.LIGHT,
 };
 
-const ListItem: React.FunctionComponent<OwnProps> = (props) => {
+const ListItem: React.FunctionComponent<Props> = (props) => {
     const { children, size, theme } = props;
     const classProps = classnames(styles.listItem, styles[theme], styles[size]);
 
