@@ -1,0 +1,33 @@
+@use '../../_settings/mixins';
+@import '../../_settings/base';
+
+.errorPopup {
+    border-radius: 5px;
+    box-shadow: $shadow-3;
+    display: grid;
+    grid-template-columns: 1fr 20px;
+    grid-template-areas: 
+        "title cross"
+        "message message";
+    gap: 15px;
+    padding: 15px;
+    width: 400px;
+    @include mixins.center();
+}
+
+.title {
+    color: $error;
+    grid-area: title;
+}
+
+.close {
+    grid-area: cross;
+}
+
+.closeIcon {
+    cursor: pointer;
+}
+
+.message {
+    grid-area: message;
+}

@@ -5,8 +5,8 @@ import {
     Switch,
 } from 'react-router-dom';
 import store from './store/store';
-import Header from './components/organisms/Header/Header.container';
 import { routesArr, createRoutes } from './routes/routes';
+import Header from './components/organisms/Header/Header.component';
 
 const App: React.FunctionComponent = () => (
     <Provider store={store}>

@@ -4,7 +4,7 @@ import Tippy from '@tippyjs/react';
 import Dropdown, { Option } from 'react-dropdown';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
-import { ThemeType, Themes } from '../../../common/settings';
+import { Themes } from '../../../common/settings';
 
 import BlockWithText from '../../molecules/BlockWithText/BlockWithText.container';
 
@@ -21,13 +21,7 @@ import 'tippy.js/animations/shift-toward.css';
 import 'react-dropdown/style.css';
 import * as styles from './style.scss';
 import { LabelSize } from '../../molecules/BlockWithText/BlockWithText.types';
-
-interface Props {
-    selectedLocale: string;
-    setLocaleWithFallback: (desiredLocale: string) => void;
-    theme: ThemeType;
-    toggleTheme: (theme: ThemeType) => void;
-}
+import { Props } from './Header.types';
 
 const defaultProps = {
     theme: Themes.LIGHT,
