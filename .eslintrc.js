@@ -8,6 +8,9 @@ const config = {
 	parser: '@typescript-eslint/parser',
 	plugins: ['@typescript-eslint'],
 	rules: {
+		"lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
+		"padded-blocks": ["error", { "classes": "always" }],
+		"no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
 		'@typescript-eslint/no-var-requires': 0,
 		'implicit-arrow-linebreak': 'off',
 		'import/extensions': ['error', 'ignorePackages', {
