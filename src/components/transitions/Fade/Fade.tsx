@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import {
     CSSTransition,
     TransitionGroup,
 } from 'react-transition-group';
 import { Props } from './Fade.types';
 
-import * as styles from './style.scss';
+import styles from './style.scss';
 import { ComponentWithId } from '../../../models/base/ui/components';
 
 const defaultProps: Props = {
@@ -13,18 +13,35 @@ const defaultProps: Props = {
 };
 
 const Fade: FC<Props> = (props) => {
-    const { children, duration, items } = props;
-    const transitionPhases = {
-        appear: styles.fadeAppear,
-        appearActive: styles.fadeAppearActive,
-    };
+    const {
+        children, duration, items, renderChildren,
+    } = props;
+    const [visible, setVisible] = useState(true);
+
+    function handleClose(): void {
+        setVisible(false);
+    }
+
+    if (renderChildren) {
+        return (
+            <CSSTransition
+                classNames={{ ...styles }}
+                in={visible}
+                timeout={duration}
+                unmountOnExit
+                appear
+            >
+                {renderChildren(handleClose)}
+            </CSSTransition>
+        );
+    }
 
     if (children) {
         return (
             <TransitionGroup component={null} appear>
                 <CSSTransition
                     timeout={duration}
-                    classNames={transitionPhases}
+                    classNames={{ ...styles }}
                 >
                     {children}
                 </CSSTransition>
@@ -41,7 +58,7 @@ const Fade: FC<Props> = (props) => {
                     return (
                         <CSSTransition
                             timeout={duration}
-                            classNames={transitionPhases}
+                            classNames={{ ...styles }}
                             key={id}
                         >
                             {component}

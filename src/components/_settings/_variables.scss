@@ -15,6 +15,14 @@ $dark: #000;
 $color-type-body: $grey-1;
 
 /*
+* Shadows
+*/
+$shadow-1: $dark 0 1px 3px;
+$shadow-2: lighten($dark, 25%) 0 1px 3px;
+$shadow-3: lighten($dark, 50%) 0 1px 3px;
+$shadow-4: lighten($dark, 75%) 0 1px 3px;
+
+/*
 * Fonts
 */
 $base-font-family: sans-serif;

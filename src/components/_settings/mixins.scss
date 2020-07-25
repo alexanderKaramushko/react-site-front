@@ -1,0 +1,17 @@
+@mixin center($direction: 'both') {
+    position: absolute;
+
+    @if ($direction == 'both') {
+       left: 50%;
+       top: 50%;
+       transform: translate(-50%, -50%);
+    } @else if ($direction == 'v') {
+        left: 50%;
+        transform: translateX(-50%);
+    } @else if ($direction == 'h') {
+        top: 50%;
+        transform: translateY(-50%);
+    } @else {
+        @error "Expect #{$direction} to be vertical, horizontall or both";
+    }
+}
