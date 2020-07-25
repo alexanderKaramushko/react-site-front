@@ -1,12 +1,12 @@
 import React from 'react';
 import classnames from 'classnames';
-
+import { Themes } from '../../../common/settings';
+import { Props } from './Label.types';
 import * as styles from './style.scss';
-import { ThemeType } from '../../../common/settings';
 
 export const LabelTheme = {
-    DARK: 'dark' as ThemeType,
-    LIGHT: 'light' as ThemeType,
+    DARK: Themes.DARK,
+    LIGHT: Themes.LIGHT,
 };
 
 export const LabelSize = {
@@ -15,16 +15,10 @@ export const LabelSize = {
     SMALL: 'small',
 };
 
-interface Props {
-    theme?: ThemeType;
-    children: React.ReactNode;
-    size?: string;
-}
-
 const defaultProps = {
     children: 'label',
     size: 'medium',
-    theme: 'light' as ThemeType,
+    theme: Themes.LIGHT,
 };
 
 const Label: React.FunctionComponent<Props> = (props) => {
@@ -35,5 +29,6 @@ const Label: React.FunctionComponent<Props> = (props) => {
 };
 
 Label.defaultProps = defaultProps;
+Label.displayName = 'Label';
 
 export default Label;

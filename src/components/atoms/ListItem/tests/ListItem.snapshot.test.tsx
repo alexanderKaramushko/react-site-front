@@ -4,7 +4,8 @@ import renderer from 'react-test-renderer';
 import { MockStoreEnhanced } from 'redux-mock-store';
 import { mockStore } from '../../../../mocks';
 import ListItem from '../ListItem.container';
-import { SettingsState } from '../../../../actions/settings/types';
+import { SettingsState } from '../../../../store/reducers/settings/types';
+import { Themes } from '../../../../common/settings';
 
 interface MockStore {
     settingsReducer: {
@@ -14,7 +15,7 @@ interface MockStore {
 
 const store: MockStoreEnhanced = mockStore<MockStore>({
     settingsReducer: {
-        themeName: 'light',
+        themeName: Themes.LIGHT,
     },
 });
 

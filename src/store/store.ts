@@ -6,13 +6,13 @@ import {
     loadTranslations,
     syncTranslationWithStore,
 } from 'react-redux-i18n';
-import { translations } from './localization';
-import { rootReducer } from './reducers';
-import rootSaga from './api/sagas/rootSaga';
+import { translations } from '../localization';
+import rootSaga from '../api/sagas/rootSaga';
+import { rootReducer } from './reducers/rootReducer';
 
 const sagaMiddleware = createSagaMiddleware();
 
-export const store = createStore(
+const store = createStore(
     rootReducer,
     {},
     composeWithDevTools(applyMiddleware(sagaMiddleware)),
@@ -23,3 +23,5 @@ loadTranslations(translations)(store.dispatch);
 setLocale('en')(store.dispatch);
 
 sagaMiddleware.run(rootSaga);
+
+export default store;

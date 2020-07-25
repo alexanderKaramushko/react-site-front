@@ -4,19 +4,9 @@ import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import ListItem from '../../atoms/ListItem/ListItem.container';
 import Fade from '../../transitions/Fade/Fade';
-
-import * as styles from './style.scss';
 import { ComponentWithId } from '../../../models/base/ui/components';
-
-interface Props {
-    className?: string;
-    dotted?: boolean;
-    listItems: {
-        link?: string;
-        title?: string;
-    }[];
-    horizontal?: boolean;
-}
+import { Props } from './UnorderedList.types';
+import * as styles from './style.scss';
 
 const defaultProps = {
     listItems: [{}],

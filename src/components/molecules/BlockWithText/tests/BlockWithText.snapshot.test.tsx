@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import { MockStoreEnhanced } from 'redux-mock-store';
 import { mockStore } from '../../../../mocks';
 import BlockWithText from '../BlockWithText.component';
-import { RootState } from '../../../../reducers';
+import { RootState } from '../../../../store/reducers/rootReducer';
 
 const store: MockStoreEnhanced = mockStore({
     settingsReducer: {

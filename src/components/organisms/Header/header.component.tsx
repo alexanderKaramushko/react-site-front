@@ -1,41 +1,41 @@
-import React, { ChangeEvent, useState, useEffect } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import Toggle from 'react-toggle';
 import Tippy from '@tippyjs/react';
 import Dropdown, { Option } from 'react-dropdown';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
-import { ThemeType } from '../../../common/settings';
+import { ThemeType, Themes } from '../../../common/settings';
 
 import BlockWithText from '../../molecules/BlockWithText/BlockWithText.container';
 
 import Logo from '../../../assets/icons/design.svg';
 import SettingsIcon from '../../../assets/icons/settings.svg';
+import { supportedLocales } from '../../../localization';
+import UnorderedList from '../../molecules/UnorderedList/UnorderedList.component';
+import Fade from '../../transitions/Fade/Fade';
+import { listItems } from '../../../routes/routes';
 
 import 'react-toggle/style.css';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/shift-toward.css';
 import 'react-dropdown/style.css';
 import * as styles from './style.scss';
-import { supportedLocales } from '../../../localization';
-import UnorderedList from '../../molecules/UnorderedList/UnorderedList.component';
-import Fade from '../../transitions/Fade/Fade';
-import { listItems } from '../../../routes/routes';
+import { LabelSize } from '../../molecules/BlockWithText/BlockWithText.types';
 
 interface Props {
     selectedLocale: string;
     setLocaleWithFallback: (desiredLocale: string) => void;
     theme: ThemeType;
     toggleTheme: (theme: ThemeType) => void;
-    getUsers: () => void;
 }
 
 const defaultProps = {
-    theme: 'light' as ThemeType,
+    theme: Themes.LIGHT,
 };
 
 const Header: React.FunctionComponent<Props> = (props) => {
     const {
-        selectedLocale, setLocaleWithFallback, theme, toggleTheme, getUsers,
+        selectedLocale, setLocaleWithFallback, theme, toggleTheme,
     } = props;
     const classProps = classnames(styles.header, styles[theme]);
     const tipClassProps = classnames(styles[theme], styles.tip);
@@ -52,17 +52,13 @@ const Header: React.FunctionComponent<Props> = (props) => {
         setLocaleWithFallback(value);
     }
 
-    useEffect(() => {
-        getUsers();
-    }, []);
-
     const show = (): void => setVisible(true);
     const hide = (): void => setVisible(false);
 
     return (
         <header className={classProps}>
             <Link to="/">
-                <BlockWithText label="Logo" labelSize="medium" rowReverse>
+                <BlockWithText label="Logo" labelSize={LabelSize.MEDIUM} rowReverse>
                     <Logo className="design_svg__animated" width="40px" />
                 </BlockWithText>
             </Link>
@@ -75,14 +71,14 @@ const Header: React.FunctionComponent<Props> = (props) => {
                 <Tippy
                     content={(
                         <div>
-                            <BlockWithText label="settings.language" labelSize="small">
+                            <BlockWithText label="settings.language" labelSize={LabelSize.SMALL}>
                                 <Dropdown
                                     onChange={handleLocaleChange}
                                     options={Object.keys(supportedLocales)}
                                     value={selectedLocale}
                                 />
                             </BlockWithText>
-                            <BlockWithText label="settings.nightMode" labelSize="small">
+                            <BlockWithText label="settings.nightMode" labelSize={LabelSize.SMALL}>
                                 <Toggle
                                     defaultChecked={false}
                                     icons={false}
