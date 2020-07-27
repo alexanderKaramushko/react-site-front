@@ -1,0 +1,37 @@
+@import '../../_settings/_variables';
+
+/* Common */
+.listItem {
+    &:first-letter {
+        color: $error;
+    }
+}
+
+/* Size */
+.small {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.medium {
+    padding: 15px;
+    font-size: 16px;
+}
+
+.large {
+    padding: 20px;
+    font-size: 18px;
+}
+
+/* Theme */
+.light, .dark a {
+    color: $dark;
+}
+
+.dark, .dark a {
+    color: $white;
+}
+
+a:hover {
+    color: $error;
+}

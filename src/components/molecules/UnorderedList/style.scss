@@ -1,0 +1,12 @@
+.unorderedList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.unorderedList.dotted {
+    list-style-type: disc;
+}
+
+.unorderedList.horizontal {
+    display: flex;
+}

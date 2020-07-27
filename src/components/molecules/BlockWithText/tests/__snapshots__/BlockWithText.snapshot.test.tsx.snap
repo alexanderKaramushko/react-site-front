@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>>>BlockWithText --- Snapshot +++capturing Snapshot of Block 1`] = `
+<div
+  className=""
+>
+  <span
+    className=""
+  >
+    <span>
+      Test LabeledImage
+    </span>
+  </span>
+  <span>
+    Test LabeledImage
+  </span>
+</div>
+`;

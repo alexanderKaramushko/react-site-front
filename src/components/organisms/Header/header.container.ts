@@ -1,17 +1,21 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { ThemeAction } from '../../../common';
-import { toggleThemeAction } from '../../../actions';
+import { setLocaleWithFallback } from '../../../localization';
+import Header from './Header.component';
 
-import Header from './header.component';
-import { ThemeType } from '../../../common/settings';
+import { RootState } from '../../../store/reducers/rootReducer';
+import { toggleThemeAction } from '../../../store/reducers/settings/actions';
+import { StateProps, DispatchProps, OwnProps } from './Header.types';
+import { getSelectedLocale, getActiveTheme } from '../../../store/reducers/settings/selectors';
+import { Themes } from '../../../common/settings';
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-    toggleTheme: (themeName: ThemeType): ThemeAction => dispatch(toggleThemeAction(themeName)),
-});
-
-const mapStateToProps = ({ themeReducer }: any) => ({
-    themeName: themeReducer,
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect<StateProps, DispatchProps, OwnProps, RootState>(
+    (state) => ({
+        selectedLocale: getSelectedLocale(state),
+        theme: getActiveTheme(state),
+    }),
+    (dispatch: Dispatch) => ({
+        setLocaleWithFallback: setLocaleWithFallback(dispatch),
+        toggleTheme: (themeName: Themes) => dispatch(toggleThemeAction(themeName)),
+    }),
+)(Header);
