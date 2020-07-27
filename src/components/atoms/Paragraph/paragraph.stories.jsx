@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Paragraph, { ParagraphSize, ParagraphTheme } from '.';
+import Paragraph, { ParagraphSize, ParagraphTheme } from './Paragraph.component';
 
 storiesOf('Paragraph', module)
     .add('default', () => (
