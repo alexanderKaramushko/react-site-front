@@ -1,18 +1,22 @@
 /*
 * Colors
 */
+$primary_light: #1ec6e0;
+$primary_dark: #fff;
 $attention: #2196f3;
-$brand: #2995c0;
 $error: #d92525;
+$success: #2a7e2e;
+$white: #fff;
+$dark: #000;
+$brand: #2995c0;
+
+/*
+* Tones
+*/
 $grey-1: #474747;
 $grey-2: #919191;
 $grey-3: #dadada;
 $grey-4: #ededed;
-$success: #2a7e2e;
-$wait: #fff8dd;
-$white: #fff;
-$dark: #000;
-$color-type-body: $grey-1;
 
 /*
 * Shadows
@@ -21,6 +25,7 @@ $shadow-1: $dark 0 1px 3px;
 $shadow-2: lighten($dark, 25%) 0 1px 3px;
 $shadow-3: lighten($dark, 50%) 0 1px 3px;
 $shadow-4: lighten($dark, 75%) 0 1px 3px;
+$shadow-5: lighten($dark, 90%) 0 1px 3px;
 
 /*
 * Fonts
