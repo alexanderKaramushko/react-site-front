@@ -1,3 +1,4 @@
+@use '../../_settings/mixins.scss';
 @import '../../_settings/variables';
 
 .header {
@@ -14,15 +15,15 @@
 }
 
 .light {
-    background-color: $white;
+    @include mixins.colors('primary_dark', ('color'));
 }
 
 .light.tip {
-    background-color: $grey-3;
+    @include mixins.colors('background_grey', ('background'));
 }
 
 .dark {
-    background-color: $dark;
+    @include mixins.colors('primary_light', ('color'));
 }
 
 .dark.tip {

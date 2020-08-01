@@ -1,3 +1,4 @@
+@use '../../_settings/mixins.scss';
 @import '../../_settings/_variables';
 
 /* Size */
@@ -18,9 +19,9 @@
 
 /* Theme */
 .light {
-    color: $dark;
+    @include mixins.colors('primary_dark', ('color'));
 }
 
 .dark {
-    color: $white;
+    @include mixins.colors('primary_light', ('color'));
 }

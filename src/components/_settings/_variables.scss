@@ -19,7 +19,7 @@ $colors: (
         secondary_dark_hover: lighten(#cfcfcf, 15%),
     ),
     error: (
-        error_light: #d92525,
+        error_light_color: #d92525,
         error_light_hover: lighten(#d92525, 15%),
 
         error_dark: #fd6a6ab0,
@@ -32,11 +32,8 @@ $colors: (
         success_dark: #3d994c,
         success_dark_hover: lighten(#3d994c, 15%),
     ),
-    tones: (
-        grey_1: #474747,
-        grey_2: #919191,
-        grey_3: #dadada,
-        grey_4: #ededed,
+    background: (
+        background_grey_background: #bbbaba,
     )
 );
 
