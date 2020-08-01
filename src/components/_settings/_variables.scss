@@ -1,22 +1,52 @@
 /*
 * Colors
 */
-$primary_light: #1ec6e0;
-$primary_dark: #fff;
-$attention: #2196f3;
-$error: #d92525;
-$success: #2a7e2e;
-$white: #fff;
-$dark: #000;
-$brand: #2995c0;
+$colors: (
+    primary: (
+        primary_light_background-color: #1ec6e0,
+        primary_light_color: #fff,
+        primary_light_hover: lighten(#1ec6e0, 15%),
 
-/*
-* Tones
-*/
-$grey-1: #474747;
-$grey-2: #919191;
-$grey-3: #dadada;
-$grey-4: #ededed;
+        primary_dark_background-color: #fff,
+        primary_dark: #000,
+        primary_dark_hover: darken(#fff, 15%),
+    ),
+    secondary: (
+        secondary_light: #4da9b8,
+        secondary_light_hover: lighten(#4da9b8, 15%),
+
+        secondary_dark: #cfcfcf,
+        secondary_dark_hover: lighten(#cfcfcf, 15%),
+    ),
+    error: (
+        error_light: #d92525,
+        error_light_hover: lighten(#d92525, 15%),
+
+        error_dark: #fd6a6ab0,
+        error_dark_hover: lighten(#fd6a6ab0, 15%),
+    ),
+    success: (
+        success_light: #2a7e2e,
+        success_light_hover: lighten(#2a7e2e, 15%),
+
+        success_dark: #3d994c,
+        success_dark_hover: lighten(#3d994c, 15%),
+    ),
+    tones: (
+        grey_1: #474747,
+        grey_2: #919191,
+        grey_3: #dadada,
+        grey_4: #ededed,
+    )
+);
+
+$error: red;
+$grey-3: grey;
+$primary_dark: #fff;
+$brand: blue;
+$primary_light: #1ec6e0;
+$dark: #000;
+$white: #fff;
 
 /*
 * Shadows
