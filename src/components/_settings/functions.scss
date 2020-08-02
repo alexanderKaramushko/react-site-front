@@ -10,6 +10,10 @@
 }
 
 @function nested-map-get($map, $keys...) {
+    @if ($map == null) {
+        @warn 'No map found! Set initial.';
+        @return initial;
+    }
     @if (length($keys) == 1) {
         @return map-get($map, nth($keys, 1));
     }
