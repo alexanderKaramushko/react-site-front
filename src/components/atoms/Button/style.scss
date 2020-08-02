@@ -1,0 +1,49 @@
+@use '../../_settings/mixins.scss';
+@import '../../_settings/_variables';
+
+/* Common */
+.button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: $shadow-5;
+    transition: box-shadow 0.5s ease;
+
+    &:hover {
+        box-shadow: $shadow-4;
+    }
+}
+
+/* Size */
+.small {
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.medium {
+    padding: 12px 22px;
+    font-size: 16px;
+}
+
+.large {
+    padding: 15px 26px;
+    font-size: 18px;
+}
+
+/* Types */
+.rounded {
+    border-radius: 3px;
+}
+
+.straight {
+    border-radius: 0;
+}
+
+/* Theme */
+.light {
+    @include mixins.colors('primary_light');
+}
+
+.dark {
+    @include mixins.colors('primary_dark');
+}

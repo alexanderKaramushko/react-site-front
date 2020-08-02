@@ -1,3 +1,5 @@
+@use '../../_settings/mixins.scss';
+
 .small {
     font-size: 13px;
 }
@@ -11,9 +13,9 @@
 }
 
 .light {
-    color: black;
+    @include mixins.colors('primary_dark');
 }
 
 .dark {
-    color: white;
+    @include mixins.colors('primary_light');
 }

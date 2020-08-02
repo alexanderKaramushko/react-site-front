@@ -1,0 +1,21 @@
+@function list-slice($list, $start, $end: length($list)) {
+    @if $start > length($list) {
+      @return ();
+    }
+    $new-list: ();
+    @for $i from $start through $end {
+       $new-list: append($new-list, nth($list, $i), list-separator($list));
+    }
+    @return $new-list;
+}
+
+@function nested-map-get($map, $keys...) {
+    @if ($map == null) {
+        @warn 'No map found! Set initial.';
+        @return initial;
+    }
+    @if (length($keys) == 1) {
+        @return map-get($map, nth($keys, 1));
+    }
+    @return nested-map-get(map-get($map, nth($keys, 1)), list-slice($keys, 2)...);
+}

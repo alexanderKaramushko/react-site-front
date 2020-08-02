@@ -1,18 +1,49 @@
 /*
 * Colors
 */
-$attention: #2196f3;
-$brand: #2995c0;
-$error: #d92525;
-$grey-1: #474747;
-$grey-2: #919191;
-$grey-3: #dadada;
-$grey-4: #ededed;
-$success: #2a7e2e;
-$wait: #fff8dd;
-$white: #fff;
+$colors: (
+    primary: (
+        primary_light_background-color: #1ec6e0,
+        primary_light_color: #fff,
+        primary_light_hover: lighten(#1ec6e0, 15%),
+
+        primary_dark_background-color: #fff,
+        primary_dark: #000,
+        primary_dark_hover: darken(#fff, 15%),
+    ),
+    secondary: (
+        secondary_light: #4da9b8,
+        secondary_light_hover: lighten(#4da9b8, 15%),
+
+        secondary_dark: #cfcfcf,
+        secondary_dark_hover: lighten(#cfcfcf, 15%),
+    ),
+    error: (
+        error_light_color: #d92525,
+        error_light_hover: lighten(#d92525, 15%),
+
+        error_dark: #fd6a6ab0,
+        error_dark_hover: lighten(#fd6a6ab0, 15%),
+    ),
+    success: (
+        success_light: #2a7e2e,
+        success_light_hover: lighten(#2a7e2e, 15%),
+
+        success_dark: #3d994c,
+        success_dark_hover: lighten(#3d994c, 15%),
+    ),
+    background: (
+        background_grey_background: #bbbaba,
+    )
+);
+
+$error: red;
+$grey-3: grey;
+$primary_dark: #fff;
+$brand: blue;
+$primary_light: #1ec6e0;
 $dark: #000;
-$color-type-body: $grey-1;
+$white: #fff;
 
 /*
 * Shadows
@@ -21,6 +52,7 @@ $shadow-1: $dark 0 1px 3px;
 $shadow-2: lighten($dark, 25%) 0 1px 3px;
 $shadow-3: lighten($dark, 50%) 0 1px 3px;
 $shadow-4: lighten($dark, 75%) 0 1px 3px;
+$shadow-5: lighten($dark, 90%) 0 1px 3px;
 
 /*
 * Fonts

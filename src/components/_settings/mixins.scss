@@ -1,3 +1,6 @@
+@use './functions';
+@import './variables';
+
 @mixin center($direction: 'both') {
     position: absolute;
 
@@ -13,5 +16,15 @@
         transform: translateY(-50%);
     } @else {
         @error "Expect #{$direction} to be vertical, horizontall or both";
+    }
+}
+
+@mixin colors($color, $properties: ("color", "background-color")) {
+    $colorMap: str-slice($color, 0, str-index($color, '_') - 1);
+    @each $property in $properties {
+        $colorFromProperty: "#{$color}_#{$property}";
+        @if (functions.nested-map-get($colors, $colorMap, $colorFromProperty)) {
+            #{$property}: functions.nested-map-get($colors, $colorMap, $colorFromProperty);
+        }
     }
 }

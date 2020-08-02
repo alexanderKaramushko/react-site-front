@@ -1,0 +1,30 @@
+@import '../../_settings/_variables';
+
+.clickableArea {
+    display: inline-block;
+    position: relative;
+}
+
+.clickableSpawn {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+}
+
+.enter {
+    box-shadow: 0 0 5px 1px lighten($dark, 30%);
+    height: 5px;
+    transition: box-shadow 0.2s ease, height 0.2s ease, width 0.2s ease;
+    width: 5px;
+}
+
+.enterActive, .exit {
+    box-shadow: 0 0 20px 2px lighten($dark, 60%);
+    height: 12px;
+    transform: translate(-50%, -50%);
+    width: 12px;
+}
+
+
+
