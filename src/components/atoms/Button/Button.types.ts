@@ -20,6 +20,7 @@ export enum ButtonTypes {
 
 export type OwnProps = {
     children: ReactNode;
+    onClick?: () => void;
     shape?: ButtonShapes;
     size?: ButtonSizes;
     type?: ButtonTypes;

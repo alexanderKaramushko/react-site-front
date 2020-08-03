@@ -13,14 +13,14 @@ const defaultProps = {
 
 const Button: FC<Props> = (props) => {
     const {
-        children, shape, size, theme, type,
+        children, onClick, shape, size, theme, type,
     } = props;
     const classProps = classnames([styles.button, styles[size], styles[shape], styles[theme]]);
 
     return (
         /* eslint-disable react/button-has-type */
         <div>
-            <button type={type} className={classProps}>
+            <button onClick={onClick} type={type} className={classProps}>
                 {children}
             </button>
         </div>
