@@ -4,7 +4,7 @@ import {
     BrowserRouter as Router,
     Switch,
 } from 'react-router-dom';
-import Header from './components/organisms/Header/Header.component';
+import Header from './components/organisms/Header/header.container';
 import store from './store/store';
 import { createRoutes, routesArr } from './routes/routes';
 
