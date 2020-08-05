@@ -10,6 +10,11 @@ export const getActiveTheme = createSelector(
     (settings: SettingsState) => settings.themeName,
 );
 
+export const getTextSize = createSelector(
+    getSettings,
+    (settings: SettingsState) => settings.textSize,
+);
+
 export const getSelectedLocale = createSelector(
     getLocale,
     (locale: string) => locale,
