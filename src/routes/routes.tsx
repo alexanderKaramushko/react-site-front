@@ -4,7 +4,7 @@ import {
 import React from 'react';
 import AboutUs from '../components/pages/AboutUs';
 import Contacts from '../components/pages/Contacts';
-import Main from '../components/pages/Main/Main';
+import Main from '../components/pages/Main';
 import { ROUTE_WAYS } from './routes.types';
 
 interface Routes {
