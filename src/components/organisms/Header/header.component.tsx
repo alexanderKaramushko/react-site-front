@@ -10,6 +10,7 @@ import BlockWithText from '../../molecules/BlockWithText/BlockWithText.container
 
 import Logo from '../../../assets/icons/design.svg';
 import SettingsIcon from '../../../assets/icons/settings.svg';
+import TextSize from '../../atoms/TextSize/TextSize.container';
 import { supportedLocales } from '../../../localization';
 import UnorderedList from '../../molecules/UnorderedList/UnorderedList.component';
 import Fade from '../../transitions/Fade/Fade';
@@ -78,6 +79,9 @@ const Header: React.FunctionComponent<Props> = (props) => {
                                     icons={false}
                                     onChange={handleThemeChange}
                                 />
+                            </BlockWithText>
+                            <BlockWithText label="settings.textSize" labelSize={LabelSize.SMALL}>
+                                <TextSize />
                             </BlockWithText>
                         </div>
                     )}
