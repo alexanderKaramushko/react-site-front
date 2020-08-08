@@ -1,26 +1,48 @@
-[
-    {
-        "id": 1,
-        "name": "John",
-        "description": "This is often user",
-        "contacts": [
-            {
-                "id": 1,
-                "name": "Bill",
-                "path": "USA"
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "name": "Bill",
-        "description": "This is no often user",
-        "contacts": [
-            {
-                "id": 2,
-                "name": "John",
-                "path": "USA"
-            }
-        ]
-    }
-]
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "John",
+            "description": "This is often user",
+            "contacts": [
+                {
+                    "id": 1,
+                    "name": "Bill",
+                    "path": "USA"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Bill",
+            "description": "This is no often user",
+            "contacts": [
+                {
+                    "id": 2,
+                    "name": "John",
+                    "path": "USA"
+                }
+            ]
+        }
+    ],
+    "processes": [
+        {
+            "description": "bla bla bla 1",
+            "id": 1,
+            "status": "process",
+            "title": "title 1"
+        },
+        {
+            "description": "bla bla bla 2",
+            "id": 1,
+            "status": "wait",
+            "title": "title 2"
+        },
+        {
+            "description": "bla bla bla 3",
+            "id": 1,
+            "status": "wait",
+            "title": "title 3"
+        }
+    ]
+}
