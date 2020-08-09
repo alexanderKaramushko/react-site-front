@@ -3,12 +3,13 @@
 */
 $colors: (
     primary: (
+        primary_light: #1ec6e0,
         primary_light_background-color: #1ec6e0,
         primary_light_color: #fff,
         primary_light_hover: lighten(#1ec6e0, 15%),
 
         primary_dark_background-color: #fff,
-        primary_dark: #000,
+        primary_dark: rgb(0, 0, 0),
         primary_dark_hover: darken(#fff, 15%),
     ),
     secondary: (
@@ -19,6 +20,7 @@ $colors: (
         secondary_dark_hover: lighten(#cfcfcf, 15%),
     ),
     error: (
+        error_light: #d92525,
         error_light_color: #d92525,
         error_light_hover: lighten(#d92525, 15%),
 
