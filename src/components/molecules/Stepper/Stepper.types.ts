@@ -2,6 +2,11 @@ import { ReactNode } from 'react';
 import { StepProps } from 'rc-steps/lib/Step';
 import { Themes } from '../../../common/settings';
 
+export enum StepperSizes {
+    DEFAULT = 'default',
+    SMALL = 'small',
+}
+
 export enum ActionTypes {
     ERROR = 'error',
     NEXT_STEP = 'nextStep',
@@ -32,6 +37,7 @@ export interface State {
 
 export interface OwnProps extends State {
     contentNodes: ReactNode[];
+    size?: StepperSizes;
 }
 
 export interface StateProps {

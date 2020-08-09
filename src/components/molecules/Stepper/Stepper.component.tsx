@@ -5,7 +5,7 @@ import { StepProps } from 'rc-steps/lib/Step';
 import { CSSTransition } from 'react-transition-group';
 import styles from './style.scss';
 import {
-    Props, State, Action, ActionTypes, Statuses,
+    Props, State, Action, ActionTypes, Statuses, StepperSizes,
 } from './Stepper.types';
 import Button from '../../atoms/Button/Button.component';
 import HourglassIcon from '../../../assets/icons/hourglass.svg';
@@ -13,6 +13,12 @@ import PencilIcon from '../../../assets/icons/pencil.svg';
 import TickIcon from '../../../assets/icons/tick.svg';
 import { ButtonSizes } from '../../atoms/Button/Button.types';
 import { Clickable } from '../../atoms/Clickable/Clickable.component';
+
+const defaultProps = {
+    currentStep: 0,
+    size: StepperSizes.DEFAULT,
+    steps: [{}],
+};
 
 function reducer(state: State, action: Action): State {
     switch (action.type) {
@@ -45,9 +51,11 @@ function reducer(state: State, action: Action): State {
 }
 
 const Stepper: FC<Props> = (props) => {
-    const { contentNodes, currentStep, steps } = props;
+    const {
+        contentNodes, currentStep, size, steps,
+    } = props;
     const [state, dispatch] = useReducer(reducer, {
-        currentStep: currentStep ?? 0,
+        currentStep,
         steps,
     });
 
@@ -101,7 +109,7 @@ const Stepper: FC<Props> = (props) => {
 
     return (
         <>
-            <Steps current={state.currentStep}>
+            <Steps size={size} current={state.currentStep}>
                 {renderSteps(state.steps)}
             </Steps>
             <div className={styles.content}>
@@ -118,5 +126,8 @@ const Stepper: FC<Props> = (props) => {
         </>
     );
 };
+
+Stepper.defaultProps = defaultProps;
+Stepper.displayName = 'Stepper';
 
 export default Stepper;

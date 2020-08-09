@@ -2,6 +2,12 @@ const path = require('path');
 
 module.exports = {
     webpackFinal: async (config) => {
+        const rules = config.module.rules;
+        const fileLoaderRule = rules.find(rule => rule.test.test('.svg'));
+
+        // process .svg with the help of svgr
+        fileLoaderRule.exclude = /\.svg$/;
+
         config.module.rules.push(
             {
                 test: /\.(ts|tsx)$/,
@@ -26,6 +32,10 @@ module.exports = {
                 ],
                 include: path.resolve(__dirname, '../'),
             },
+            {
+                test: /\.svg$/,
+                use: ['@svgr/webpack'],
+            }
         );
         config.resolve.extensions.push('.ts', '.tsx');
         return config;
