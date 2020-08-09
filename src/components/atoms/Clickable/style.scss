@@ -13,14 +13,14 @@
 }
 
 .enter {
-    box-shadow: 0 0 5px 1px lighten($dark, 30%);
+    box-shadow: 0 0 5px 1px lighten(map-get($colors, dark), 30%);
     height: 5px;
     transition: box-shadow 0.2s ease, height 0.2s ease, width 0.2s ease;
     width: 5px;
 }
 
 .enterActive, .exit {
-    box-shadow: 0 0 20px 2px lighten($dark, 60%);
+    box-shadow: 0 0 20px 2px lighten(map-get($colors, dark), 60%);
     height: 12px;
     transform: translate(-50%, -50%);
     width: 12px;

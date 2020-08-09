@@ -2,6 +2,8 @@
 * Colors
 */
 $colors: (
+    dark: #000,
+    white: #fff,
     primary: (
         primary_light: #1ec6e0,
         primary_light_background-color: #1ec6e0,
@@ -34,27 +36,24 @@ $colors: (
         success_dark: #3d994c,
         success_dark_hover: lighten(#3d994c, 15%),
     ),
+    greys: (
+        grey-1: grey,
+        grey-2: lighten(grey, 15%),
+        grey-3: lighten(grey, 30%),
+    ),
     background: (
         background_grey_background: #bbbaba,
     )
 );
 
-$error: red;
-$grey-3: grey;
-$primary_dark: #fff;
-$brand: blue;
-$primary_light: #1ec6e0;
-$dark: #000;
-$white: #fff;
-
 /*
 * Shadows
 */
-$shadow-1: $dark 0 1px 3px;
-$shadow-2: lighten($dark, 25%) 0 1px 3px;
-$shadow-3: lighten($dark, 50%) 0 1px 3px;
-$shadow-4: lighten($dark, 75%) 0 1px 3px;
-$shadow-5: lighten($dark, 90%) 0 1px 3px;
+$shadow-1: map-get($colors, dark) 0 1px 3px;
+$shadow-2: lighten(map-get($colors, dark), 25%) 0 1px 3px;
+$shadow-3: lighten(map-get($colors, dark), 50%) 0 1px 3px;
+$shadow-4: lighten(map-get($colors, dark), 75%) 0 1px 3px;
+$shadow-5: lighten(map-get($colors, dark), 90%) 0 1px 3px;
 
 /*
 * Fonts

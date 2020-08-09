@@ -1,10 +1,11 @@
 @use '../../_settings/mixins.scss';
+@use '../../_settings/functions.scss';
 @import '../../_settings/_variables';
 
 /* Common */
 .listItem {
     &:first-letter {
-        color: $error;
+        color: functions.nested-map-get($colors, primary, primary_light);
     }
 }
 

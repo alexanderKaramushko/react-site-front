@@ -1,4 +1,5 @@
 @use '../../_settings/mixins';
+@use '../../_settings/functions';
 @import '../../_settings/base';
 
 .errorPopup {
@@ -16,7 +17,7 @@
 }
 
 .title {
-    color: $error;
+    color: functions.nested-map-get($colors, primary, primary_light);
     grid-area: title;
 }
 
