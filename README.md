@@ -8,6 +8,7 @@
 + Sass
 + Atomic structure
 + Storybook
++ Jest
 
 ### Commit rules:
 | Commit type   | Description |
