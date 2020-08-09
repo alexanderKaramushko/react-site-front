@@ -1,20 +1,11 @@
 import React, { useEffect } from 'react';
-import { Themes } from '../../../common/settings';
+import classnames from 'classnames';
 import * as styles from './style.scss';
-
-export interface StateProps {
-    theme: Themes;
-    size: number;
-}
-
-export interface DispatchProps {
-    changeSize: (newSize: number) => void;
-}
-
-type Props = StateProps & DispatchProps;
+import { Props } from './TextSize.types';
 
 const TextSize: React.FunctionComponent<Props> = (props: Props) => {
     const { size, changeSize } = props;
+    const classProps = classnames(styles['text-size']);
 
     useEffect(() => {
         document.body.parentElement.style.fontSize = `${size}%`;
@@ -31,7 +22,7 @@ const TextSize: React.FunctionComponent<Props> = (props: Props) => {
     };
 
     return (
-        <div className={styles['text-size']}>
+        <div className={classProps}>
             <button type="button" onClick={dec} className={styles.dec}>&minus;</button>
             <p>
                 {size}
