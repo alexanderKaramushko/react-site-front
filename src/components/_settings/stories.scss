@@ -1,103 +1,38 @@
+@use './functions.scss';
 @import './_variables.scss';
 
-.--brand:before {
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    margin-right: 0.5em;
-    background-color: $brand;
+.colors {
+    display: flex;
+    align-items: center;
 }
 
-.--grey-1:before {
+%color {
     content: '';
     display: inline-block;
     width: 15px;
     height: 15px;
     border-radius: 3px;
     margin-right: 0.5em;
-    background-color: $grey-1;
 }
 
-.--grey-2:before {
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    margin-right: 0.5em;
-    background-color: $grey-2;
+.--primary:before {
+    @extend %color;
+    background-color: functions.nested-map-get($colors, primary, primary_light);
 }
 
-.--grey-3:before {
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    margin-right: 0.5em;
-    background-color: $grey-3;
-}
-
-.--grey-4:before {
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    margin-right: 0.5em;
-    background-color: $grey-4;
-}
-
-.--color-type-body:before {
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    margin-right: 0.5em;
-    background-color: $grey-2;
+.--secondary:before {
+    @extend %color;
+    background-color: functions.nested-map-get($colors, secondary, secondary_light);
 }
 
 .--success:before {
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    margin-right: 0.5em;
-    background-color: $success;
-}
-
-.--attention:before {
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    margin-right: 0.5em;
-    background-color: $attention;
-}
-
-.--wait:before {
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    margin-right: 0.5em;
-    background-color: $wait;
+    @extend %color;
+    background-color: functions.nested-map-get($colors, success, success_light);
 }
 
 .--error:before {
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    margin-right: 0.5em;
-    background-color: $error;
+    @extend %color;
+    background-color: functions.nested-map-get($colors, error, error_light);
 }
 
 .--base-font-family {
