@@ -29,6 +29,12 @@
 git commit -m 'build(integration): add public API'
 ```
 
+### Branch example
+A branch`s name begins with the type of changes(see commit types) and then the changes description is written:
+```
+git checkout -b feat_themes
+```
+
 ### Tests
 Show test coverage: `npm test -- --coverage`
 
