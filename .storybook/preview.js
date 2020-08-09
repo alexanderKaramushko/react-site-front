@@ -1,5 +1,6 @@
 import { configure, addDecorator } from '@storybook/react';
 import { withInfo, setDefaults } from '@storybook/addon-info';
+import { withConsole } from '@storybook/addon-console';
 
 import './style.scss';
 
@@ -13,5 +14,6 @@ setDefaults({
     inline: true,
 });
 
+addDecorator((storyFn, context) => withConsole()(storyFn)(context));
 addDecorator((story, context) => withInfo(context.kind)(story)(context));
 configure(loadStories, module);
