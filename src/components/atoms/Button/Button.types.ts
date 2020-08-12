@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, ElementType } from 'react';
 import { Themes } from '../../../common/settings';
 
 export enum ButtonSizes {
@@ -20,6 +20,7 @@ export enum ButtonTypes {
 
 export type OwnProps = {
     children: ReactNode;
+    Icon?: ElementType;
     onClick?: () => void;
     primary?: boolean;
     secondary?: boolean;

@@ -15,6 +15,7 @@ const defaultProps = {
 const Button: FC<Props> = (props) => {
     const {
         children,
+        Icon,
         onClick,
         primary,
         secondary,
@@ -36,11 +37,10 @@ const Button: FC<Props> = (props) => {
 
     return (
         /* eslint-disable react/button-has-type */
-        <div>
-            <button onClick={onClick} type={type} className={classProps}>
-                {children}
-            </button>
-        </div>
+        <button onClick={onClick} type={type} className={classProps}>
+            {children}
+            {Icon && <Icon />}
+        </button>
     );
 };
 

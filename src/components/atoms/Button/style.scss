@@ -1,12 +1,21 @@
 @use '../../_settings/mixins.scss';
+@use '../../_settings/functions.scss' as f;
 @import '../../_settings/_variables';
+
+$padding_v: 8;
+$padding_h: 12;
+$font_size: 14;
+$icon_width: 20;
+$icon_margin_left: 5;
 
 /* Common */
 .button {
+    align-items: center;
     border: none;
-    outline: none;
-    cursor: pointer;
     box-shadow: $shadow-5;
+    cursor: pointer;
+    display: flex;
+    outline: none;
     transition: all 0.5s ease;
 
     &:hover {
@@ -16,18 +25,33 @@
 
 /* Size */
 .small {
-    padding: 8px 12px;
+    padding: #{$padding_v}px #{$padding_h}px;
     font-size: 14px;
+
+    svg {
+        width: #{$padding_h}px;
+        margin-left: #{$padding_h / 4}px;
+    }
 }
 
 .medium {
-    padding: 12px 22px;
-    font-size: 16px;
+    padding: f.increaseTo($padding_v, 1.5) f.increaseTo($padding_h, 1.5);
+    font-size: f.increaseTo($font-size, 1.2);
+
+    svg {
+        width: f.increaseTo($padding_h, 1.5);
+        margin-left: f.decreaseTo($padding_h, 1.5);
+    }
 }
 
 .large {
-    padding: 15px 26px;
-    font-size: 18px;
+    padding: f.increaseTo($padding_v, 2) f.increaseTo($padding_h, 2);
+    font-size: f.increaseTo($font-size, 1.4);
+
+    svg {
+        width: f.increaseTo($padding_h, 2);
+        margin-left: #{$padding_h}px;
+    }
 }
 
 /* Types */
