@@ -8,6 +8,7 @@
 + Sass
 + Atomic structure
 + Storybook
++ Jest
 
 ### Commit rules:
 | Commit type   | Description |
@@ -27,6 +28,12 @@
 ### Commit example
 ```
 git commit -m 'build(integration): add public API'
+```
+
+### Branch example
+A branch`s name begins with the type of changes(see commit types) and then the changes description is written:
+```
+git checkout -b feat_themes
 ```
 
 ### Tests

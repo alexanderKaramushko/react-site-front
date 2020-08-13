@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import Header from './Header.component';
+import Header from './header.component';
 
 import { RootState } from '../../../store/reducers/rootReducer';
 import { toggleThemeAction } from '../../../store/reducers/settings/actions';

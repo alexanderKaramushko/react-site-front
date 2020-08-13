@@ -14,7 +14,7 @@ describe('With snapshots ', () => {
     });
 
     it('+++ reducer for TOGGLE_THEME', () => {
-        const state = { themeName: Themes.DARK };
+        const state = { textSize: 100, themeName: Themes.DARK };
         const themeReducer = settingsReducer(state, {
             payload: Themes.DARK,
             type: getType(toggleThemeAction),

@@ -8,6 +8,7 @@ export const translations = {
         settings: {
             language: 'Language',
             nightMode: 'Night Mode',
+            textSize: 'Text Size',
         },
     },
     ru: {
@@ -19,6 +20,7 @@ export const translations = {
         settings: {
             language: 'Язык',
             nightMode: 'Ночной режим',
+            textSize: 'Размер текста',
         },
     },
 };
