@@ -19,3 +19,11 @@
     }
     @return nested-map-get(map-get($map, nth($keys, 1)), list-slice($keys, 2)...);
 }
+
+@function increaseTo($size, $multiplier, $dimension: px) {
+    @return #{$size * $multiplier}#{$dimension};
+}
+
+@function decreaseTo($size, $denominator, $dimension: px) {
+    @return #{$size / $denominator}#{$dimension};
+}

@@ -19,12 +19,17 @@
     }
 }
 
-@mixin colors($color, $properties: ("color", "background-color")) {
+@mixin colors($color, $properties: ("color", "background-color", "hover")) {
     $colorMap: str-slice($color, 0, str-index($color, '_') - 1);
     @each $property in $properties {
         $colorFromProperty: "#{$color}_#{$property}";
-        @if (functions.nested-map-get($colors, $colorMap, $colorFromProperty)) {
-            #{$property}: functions.nested-map-get($colors, $colorMap, $colorFromProperty);
+        $mapColor: functions.nested-map-get($colors, $colorMap, $colorFromProperty);
+        @if ($mapColor) {
+            @if ($property == "hover") {
+                @content($mapColor);
+            } @else {
+                #{$property}: $mapColor;
+            }
         }
     }
 }

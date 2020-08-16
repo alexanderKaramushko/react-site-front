@@ -7,12 +7,13 @@ import styles from './style.scss';
 import {
     Props, State, Action, ActionTypes, Statuses, StepperSizes,
 } from './Stepper.types';
-import Button from '../../atoms/Button/Button.component';
+import Button from '../../atoms/Button/Button.container';
 import HourglassIcon from '../../../assets/icons/hourglass.svg';
 import PencilIcon from '../../../assets/icons/pencil.svg';
 import TickIcon from '../../../assets/icons/tick.svg';
 import { ButtonSizes } from '../../atoms/Button/Button.types';
 import { Clickable } from '../../atoms/Clickable/Clickable.component';
+import PointerIcon from '../../../assets/icons/pointer.svg';
 
 const defaultProps = {
     currentStep: 0,
@@ -119,6 +120,8 @@ const Stepper: FC<Props> = (props) => {
                 <Button
                     onClick={setNextStep}
                     size={ButtonSizes.SMALL}
+                    Icon={PointerIcon}
+                    secondary
                 >
                     Continue
                 </Button>
