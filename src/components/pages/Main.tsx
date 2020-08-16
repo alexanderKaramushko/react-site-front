@@ -5,6 +5,8 @@ import Paragraph from '../atoms/Paragraph/Paragraph.component';
 import Button from '../atoms/Button/Button.container';
 import { Clickable } from '../atoms/Clickable/Clickable.component';
 import Stepper from '../molecules/Stepper/Stepper.component';
+import Card from '../molecules/Card/Card.container';
+import { ButtonSizes } from '../atoms/Button/Button.types';
 
 const Main: FC = () => (
     <section
@@ -57,6 +59,16 @@ const Main: FC = () => (
                         ]}
                     />
                 </div>
+                <Card
+                    imgSrc="https://cdn.quasar.dev/img/parallax2.jpg"
+                    overline="Overline"
+                    actions={[
+                        <Button size={ButtonSizes.SMALL}>Action 1</Button>,
+                        <Button size={ButtonSizes.SMALL}>Action 2</Button>,
+                    ]}
+                >
+                    Card
+                </Card>
             </ErrorHandler>
         </div>
     </section>
