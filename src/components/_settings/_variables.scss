@@ -8,18 +8,21 @@ $colors: (
         primary_light: #1ec6e0,
         primary_light_background-color: #1ec6e0,
         primary_light_color: #fff,
-        primary_light_hover: lighten(#1ec6e0, 15%),
+        primary_light_hover: lighten(#1ec6e0, 5%),
 
-        primary_dark_background-color: #fff,
         primary_dark: #000,
-        primary_dark_hover: darken(#fff, 15%),
+        primary_dark_background-color: #fff,
+        primary_dark_hover: darken(#fff, 5%),
     ),
     secondary: (
-        secondary_light: #4da9b8,
-        secondary_light_hover: lighten(#4da9b8, 15%),
+        secondary_light: #f0f0f0,
+        secondary_light_background-color: #f0f0f0,
+        secondary_light_color: #000,
+        secondary_light_hover: lighten(#f0f0f0, 5%),
 
-        secondary_dark: #cfcfcf,
-        secondary_dark_hover: lighten(#cfcfcf, 15%),
+        secondary_dark: #f3f3f3,
+        secondary_dark_background-color: #f3f3f3,
+        secondary_dark_hover: darken(#f3f3f3, 5%),
     ),
     error: (
         error_light: #d92525,
