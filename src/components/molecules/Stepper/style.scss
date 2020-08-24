@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.wrapper {
+    width: inherit;
+}
+
 .enter {
     opacity: 0;
     transform: scale(0.5) translateX(100%);

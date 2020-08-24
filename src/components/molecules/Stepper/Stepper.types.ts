@@ -37,6 +37,7 @@ export interface State {
 
 export interface OwnProps extends State {
     contentNodes: ReactNode[];
+    onFinish?: () => void;
     size?: StepperSizes;
 }
 
