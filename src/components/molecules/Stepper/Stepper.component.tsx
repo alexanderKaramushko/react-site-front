@@ -1,4 +1,6 @@
-import React, { FC, ReactNode, useReducer } from 'react';
+import React, {
+    FC, ReactNode, useReducer, useEffect,
+} from 'react';
 import Steps, { Step } from 'rc-steps';
 import 'rc-steps/assets/index.css';
 import { StepProps } from 'rc-steps/lib/Step';
@@ -53,7 +55,7 @@ function reducer(state: State, action: Action): State {
 
 const Stepper: FC<Props> = (props) => {
     const {
-        contentNodes, currentStep, size, steps,
+        contentNodes, currentStep, onFinish, size, steps,
     } = props;
     const [state, dispatch] = useReducer(reducer, {
         currentStep,
@@ -94,6 +96,13 @@ const Stepper: FC<Props> = (props) => {
         });
     }
 
+    useEffect(() => {
+        if (state.currentStep === state.steps.length) {
+            onFinish();
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [state]);
+
     function renderContent(nodes: ReactNode[]): ReactNode[] {
         return nodes.map((contentNode: ReactNode, index: number) => (
             <CSSTransition
@@ -109,7 +118,7 @@ const Stepper: FC<Props> = (props) => {
     }
 
     return (
-        <>
+        <div className={styles.wrapper}>
             <Steps size={size} current={state.currentStep}>
                 {renderSteps(state.steps)}
             </Steps>
@@ -126,7 +135,7 @@ const Stepper: FC<Props> = (props) => {
                     Continue
                 </Button>
             </Clickable>
-        </>
+        </div>
     );
 };
 
