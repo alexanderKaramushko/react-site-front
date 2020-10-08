@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import {
-    BrowserRouter as Router,
+    StaticRouter as Router,
     Switch,
 } from 'react-router-dom';
 import Header from './components/organisms/Header/header.container';

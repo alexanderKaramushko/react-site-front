@@ -2,7 +2,7 @@ import React, {
     FC, ReactNode, useReducer, useEffect,
 } from 'react';
 import Steps, { Step } from 'rc-steps';
-import 'rc-steps/assets/index.css';
+// import 'rc-steps/assets/index.css';
 import { StepProps } from 'rc-steps/lib/Step';
 import { CSSTransition } from 'react-transition-group';
 import styles from './style.scss';

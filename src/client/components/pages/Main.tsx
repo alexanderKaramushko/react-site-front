@@ -64,7 +64,7 @@ const Main: FC = () => (
                     )}
                     togglesOut={[
                         <Card
-                            // imgSrc="https://cdn.quasar.dev/img/parallax2.jpg"
+                        // imgSrc="https://cdn.quasar.dev/img/parallax2.jpg"
                             overline="Overline"
                             actions={[
                                 <Button size={ButtonSizes.SMALL}>Action 1</Button>,
@@ -74,7 +74,7 @@ const Main: FC = () => (
                             Card
                         </Card>,
                         <Card
-                            // imgSrc="https://cdn.quasar.dev/img/parallax2.jpg"
+                        // imgSrc="https://cdn.quasar.dev/img/parallax2.jpg"
                             overline="Overline"
                             actions={[
                                 <Button size={ButtonSizes.SMALL}>Action 1</Button>,
@@ -84,7 +84,7 @@ const Main: FC = () => (
                             Card
                         </Card>,
                         <Card
-                            // imgSrc="https://cdn.quasar.dev/img/parallax2.jpg"
+                        // imgSrc="https://cdn.quasar.dev/img/parallax2.jpg"
                             overline="Overline"
                             actions={[
                                 <Button size={ButtonSizes.SMALL}>Action 1</Button>,

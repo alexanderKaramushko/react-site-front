@@ -8,7 +8,10 @@ const TextSize: React.FunctionComponent<Props> = (props: Props) => {
     const classProps = classnames(styles['text-size']);
 
     useEffect(() => {
-        document.body.parentElement.style.fontSize = `${size}%`;
+        // check for ssr
+        if (typeof document !== 'undefined') {
+            document.body.parentElement.style.fontSize = `${size}%`;
+        }
     }, [size]);
 
     const dec = (): void => {

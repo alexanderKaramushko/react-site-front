@@ -6,13 +6,13 @@
     "author": "",
     "license": "ISC",
     "scripts": {
-        "build": "webpack --mode production",
         "build-storybook": "build-storybook",
         "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx src",
-        "eslint:dump": "eslint --print-config ./.eslintrc.json",
-        "start": "webpack-dev-server --mode development --open --hot",
         "storybook": "start-storybook -p 6006",
-        "test": "cross-env TS_NODE_FILES=true jest"
+        "test": "cross-env TS_NODE_FILES=true jest",
+        "build:server": "cross-env NODE_ENV=development webpack --config configs/webpack.server.js",
+        "start:server": "nodemon build/server.js",
+        "dev": "npm-run-all --parallel build start"
     },
     "pre-commit": [
         "eslint"
@@ -62,6 +62,8 @@
         "html-webpack-plugin": "^4.3.0",
         "jest": "^26.0.1",
         "jest-transform-stub": "^2.0.0",
+        "mini-css-extract-plugin": "^0.12.0",
+        "nodemon": "^2.0.4",
         "pre-commit": "^1.2.2",
         "redux-mock-store": "^1.5.4",
         "sass": "^1.26.5",
@@ -73,10 +75,12 @@
         "typescript": "^3.8.3",
         "webpack": "^4.43.0",
         "webpack-cli": "^3.3.11",
-        "webpack-dev-server": "^3.10.3"
+        "webpack-dev-server": "^3.10.3",
+        "webpack-node-externals": "^2.5.2"
     },
     "dependencies": {
         "axios": "^0.19.2",
+        "ejs": "^3.1.5",
         "express": "^4.17.1",
         "rc-steps": "^4.1.2",
         "react": "^16.13.1",

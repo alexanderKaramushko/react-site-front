@@ -5,7 +5,8 @@ import { DefaultError } from '../DefaultError/DefaultError.component';
 
 class ErrorHandler extends React.Component<Props, State> {
 
-    private portal = document.querySelector('#modal');
+    // check for ssr
+    private portal = typeof document !== 'undefined' && document.querySelector('#modal');
 
     constructor(props: Props) {
         super(props);
@@ -25,6 +26,10 @@ class ErrorHandler extends React.Component<Props, State> {
         const { error, hasError } = this.state;
 
         if (hasError) {
+            // check for ssr
+            if (!this.portal) {
+                return <ErrorComponent />;
+            }
             if (ErrorComponent) {
                 return createPortal(<ErrorComponent />, this.portal);
             }
