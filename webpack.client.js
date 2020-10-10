@@ -1,14 +1,8 @@
 // @ts-nocheck
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devServer: {
-        proxy: {
-            '/api': 'http://localhost:3000',
-        },
-    },
-    entry: path.resolve(__dirname, 'src/client/index.tsx'),
+    entry: './src/client/index.tsx',
     module: {
         rules: [
             {
@@ -57,12 +51,9 @@ module.exports = {
         ],
     },
     output: {
-        filename: 'client.js',
-        path: path.join(__dirname, '/build'),
+        filename: 'bundle.js',
+        path: path.join(__dirname, 'build/client'),
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'src/client/index.html'),
-    })],
     resolve: {
         extensions: ['.js', '.ts', '.tsx', '.scss'],
     },

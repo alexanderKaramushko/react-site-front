@@ -4,11 +4,10 @@ const nodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: path.join(__dirname, '..', 'src/server/server.ts'),
+    entry: './src/server/server.tsx',
     externals: [nodeExternals({
         modulesDir: './node_modules',
     })],
-    mode: 'development',
     module: {
         rules: [
             {
@@ -46,8 +45,8 @@ module.exports = {
         ],
     },
     output: {
-        filename: 'server.js',
-        path: path.join(__dirname, '..', '/build'),
+        filename: 'bundle.js',
+        path: path.join(__dirname, 'build/server'),
     },
     plugins: [new MiniCssExtractPlugin()],
     resolve: {

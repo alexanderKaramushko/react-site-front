@@ -7,12 +7,13 @@
     "license": "ISC",
     "scripts": {
         "build-storybook": "build-storybook",
+        "build-client": "webpack --config webpack.client.js --mode=development --watch",
+        "build-server": "webpack --config webpack.server.js --mode=development --watch",
+        "dev": "npm-run-all --parallel build-client build-server",
         "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx src",
+        "server": "nodemon build/server/bundle.js",
         "storybook": "start-storybook -p 6006",
-        "test": "cross-env TS_NODE_FILES=true jest",
-        "build:server": "cross-env NODE_ENV=development webpack --config configs/webpack.server.js",
-        "start:server": "nodemon build/server.js",
-        "dev": "npm-run-all --parallel build start"
+        "test": "cross-env TS_NODE_FILES=true jest"
     },
     "pre-commit": [
         "eslint"
@@ -75,11 +76,11 @@
         "typescript": "^3.8.3",
         "webpack": "^4.43.0",
         "webpack-cli": "^3.3.11",
-        "webpack-dev-server": "^3.10.3",
         "webpack-node-externals": "^2.5.2"
     },
     "dependencies": {
         "axios": "^0.19.2",
+        "css-modules-require-hook": "^4.2.3",
         "ejs": "^3.1.5",
         "express": "^4.17.1",
         "rc-steps": "^4.1.2",

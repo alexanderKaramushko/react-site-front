@@ -1,22 +1,17 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import {
-    StaticRouter as Router,
-    Switch,
-} from 'react-router-dom';
-import Header from './components/organisms/Header/header.container';
-import store from './store/store';
+import { Route, Switch } from 'react-router-dom';
 import { createRoutes, routesArr } from './routes/routes';
+import NotFound from './components/pages/NotFound';
+import Header from './components/organisms/Header/header.container';
 
 const App: React.FunctionComponent = () => (
-    <Provider store={store}>
-        <Router>
-            <Header />
-            <Switch>
-                {createRoutes(routesArr)}
-            </Switch>
-        </Router>
-    </Provider>
+    <>
+        <Header />
+        <Switch>
+            {createRoutes(routesArr)}
+            <Route component={NotFound} />
+        </Switch>
+    </>
 );
 
 export default App;
