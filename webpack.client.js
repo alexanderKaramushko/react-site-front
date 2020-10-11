@@ -51,8 +51,8 @@ module.exports = {
         ],
     },
     output: {
-        filename: 'bundle.js',
-        path: path.join(__dirname, 'build/client'),
+        filename: 'client.js',
+        path: path.join(__dirname, 'build'),
     },
     resolve: {
         extensions: ['.js', '.ts', '.tsx', '.scss'],

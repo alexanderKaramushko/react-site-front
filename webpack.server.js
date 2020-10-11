@@ -45,10 +45,14 @@ module.exports = {
         ],
     },
     output: {
-        filename: 'bundle.js',
-        path: path.join(__dirname, 'build/server'),
+        filename: 'server.js',
+        path: path.join(__dirname, 'build'),
     },
-    plugins: [new MiniCssExtractPlugin()],
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'style.css',
+        }),
+    ],
     resolve: {
         extensions: ['.ts', '.tsx', 'js', '.scss'],
     },

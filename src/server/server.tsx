@@ -9,7 +9,7 @@ import store from '../client/store/store';
 
 const server = express();
 
-server.use(express.static('build/client'));
+server.use(express.static('build'));
 
 server.set('view engine', 'ejs');
 server.set('views', './src/server/views');
