@@ -16,10 +16,10 @@ import UnorderedList from '../../molecules/UnorderedList/UnorderedList.component
 import Fade from '../../transitions/Fade/Fade';
 import { listItems } from '../../../routes/routes';
 
-import 'react-toggle/style.css';
-import 'tippy.js/dist/tippy.css';
-import 'tippy.js/animations/shift-toward.css';
-import 'react-dropdown/style.css';
+// import 'react-toggle/style.css';
+// import 'tippy.js/dist/tippy.css';
+// import 'tippy.js/animations/shift-toward.css';
+// import 'react-dropdown/style.css';
 import * as styles from './style.scss';
 import { LabelSize } from '../../molecules/BlockWithText/BlockWithText.types';
 import { Props } from './Header.types';
