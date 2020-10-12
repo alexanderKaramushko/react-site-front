@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import Button from '../Button.component';
+import Button from '../Button';
 
 describe('>>>B U T T O N --- Shallow Render REACT COMPONENT', () => {
     let button: ShallowWrapper;

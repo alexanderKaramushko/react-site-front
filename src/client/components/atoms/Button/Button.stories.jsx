@@ -1,45 +1,40 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Themes } from '../../../common/settings';
-import { ButtonSizes, ButtonShapes } from './Button.types';
-import Button from './Button.component';
+import { Variants } from './Button.types';
+import Button from './Button';
+import { Sizes } from '../../../common/UITypes';
 
 storiesOf('Button', module)
     .add('default', () => (
         <Button>Test Button</Button>
     ))
     .add('default - small', () => (
-        <Button size={ButtonSizes.SMALL}>
+        <Button size={Sizes.SMALL}>
             Test Button
         </Button>
     ))
     .add('default - medium', () => (
-        <Button size={ButtonSizes.MEDIUM}>
+        <Button size={Sizes.MEDIUM}>
             Test Button
         </Button>
     ))
     .add('default - large', () => (
-        <Button size={ButtonSizes.LARGE}>
+        <Button size={Sizes.LARGE}>
             Test Button
         </Button>
     ))
-    .add('shape - round', () => (
-        <Button shape={ButtonShapes.ROUNDED}>
+    .add('variants - text', () => (
+        <Button variant={Variants.TEXT}>
             Test Button
         </Button>
     ))
-    .add('shape - straight', () => (
-        <Button shape={ButtonShapes.STRAIGHT}>
+    .add('variants - contained', () => (
+        <Button variant={Variants.CONTAINED}>
             Test Button
         </Button>
     ))
-    .add('theme - light', () => (
-        <Button theme={Themes.LIGHT}>
-            Test Button
-        </Button>
-    ))
-    .add('theme - dark', () => (
-        <Button theme={Themes.DARK}>
+    .add('variants - outlined', () => (
+        <Button variant={Variants.OUTLINED}>
             Test Button
         </Button>
     ));

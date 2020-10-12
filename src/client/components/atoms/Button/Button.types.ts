@@ -1,38 +1,16 @@
-import { ReactNode, ElementType } from 'react';
-import { Themes } from '../../../common/settings';
+import { ReactNode } from 'react';
+import { Sizes } from '../../../common/UITypes';
 
-export enum ButtonSizes {
-    SMALL = 'small',
-    MEDIUM = 'medium',
-    LARGE = 'large',
+export enum Variants {
+    CONTAINED = 'contained',
+    OUTLINED = 'outlined',
+    TEXT = 'text',
 }
 
-export enum ButtonShapes {
-    STRAIGHT = 'straight',
-    ROUNDED = 'rounded',
-}
-
-export enum ButtonTypes {
-    SUBMIT = 'submit',
-    RESET = 'reset',
-    BUTTON = 'button',
-}
-
-export type OwnProps = {
+export type Props = {
     children: ReactNode;
-    Icon?: ElementType;
+    disabled?: boolean;
     onClick?: () => void;
-    primary?: boolean;
-    secondary?: boolean;
-    shape?: ButtonShapes;
-    size?: ButtonSizes;
-    type?: ButtonTypes;
+    size?: Sizes;
+    variant?: Variants;
 }
-
-export interface StateProps {
-    theme?: Themes;
-}
-
-export type DispatchProps = {}
-
-export type Props = OwnProps & StateProps & DispatchProps;

@@ -2,12 +2,13 @@ import React, { FC, ReactNode } from 'react';
 import template from '../templates/default/style.scss';
 import ErrorHandler from '../Errors/ErrorHandler/ErrorHandler.component';
 import Paragraph from '../atoms/Paragraph/Paragraph.component';
-import Button from '../atoms/Button/Button.container';
+import Button from '../atoms/Button/Button';
 import { Clickable } from '../atoms/Clickable/Clickable.component';
 import Stepper from '../molecules/Stepper/Stepper.component';
 import Card from '../molecules/Card/Card.container';
-import { ButtonSizes } from '../atoms/Button/Button.types';
+import { Variants } from '../atoms/Button/Button.types';
 import Replace from '../transitions/Replace/Replace';
+import { Sizes } from '../../common/UITypes';
 
 const Main: FC = () => (
     <section
@@ -21,7 +22,7 @@ const Main: FC = () => (
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </Paragraph>
                     <Clickable>
-                        <Button>Button</Button>
+                        <Button variant={Variants.OUTLINED}>Button</Button>
                     </Clickable>
                 </div>
                 <Replace
@@ -67,8 +68,8 @@ const Main: FC = () => (
                         // imgSrc="https://cdn.quasar.dev/img/parallax2.jpg"
                             overline="Overline"
                             actions={[
-                                <Button size={ButtonSizes.SMALL}>Action 1</Button>,
-                                <Button size={ButtonSizes.SMALL}>Action 2</Button>,
+                                <Button size={Sizes.SMALL}>Action 1</Button>,
+                                <Button size={Sizes.SMALL}>Action 2</Button>,
                             ]}
                         >
                             Card
@@ -77,8 +78,8 @@ const Main: FC = () => (
                         // imgSrc="https://cdn.quasar.dev/img/parallax2.jpg"
                             overline="Overline"
                             actions={[
-                                <Button size={ButtonSizes.SMALL}>Action 1</Button>,
-                                <Button size={ButtonSizes.SMALL}>Action 2</Button>,
+                                <Button size={Sizes.SMALL}>Action 1</Button>,
+                                <Button size={Sizes.SMALL}>Action 2</Button>,
                             ]}
                         >
                             Card
@@ -87,8 +88,8 @@ const Main: FC = () => (
                         // imgSrc="https://cdn.quasar.dev/img/parallax2.jpg"
                             overline="Overline"
                             actions={[
-                                <Button size={ButtonSizes.SMALL}>Action 1</Button>,
-                                <Button size={ButtonSizes.SMALL}>Action 2</Button>,
+                                <Button size={Sizes.SMALL}>Action 1</Button>,
+                                <Button size={Sizes.SMALL}>Action 2</Button>,
                             ]}
                         >
                             Card
