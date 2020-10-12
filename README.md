@@ -7,7 +7,7 @@
   npm run server (in another terminal)
 ```
 
-### This project represents the SPA made with the help of the following technologies:
+### This project represents the SSR (and PWA alongside in future) made with the help of the following technologies:
 + React
 + Redux
 + Redux-saga
