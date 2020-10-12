@@ -1,5 +1,12 @@
 # react-site
 
+### Setup project:
+`
+  npm i
+  npm run dev
+  npm run server (in another terminal)
+`
+
 ### This project represents the SPA made with the help of the following technologies:
 + React
 + Redux
