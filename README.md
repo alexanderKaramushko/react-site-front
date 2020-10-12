@@ -2,7 +2,7 @@
 
 ### Setup project:
 ```
-  npm i \n
+  npm i
   npm run dev
   npm run server (in another terminal)
 ```
