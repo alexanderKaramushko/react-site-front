@@ -10,7 +10,7 @@
         "build-client": "webpack --config webpack.client.js --mode=development --watch",
         "build-server": "webpack --config webpack.server.js --mode=development --watch",
         "dev": "rimraf ./build & npm-run-all --parallel build-client build-server",
-        "eslint": "eslint --cache --ext .js, .jsx, .ts, .tsx src",
+        "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx src",
         "server": "nodemon build/server.js",
         "storybook": "start-storybook -p 6006",
         "test": "cross-env TS_NODE_FILES=true jest"
