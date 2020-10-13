@@ -1,6 +1,6 @@
-export const supportedLocales = {
-    en: 'English',
-    ru: 'Russian',
-};
+export enum SupportedLocales {
+    EN = 'English',
+    RU = 'Russian',
+}
 
-export const fallbackLocale = 'en';
+export const fallbackLocale = SupportedLocales.EN;

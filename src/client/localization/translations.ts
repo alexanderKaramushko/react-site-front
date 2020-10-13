@@ -1,26 +1,24 @@
 export const translations = {
     en: {
         nav: {
-            about: 'About us',
-            contacts: 'Contacts',
-            main: 'Main',
+            main: {
+                description: 'Main page',
+                title: 'Main page',
+            },
         },
-        settings: {
-            language: 'Language',
-            nightMode: 'Night Mode',
-            textSize: 'Text Size',
+        ui: {
+            button: 'Button',
         },
     },
     ru: {
         nav: {
-            about: 'О нас',
-            contacts: 'Контакты',
-            main: 'Главная',
+            main: {
+                description: 'Главная страница',
+                title: 'Главная страница',
+            },
         },
-        settings: {
-            language: 'Язык',
-            nightMode: 'Ночной режим',
-            textSize: 'Размер текста',
+        ui: {
+            button: 'Кнопка',
         },
     },
 };
