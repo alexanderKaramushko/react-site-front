@@ -17,22 +17,18 @@
 
 .--primary:before {
     @extend %color;
-    background-color: functions.nested-map-get($colors, primary, primary_light);
 }
 
 .--secondary:before {
     @extend %color;
-    background-color: functions.nested-map-get($colors, secondary, secondary_light);
 }
 
 .--success:before {
     @extend %color;
-    background-color: functions.nested-map-get($colors, success, success_light);
 }
 
 .--error:before {
     @extend %color;
-    background-color: functions.nested-map-get($colors, error, error_light);
 }
 
 .--base-font-family {

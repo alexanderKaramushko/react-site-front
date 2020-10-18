@@ -19,21 +19,6 @@
     }
 }
 
-@mixin colors($color, $properties: ("color", "background-color", "hover")) {
-    $colorMap: str-slice($color, 0, str-index($color, '_') - 1);
-    @each $property in $properties {
-        $colorFromProperty: "#{$color}_#{$property}";
-        $mapColor: functions.nested-map-get($colors, $colorMap, $colorFromProperty);
-        @if ($mapColor) {
-            @if ($property == "hover") {
-                @content($mapColor);
-            } @else {
-                #{$property}: $mapColor;
-            }
-        }
-    }
-}
-
 @mixin forwardTransition($s: 0.5, $p: all) {
     transition: #{$p} #{$s}s cubic-bezier(0.8, 0.5, 0.6, 1.6);
 }
@@ -45,5 +30,3 @@
 @mixin burstTransition($s: 0.5, $p: all) {
     transition: #{$p} #{$s}s cubic-bezier(0.7, -2, 0.8, 1.4);
 }
-
-
