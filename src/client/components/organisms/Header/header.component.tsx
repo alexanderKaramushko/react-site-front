@@ -1,41 +1,35 @@
-import React, { ReactNode, useState } from 'react';
-import {
-    AppBar, Grid, IconButton, Menu, MenuItem, Toolbar, Typography,
-} from '@material-ui/core';
-import { Menu as MenuIcon, LanguageTwoTone as LanguageIcon, Brush as BrushIcon } from '@material-ui/icons';
+import React from 'react';
+import { AppBar, Grid, IconButton, MenuItem, Slider, Toolbar, Typography } from '@material-ui/core';
+import { Menu as MenuIcon, LanguageTwoTone as LanguageIcon, Brush as BrushIcon, FormatSize as FormatIcon } from '@material-ui/icons';
+import styles from './style.scss';
 import { Props } from './Header.types';
 import { SupportedLocales } from '../../../localization';
+import OptionsMenu from '../../molecules/OptionsMenu/OptionsMenu';
+import { FontSizes, Themes, ThemeTypes } from '../../../store/reducers/settings/types';
 
 const Header: React.FunctionComponent<Props> = (props) => {
-    const { selectedLocale, setLocaleWithFallback } = props;
-    const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
-    const isLanguageMenuOpen = Boolean(anchorEl);
+    const {
+        activeTheme,
+        changeSize,
+        selectedLocale,
+        setLocaleWithFallback,
+        setTheme,
+    } = props;
 
-    function openLanguageMenu(event: React.MouseEvent<HTMLElement>): void {
-        setAnchorEl(event.currentTarget);
+    function handleChooseLocale(locale: string): void {
+        setLocaleWithFallback(locale);
     }
 
-    function closeLanguageMenu(): void {
-        setAnchorEl(null);
+    function handleChooseTheme(theme: ThemeTypes): void {
+        setTheme(theme);
     }
 
-    function chooseLocale(locale: string): () => void {
-        return (): void => {
-            closeLanguageMenu();
-            setLocaleWithFallback(locale);
-        };
+    function handleChooseTextSize(event: React.ChangeEvent<{}>, size: number): void {
+        changeSize(size);
     }
 
-    function renderLocales(locales: typeof SupportedLocales): ReactNode[] {
-        return Object.keys(locales).map((locale: string): ReactNode => (
-            <MenuItem
-                key={locale}
-                onClick={chooseLocale(locales[locale as keyof typeof locales] as string)}
-                selected={locale === selectedLocale}
-            >
-                {locale}
-            </MenuItem>
-        ));
+    function getFontSizeLabel(size: number): string {
+        return `${size}px`;
     }
 
     return (
@@ -43,33 +37,55 @@ const Header: React.FunctionComponent<Props> = (props) => {
             <Toolbar>
                 <Grid container alignItems="center">
                     <Grid xs={10} alignItems="center" item container>
-                        <IconButton edge="start" color="inherit" aria-label="menu">
+                        <IconButton
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                        >
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="h6">react-site prototype</Typography>
                     </Grid>
                     <Grid xs={2} justify="flex-end" item container>
-                        <IconButton
-                            onClick={openLanguageMenu}
-                            aria-label="language"
-                            color="inherit"
+                        <OptionsMenu
+                            ariaLabel="Locales"
+                            icon={<LanguageIcon />}
+                            onChoose={handleChooseLocale}
+                            options={Object.keys(SupportedLocales)}
+                            selectedOption={selectedLocale}
+                        />
+                        <OptionsMenu
+                            ariaLabel="Themes"
+                            onChoose={handleChooseTheme}
+                            icon={<BrushIcon />}
+                            options={Object.keys(Themes)}
+                            selectedOption={activeTheme}
+                        />
+                        <OptionsMenu
+                            ariaLabel="Sizes"
+                            icon={<FormatIcon />}
                         >
-                            <LanguageIcon />
-                        </IconButton>
-                        <IconButton
-                            aria-label="theme"
-                            color="inherit"
-                        >
-                            <BrushIcon />
-                        </IconButton>
-                        <Menu
-                            anchorEl={anchorEl}
-                            onClose={closeLanguageMenu}
-                            open={isLanguageMenuOpen}
-                            keepMounted
-                        >
-                            {renderLocales(SupportedLocales)}
-                        </Menu>
+                            <MenuItem classes={{
+                                root: styles.sliderItem,
+                            }}
+                            >
+                                <Slider
+                                    aria-label="slider"
+                                    classes={{
+                                        root: styles.slider,
+                                        valueLabel: styles.valueLabel,
+                                    }}
+                                    defaultValue={FontSizes.DEFAULT}
+                                    getAriaValueText={getFontSizeLabel}
+                                    max={FontSizes.MAX}
+                                    min={FontSizes.MIN}
+                                    onChange={handleChooseTextSize}
+                                    step={FontSizes.STEP}
+                                    valueLabelDisplay="on"
+                                    marks
+                                />
+                            </MenuItem>
+                        </OptionsMenu>
                     </Grid>
                 </Grid>
             </Toolbar>

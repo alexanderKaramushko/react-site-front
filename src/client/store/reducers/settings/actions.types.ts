@@ -6,5 +6,6 @@ export type ThemeActions = typeof themeActions;
 export type ThemeActionTypes = ActionType<ThemeActions>;
 
 export type ToggleTheme = ThemeActions['toggleThemeAction'];
+export type ToggleTextSize = ThemeActions['toggleTextSizeAction'];
 
 export type ThemeReducerActionTypes = ThemeActionTypes;

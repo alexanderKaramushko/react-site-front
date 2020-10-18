@@ -1,5 +1,5 @@
 export const translations = {
-    en: {
+    EN: {
         nav: {
             main: {
                 description: 'Main page',
@@ -10,7 +10,7 @@ export const translations = {
             button: 'Button',
         },
     },
-    ru: {
+    RU: {
         nav: {
             main: {
                 description: 'Главная страница',

@@ -1,7 +1,7 @@
 import { getType } from 'typesafe-actions';
 import { settingsReducer } from '../store/reducers/settings/settings';
-import { Themes } from '../common/settings';
 import { toggleThemeAction } from '../store/reducers/settings/actions';
+import { Themes } from '../store/reducers/settings/types';
 
 describe('With snapshots ', () => {
     it('+++ reducer with shapshot', () => {

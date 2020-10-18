@@ -11,9 +11,7 @@ const defaultProps = {
 };
 
 const Replace: FC<Props> = (props) => {
-    const {
-        animationType, renderToggleIn, startOffMs, togglesOut,
-    } = props;
+    const { animationType, renderToggleIn, startOffMs, togglesOut } = props;
     const [toggles, setToggles] = useState<Toggle[]>([
         { isVisible: true, render: renderToggleIn },
         ...togglesOut.map((component: ReactNode) => ({ isVisible: false, render: (): ReactNode => component })),

@@ -1,8 +1,5 @@
 import React, { FC, useState } from 'react';
-import {
-    CSSTransition,
-    TransitionGroup,
-} from 'react-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Props } from './Fade.types';
 
 import styles from './style.scss';
@@ -13,9 +10,7 @@ const defaultProps: Props = {
 };
 
 const Fade: FC<Props> = (props) => {
-    const {
-        children, duration, items, renderChildren,
-    } = props;
+    const { children, duration, items, renderChildren } = props;
     const [visible, setVisible] = useState(true);
 
     function handleClose(): void {

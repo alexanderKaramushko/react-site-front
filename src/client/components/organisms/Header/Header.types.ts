@@ -1,15 +1,18 @@
-import { ThemeType } from '../../../common/settings';
+import { ToggleTextSize, ToggleTheme } from '../../../store/reducers/settings/actions.types';
+import { ThemeTypes } from '../../../store/reducers/settings/types';
 
 export type OwnProps = {}
 
 export interface StateProps {
     selectedLocale?: string;
-    theme?: ThemeType;
+    activeTheme?: ThemeTypes;
+    textSize?: number;
 }
 
 export interface DispatchProps {
     setLocaleWithFallback?: (desiredLocale: string) => void;
-    toggleTheme?: (themeName: ThemeType) => void;
+    setTheme?: ToggleTheme;
+    changeSize?: ToggleTextSize;
 }
 
 export type Props = OwnProps & StateProps & DispatchProps;

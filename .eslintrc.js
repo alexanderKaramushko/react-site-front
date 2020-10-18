@@ -53,6 +53,11 @@ const config = {
 			caseSensitive: true,
 			natural: false
 		}],
+		"object-curly-newline": ["error", {
+			"ObjectPattern": { "multiline": true },
+			"ImportDeclaration": "never",
+			"ExportDeclaration": { "multiline": true, "minProperties": 3 }
+		}]
 	},
 	settings: {
 		'import/extensions': ['.ts', '.tsx', '.json'],
