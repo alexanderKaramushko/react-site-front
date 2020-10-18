@@ -2,6 +2,7 @@
 const path = require('path');
 
 module.exports = {
+    devtool: 'eval-source-map',
     entry: './src/client/index.tsx',
     module: {
         rules: [

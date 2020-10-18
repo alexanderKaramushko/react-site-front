@@ -1,34 +1,34 @@
-@use '../../_settings/mixins';
-@use '../../_settings/functions';
-@import '../../_settings/base';
+// @use '../../_settings/mixins';
+// @use '../../_settings/functions';
+// @import '../../_settings/base';
 
-.errorPopup {
-    border-radius: 5px;
-    box-shadow: $shadow-3;
-    display: grid;
-    grid-template-columns: 1fr 20px;
-    grid-template-areas: 
-        "title cross"
-        "message message";
-    gap: 15px;
-    padding: 15px;
-    width: 400px;
-    @include mixins.center();
-}
+// .errorPopup {
+//     border-radius: 5px;
+//     box-shadow: $shadow-3;
+//     display: grid;
+//     grid-template-columns: 1fr 20px;
+//     grid-template-areas: 
+//         "title cross"
+//         "message message";
+//     gap: 15px;
+//     padding: 15px;
+//     width: 400px;
+//     @include mixins.center();
+// }
 
-.title {
-    color: functions.nested-map-get($colors, primary, primary_light);
-    grid-area: title;
-}
+// .title {
+//     color: functions.nested-map-get($colors, primary, primary_light);
+//     grid-area: title;
+// }
 
-.close {
-    grid-area: cross;
-}
+// .close {
+//     grid-area: cross;
+// }
 
-.closeIcon {
-    cursor: pointer;
-}
+// .closeIcon {
+//     cursor: pointer;
+// }
 
-.message {
-    grid-area: message;
-}
+// .message {
+//     grid-area: message;
+// }

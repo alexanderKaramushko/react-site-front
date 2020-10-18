@@ -1,5 +1,4 @@
 import React, { FC, ReactNode } from 'react';
-import CloseIcon from '../../../assets/icons/close.svg';
 import { Props } from './DefaultError.types';
 import * as styles from './styles.scss';
 import Fade from '../../transitions/Fade/Fade';
@@ -11,7 +10,7 @@ export const DefaultError: FC<Props> = (props) => {
         <Fade renderChildren={(handleClose: () => void): ReactNode => (
             <div className={styles.errorPopup}>
                 <div className={styles.close}>
-                    <CloseIcon onClick={handleClose} className={styles.closeIcon} width="20px" />
+                    {/* <CloseIcon onClick={handleClose} className={styles.closeIcon} width="20px" /> */}
                 </div>
                 <div className={styles.title}>
                     {error.name}
