@@ -30,19 +30,10 @@ module.exports = {
                 use: ['ts-loader'],
             },
             {
-                enforce: 'pre',
-                loader: 'source-map-loader',
-                test: /\.js$/,
-            },
-            {
                 exclude: /\.test.tsx?$/,
                 include: /ClientApp/,
                 test: /\.tsx?$/,
                 use: 'awesome-typescript-loader?silent=true',
-            },
-            {
-                test: /\.svg$/,
-                use: ['@svgr/webpack'],
             },
             {
                 test: /\.css$/i,
