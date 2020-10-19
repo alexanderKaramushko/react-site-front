@@ -1,6 +1,6 @@
 import { getType } from 'typesafe-actions';
 import { toggleThemeAction } from '../store/reducers/settings/actions';
-import { Themes } from '../common/settings';
+import { Themes } from '../components/settings/themes';
 
 describe('>>>A C T I O N --- Test theme actions', () => {
     it('should create an action to toggle theme', () => {
