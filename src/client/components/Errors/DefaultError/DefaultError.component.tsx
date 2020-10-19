@@ -7,7 +7,7 @@ export const DefaultError: FC<Props> = (props) => {
     const { error } = props;
 
     return (
-        <Fade renderChildren={(handleClose: () => void): ReactNode => (
+        <Fade renderChildren={(): ReactNode => (
             <div className={styles.errorPopup}>
                 <div className={styles.close}>
                     {/* <CloseIcon onClick={handleClose} className={styles.closeIcon} width="20px" /> */}

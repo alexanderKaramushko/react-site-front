@@ -1,4 +1,4 @@
-import { ThemeTypes } from './store/reducers/settings/types';
+import { ThemeTypes } from '../../store/reducers/settings/types';
 
 export type OwnProps = {};
 

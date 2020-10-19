@@ -2,6 +2,7 @@ import React from 'react';
 import { AppBar, Grid, IconButton, MenuItem, Slider, Toolbar, Typography } from '@material-ui/core';
 import { Menu as MenuIcon, LanguageTwoTone as LanguageIcon, Brush as BrushIcon, FormatSize as FormatIcon } from '@material-ui/icons';
 import styles from './style.scss';
+// eslint-disable-next-line import/no-unresolved
 import { Props } from './Header.types';
 import { SupportedLocales } from '../../../localization';
 import OptionsMenu from '../../molecules/OptionsMenu/OptionsMenu';
