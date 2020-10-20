@@ -10,9 +10,15 @@
         "outDir": "./dist/",
         "sourceMap": true,
         "target": "es6",
+        "baseUrl": "./src",
+        "paths": {
+            "@client": ["client/*"],
+            "@server": ["server/*"],
+        }
     },
     "exclude": [
+        "build",
         "node_modules",
-        "build"
+        "webpack",
     ]
 }
