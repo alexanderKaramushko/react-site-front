@@ -7,9 +7,7 @@ const NotFound: FC<RouteComponentProps> = (props) => {
     staticContext.statusCode = 404;
 
     return (
-        <h1>
-            Page not found!
-        </h1>
+        <h1>404</h1>
     );
 };
 

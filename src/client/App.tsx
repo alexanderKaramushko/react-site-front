@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { createRoutes, routesArr } from './routes/routes';
 import NotFound from './components/pages/NotFound';
-import Header from './components/organisms/Header/header.container';
+// eslint-disable-next-line import/no-unresolved
+import Header from './components/organisms/Header/Header.container';
 
-const App: React.FunctionComponent = () => (
+const App: FC = () => (
     <>
         <Header />
         <Switch>

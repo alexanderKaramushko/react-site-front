@@ -1,10 +1,10 @@
 import { setLocale } from 'react-redux-i18n';
 import { Dispatch } from 'redux';
-import { supportedLocales, fallbackLocale } from './config';
+import { SupportedLocales, fallbackLocale } from './config';
 
 export function setLocaleWithFallback(dispatch: Dispatch) {
     return (desiredLocale: string): void => {
-        const finalLocale = Object.keys(supportedLocales).includes(desiredLocale)
+        const finalLocale = Object.keys(SupportedLocales).includes(desiredLocale)
             ? desiredLocale
             : fallbackLocale;
 

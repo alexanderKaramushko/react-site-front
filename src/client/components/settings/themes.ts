@@ -1,8 +1,3 @@
-export interface SettingsState {
-    themeName: ThemeTypes;
-    textSize: number;
-}
-
 export enum Themes {
     LIGHT = 'LIGHT',
     DARK = 'DARK',
@@ -15,4 +10,4 @@ export enum FontSizes {
     DEFAULT = 14
 }
 
-export type ThemeTypes = keyof typeof Themes;
+export type ThemeType = keyof typeof Themes;

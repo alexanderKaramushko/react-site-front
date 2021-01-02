@@ -1,0 +1,40 @@
+@use './functions.scss';
+@import './_variables.scss';
+
+.colors {
+    display: flex;
+    align-items: center;
+}
+
+%color {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    margin-right: 0.5em;
+}
+
+.--primary:before {
+    @extend %color;
+}
+
+.--secondary:before {
+    @extend %color;
+}
+
+.--success:before {
+    @extend %color;
+}
+
+.--error:before {
+    @extend %color;
+}
+
+.--base-font-family {
+    font-family: $base-font-family;
+}
+
+.--headers-font-family {
+    font-family: $headers-font-family;
+}

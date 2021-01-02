@@ -1,32 +1,16 @@
-@use '../../_settings/mixins.scss';
-@use '../../_settings//functions.scss';
-@import '../../_settings/variables';
-
-.header {
-    align-items: center;
-    border-bottom: 1px solid functions.nested-map-get($colors, greys, grey-1);
-    display: flex;
-    height: 50px;
-    justify-content: space-between;
-    padding: 20px;
+.slider {
+    width: 300px !important;
 }
 
-.settingsIcon {
-    cursor: pointer;
+.valueLabel {
+    transform: scale(0.7) translateY(-10px) !important;
 }
 
-.light {
-    @include mixins.colors('primary_dark', ('color'));
-}
+.sliderItem {
+    height: 70px;
+    overflow: initial !important;
 
-.light.tip {
-    @include mixins.colors('background_grey', ('background'));
-}
-
-.dark {
-    @include mixins.colors('primary_light', ('color'));
-}
-
-.dark.tip {
-    @include mixins.colors('primary_dark', ('background-color'));
+    &:hover, &:active {
+        background: none !important;
+    }
 }

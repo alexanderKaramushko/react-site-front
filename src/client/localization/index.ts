@@ -1,9 +1,9 @@
 import { setLocaleWithFallback } from './actions';
-import { supportedLocales } from './config';
+import { SupportedLocales } from './config';
 import { translations } from './translations';
 
 export {
     setLocaleWithFallback,
-    supportedLocales,
+    SupportedLocales,
     translations,
 };
