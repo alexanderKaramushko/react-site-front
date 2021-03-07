@@ -3,5 +3,5 @@ import { SagaIterator } from 'redux-saga';
 import { watchUsersFetch } from './fetchUsers';
 
 export default function* rootSaga(): SagaIterator {
-    yield all([fork(watchUsersFetch)]);
+  yield all([fork(watchUsersFetch)]);
 }

@@ -9,9 +9,9 @@ import { rootReducer } from './reducers/rootReducer';
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
-    rootReducer,
-    {},
-    composeWithDevTools(applyMiddleware(sagaMiddleware)),
+  rootReducer,
+  {},
+  composeWithDevTools(applyMiddleware(sagaMiddleware)),
 );
 
 syncTranslationWithStore(store);

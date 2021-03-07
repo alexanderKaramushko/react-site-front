@@ -3,7 +3,7 @@ import { SupportedLocales } from './config';
 import { translations } from './translations';
 
 export {
-    setLocaleWithFallback,
-    SupportedLocales,
-    translations,
+  setLocaleWithFallback,
+  SupportedLocales,
+  translations,
 };

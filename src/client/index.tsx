@@ -7,12 +7,12 @@ import App from './App';
 import ThemeHOC from './utils/ThemeHOC/ThemeHOC';
 
 ReactDOM.hydrate(
-    <Provider store={store}>
-        <BrowserRouter>
-            <ThemeHOC>
-                <App />
-            </ThemeHOC>
-        </BrowserRouter>
-    </Provider>,
-    document.getElementById('root'),
+  <Provider store={store}>
+    <BrowserRouter>
+      <ThemeHOC>
+        <App />
+      </ThemeHOC>
+    </BrowserRouter>
+  </Provider>,
+  document.getElementById('root'),
 );

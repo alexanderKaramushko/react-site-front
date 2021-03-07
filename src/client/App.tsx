@@ -6,13 +6,13 @@ import NotFound from './components/pages/NotFound';
 import Header from './components/organisms/Header/Header.container';
 
 const App: FC = () => (
-    <>
-        <Header />
-        <Switch>
-            {createRoutes(routesArr)}
-            <Route component={NotFound} />
-        </Switch>
-    </>
+  <>
+    <Header />
+    <Switch>
+      {createRoutes(routesArr)}
+      <Route component={NotFound} />
+    </Switch>
+  </>
 );
 
 export default App;

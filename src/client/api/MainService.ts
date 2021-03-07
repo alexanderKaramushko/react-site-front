@@ -3,9 +3,9 @@ import { Users } from '../models/base/Users';
 
 class MainService extends CrudService<Users> {
 
-    constructor() {
-        super('main');
-    }
+  constructor() {
+    super('main');
+  }
 
 }
 

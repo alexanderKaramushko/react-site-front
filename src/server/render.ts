@@ -1,9 +1,9 @@
 import { Contents } from './types';
 
 function render(contents: Contents): string {
-    const { app, css } = contents;
+  const { app, css } = contents;
 
-    return `
+  return `
         <!DOCTYPE html>
         <html lang="en">
             <head>

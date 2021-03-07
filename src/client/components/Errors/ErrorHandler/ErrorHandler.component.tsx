@@ -9,38 +9,38 @@ class ErrorHandler extends React.Component<Props, State> {
     private portal = typeof document !== 'undefined' && document.querySelector('#modal');
 
     constructor(props: Props) {
-        super(props);
+      super(props);
 
-        this.state = {
-            error: null,
-            hasError: false,
-        };
+      this.state = {
+        error: null,
+        hasError: false,
+      };
     }
 
     static getDerivedStateFromError(error: Error): State {
-        return { error, hasError: true };
+      return { error, hasError: true };
     }
 
     render(): React.ReactNode {
-        const { ErrorComponent, children } = this.props;
-        const { error, hasError } = this.state;
+      const { ErrorComponent, children } = this.props;
+      const { error, hasError } = this.state;
 
-        if (hasError) {
-            // check for ssr
-            if (!this.portal) {
-                return <ErrorComponent />;
-            }
-            if (ErrorComponent) {
-                return createPortal(<ErrorComponent />, this.portal);
-            }
-            return createPortal(<DefaultError error={error} />, this.portal);
+      if (hasError) {
+        // check for ssr
+        if (!this.portal) {
+          return <ErrorComponent />;
         }
+        if (ErrorComponent) {
+          return createPortal(<ErrorComponent />, this.portal);
+        }
+        return createPortal(<DefaultError error={error} />, this.portal);
+      }
 
-        return (
-            <>
-                {children}
-            </>
-        );
+      return (
+        <>
+          {children}
+        </>
+      );
     }
 
 }

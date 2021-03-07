@@ -9,6 +9,12 @@ const config = {
   plugins: ['@typescript-eslint'],
   rules: {
     '@typescript-eslint/no-var-requires': 0,
+    'react-hooks/exhaustive-deps': 'warn',
+    'react-hooks/rules-of-hooks': 'warn',
+    'react/jsx-filename-extension': [1, {
+      extensions: ['.tsx', '.jsx'],
+    }],
+    'react/prop-types': 'off',
     'lines-between-class-members': ['error', 'always', {
       exceptAfterSingleLine: true,
     }],
@@ -48,14 +54,6 @@ const config = {
       maxEOF: 0,
     }],
     quotes: ['error', 'single'],
-    'react-hooks/exhaustive-deps': 'warn',
-    'react-hooks/rules-of-hooks': 'warn',
-    'react/jsx-filename-extension': [1, {
-      extensions: ['.tsx', '.jsx'],
-    }],
-    'react/jsx-indent': ['error', 4],
-    'react/jsx-indent-props': ['error', 4],
-    'react/prop-types': 'off',
     'sort-keys': ['error', 'asc', {
       caseSensitive: true,
       natural: false,

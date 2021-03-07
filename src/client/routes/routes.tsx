@@ -12,28 +12,29 @@ interface Routes {
 }
 
 export const listItems = [
-    { link: ROUTE_WAYS.BASE, title: 'nav.main' },
-    { link: ROUTE_WAYS.ABOUT, title: 'nav.about' },
-    { link: ROUTE_WAYS.CONTACTS, title: 'nav.contacts' },
+  { link: ROUTE_WAYS.BASE, title: 'nav.main' },
+  { link: ROUTE_WAYS.ABOUT, title: 'nav.about' },
+  { link: ROUTE_WAYS.CONTACTS, title: 'nav.contacts' },
 ];
 
 export const routesArr = [
-    {
-        component: Main,
-        isExact: true,
-        path: ROUTE_WAYS.BASE,
-    },
-    {
-        component: AboutUs,
-        path: ROUTE_WAYS.ABOUT,
-    },
-    {
-        component: Contacts,
-        path: ROUTE_WAYS.CONTACTS,
-    },
+  {
+    component: Main,
+    isExact: true,
+    path: ROUTE_WAYS.BASE,
+  },
+  {
+    component: AboutUs,
+    path: ROUTE_WAYS.ABOUT,
+  },
+  {
+    component: Contacts,
+    path: ROUTE_WAYS.CONTACTS,
+  },
 ];
 
 export const createRoutes = (routesArray: Routes[]): React.ReactNode => routesArray.map((route) => {
-    const { component, isExact, path } = route;
-    return <Route key={path} path={path} component={component} exact={isExact} />;
+  const { component, isExact, path } = route;
+
+  return <Route key={path} path={path} component={component} exact={isExact} />;
 });

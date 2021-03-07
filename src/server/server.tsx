@@ -15,30 +15,30 @@ const server = express();
 server.use(express.static('build'));
 
 server.get('*', (req, res) => {
-    const sheets = new ServerStyleSheets();
-    const theme = getTheme();
-    const context = {} as StaticRouterContext;
+  const sheets = new ServerStyleSheets();
+  const theme = getTheme();
+  const context = {} as StaticRouterContext;
 
-    const app = renderToString(
-        sheets.collect(
-            <Provider store={store}>
-                <StaticRouter location={req.url} context={context}>
-                    <ThemeProvider theme={theme}>
-                        <CssBaseline />
-                        <App />
-                    </ThemeProvider>
-                </StaticRouter>
-            </Provider>,
-        ),
-    );
+  const app = renderToString(
+    sheets.collect(
+      <Provider store={store}>
+        <StaticRouter location={req.url} context={context}>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <App />
+          </ThemeProvider>
+        </StaticRouter>
+      </Provider>,
+    ),
+  );
 
-    if (context.statusCode === 404) {
-        res.status(404);
-    }
+  if (context.statusCode === 404) {
+    res.status(404);
+  }
 
-    const css = sheets.toString();
+  const css = sheets.toString();
 
-    res.send(render({ app, css }));
+  res.send(render({ app, css }));
 });
 
 // eslint-disable-next-line no-console
