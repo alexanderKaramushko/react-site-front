@@ -11,14 +11,12 @@
         "dev:server": "webpack --config webpack/webpack.server.js --mode=development --w",
         "dev": "npm-run-all --parallel dev:client dev:server",
         "prebuild": "rimraf ./build",
-        "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx src",
+        "lint": "eslint --cache --ext .ts,.js,.tsx,.jsx src",
         "server": "nodemon build/server.js",
         "storybook": "start-storybook -p 6006",
-        "test": "cross-env TS_NODE_FILES=true jest"
+        "test": "cross-env TS_NODE_FILES=true jest",
+        "lint-staged": "lint-staged"
     },
-    "pre-commit": [
-        "eslint"
-    ],
     "devDependencies": {
         "@babel/core": "^7.9.6",
         "@babel/preset-env": "^7.9.6",
@@ -62,6 +60,7 @@
         "html-webpack-plugin": "^4.3.0",
         "jest": "^26.0.1",
         "jest-transform-stub": "^2.0.0",
+        "lint-staged": "^10.5.4",
         "mini-css-extract-plugin": "^0.12.0",
         "nodemon": "^2.0.4",
         "npm-run-all": "^4.1.5",
@@ -99,5 +98,11 @@
         "reselect": "^4.0.0",
         "rimraf": "^3.0.2",
         "typesafe-actions": "^5.1.0"
-    }
+    },
+    "lint-staged": {
+        "*.{ts, js, tsx, jsx}": [
+            "npm run lint"
+        ]
+    },
+    "pre-commit": "lint-staged"
 }
