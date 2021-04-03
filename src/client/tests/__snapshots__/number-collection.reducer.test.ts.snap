@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`With snapshots  +++ reducer with shapshot 1`] = `
-Array [
-  0,
-  1,
-]
-`;
