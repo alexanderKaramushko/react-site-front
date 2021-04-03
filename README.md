@@ -1,4 +1,4 @@
-# react-site
+# react-site-front
 
 ### Setup project:
 ```
