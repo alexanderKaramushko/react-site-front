@@ -1,9 +1,10 @@
 // declaration.d.ts
-declare module '*.scss';
+declare module '*.scss'
 
 declare module '*.svg' {
-	type SvgrComponent = React.StatelessComponent<React.SVGAttributes<SVGElement>>
+  type SvgrComponent = React.StatelessComponent<React.SVGAttributes<SVGElement>>
 
-	const content: SvgrComponent;
-    export default content;
+  const content: SvgrComponent;
+
+  export default content;
 }

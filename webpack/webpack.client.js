@@ -6,7 +6,7 @@ const {
     loaders,
     plugins
 } = require('./common');
-    
+
 module.exports = {
     devtool: 'eval-source-map',
     entry: {
@@ -16,6 +16,7 @@ module.exports = {
         filename: clientOutputFile,
         path: clientOutputPath,
     },
+    mode: 'development',
     module: {
         rules: [
             {
@@ -31,4 +32,5 @@ module.exports = {
         ...plugins,
     ],
     resolve,
+    watch: true,
 };

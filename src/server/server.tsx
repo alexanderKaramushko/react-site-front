@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { StaticRouter, StaticRouterContext } from 'react-router';
 import { ServerStyleSheets, ThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 import App from '../client/App';
 import store from '../client/store/store';
 import render from './render';
@@ -40,6 +41,15 @@ server.get('*', (req, res) => {
 
   res.send(render({ app, css }));
 });
+
+const apiProxyMiddleware = createProxyMiddleware({
+  changeOrigin: true,
+  pathRewrite: { '^/api': '' },
+  target: 'http://localhost:3001',
+  logLevel: 'debug',
+});
+
+server.use('^/api', apiProxyMiddleware);
 
 // eslint-disable-next-line no-console
 server.listen(3000, () => console.log('Example app listening on port 3000!'));
