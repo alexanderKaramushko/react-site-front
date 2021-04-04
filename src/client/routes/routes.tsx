@@ -1,14 +1,15 @@
 import { Route } from 'react-router-dom';
 import React from 'react';
+import { ROUTE_WAYS } from './routes.types';
 import AboutUs from '../components/pages/AboutUs';
+import AdminSignIn from '../components/pages/AdminSignIn';
 import Contacts from '../components/pages/Contacts';
 import Main from '../components/pages/Main';
-import { ROUTE_WAYS } from './routes.types';
 
 interface Routes {
-    component: React.ComponentType;
-    isExact?: boolean;
-    path: ROUTE_WAYS;
+  component: React.ComponentType;
+  isExact?: boolean;
+  path: ROUTE_WAYS;
 }
 
 export const listItems = [
@@ -30,6 +31,10 @@ export const routesArr = [
   {
     component: Contacts,
     path: ROUTE_WAYS.CONTACTS,
+  },
+  {
+    component: AdminSignIn,
+    path: ROUTE_WAYS.ADMIN_SIGN_IN,
   },
 ];
 

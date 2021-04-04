@@ -2,7 +2,7 @@ import axios, { AxiosInstance } from 'axios';
 
 class BaseService {
 
-    public static axios: AxiosInstance = axios.create({ baseURL: 'api/' });
+    public static axios: AxiosInstance = axios.create({ baseURL: 'api' });
     protected path: string;
 
     constructor(path: string) {

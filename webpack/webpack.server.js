@@ -18,6 +18,7 @@ module.exports = {
         path: serverOutputPath,
         libraryTarget: 'commonjs2',
     },
+    mode: 'development',
     module: {
         rules: [
             ...loaders,
@@ -30,4 +31,5 @@ module.exports = {
         ...plugins,
     ],
     resolve,
+    watch: true,
 };
