@@ -43,11 +43,6 @@ A branch`s name begins with the type of changes(see commit types) and then the c
 git checkout -b feat_themes
 ```
 
-### Tests
-Show test coverage: `npm test -- --coverage`
-
-Presentational report: `react-boilerplate/coverage/lcov-report/index.html`
-
 ### Linting
 Linting is set on the precommit script.
 
