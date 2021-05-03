@@ -1,10 +1,12 @@
 import React, { FC, useEffect, useMemo } from 'react';
 import { connect } from 'react-redux';
 import { CssBaseline, PaletteType, Theme, ThemeProvider, useMediaQuery } from '@material-ui/core';
+
+import { DispatchProps, OwnProps, Props, StateProps } from './ThemeHOC.types';
+
 import getTheme from '../getTheme';
 import { getActiveTheme, getTextSize } from '../../store/reducers/settings/selectors';
 import { RootState } from '../../store/reducers/rootReducer';
-import { DispatchProps, OwnProps, Props, StateProps } from './ThemeHOC.types';
 
 const ThemeHOC: FC<Props> = (props) => {
   const { children } = props;

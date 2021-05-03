@@ -1,5 +1,6 @@
 import React, { FC, ReactNode, useState } from 'react';
 import { IconButton, Menu, MenuItem } from '@material-ui/core';
+
 import { Props } from './OptionsMenu.types';
 
 const OptionsMenu: FC<Props> = (props) => {

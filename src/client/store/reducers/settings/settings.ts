@@ -1,7 +1,9 @@
 import { createReducer } from 'typesafe-actions';
+
 import { ThemeReducerActionTypes } from './actions.types';
-import { toggleThemeAction, toggleTextSizeAction } from './actions';
 import { Themes, SettingsState, FontSizes } from './types';
+
+import { toggleThemeAction, toggleTextSizeAction } from './actions';
 
 const initialState: SettingsState = {
   textSize: FontSizes.DEFAULT,

@@ -1,6 +1,8 @@
 import { Route } from 'react-router-dom';
 import React from 'react';
+
 import { ROUTE_WAYS } from './routes.types';
+
 import AboutUs from '../components/pages/AboutUs';
 import AdminSignIn from '../components/pages/AdminSignIn';
 import Contacts from '../components/pages/Contacts';

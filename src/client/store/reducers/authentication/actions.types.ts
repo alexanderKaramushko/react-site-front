@@ -1,4 +1,5 @@
 import { ActionType } from 'typesafe-actions';
+
 import * as authenticationActions from './actions';
 
 export type AuthenticationActions = typeof authenticationActions;

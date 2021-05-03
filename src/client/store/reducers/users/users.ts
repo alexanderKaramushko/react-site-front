@@ -1,6 +1,8 @@
 import { createReducer } from 'typesafe-actions';
+
 import { UsersState } from './types';
 import { UsersReducerActionTypes } from './actions.types';
+
 import { getUsersAsync } from './actions';
 
 const initialState: UsersState = {

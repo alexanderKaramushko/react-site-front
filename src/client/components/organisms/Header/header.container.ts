@@ -1,12 +1,15 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import Header from './Header.component';
+
 import { StateProps, DispatchProps, OwnProps } from './Header.types';
+import { ThemeTypes } from '../../../store/reducers/settings/types';
+
 import { RootState } from '../../../store/reducers/rootReducer';
 import { getActiveTheme, getSelectedLocale, getTextSize } from '../../../store/reducers/settings/selectors';
 import { setLocaleWithFallback } from '../../../localization';
 import { toggleTextSizeAction, toggleThemeAction } from '../../../store/reducers/settings/actions';
-import { ThemeTypes } from '../../../store/reducers/settings/types';
+
+import Header from './Header.component';
 
 export default connect<StateProps, DispatchProps, OwnProps, RootState>(
   (state) => ({

@@ -1,7 +1,9 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
 import { SagaIterator } from 'redux-saga';
-import MainService from '../MainService';
+
 import { USERS_TYPES } from '../../store/reducers/users/types';
+
+import MainService from '../MainService';
 import { Users } from '../../models/base/Users';
 import { getUsersAsync } from '../../store/reducers/users/actions';
 

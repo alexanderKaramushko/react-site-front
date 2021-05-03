@@ -1,5 +1,7 @@
 import { createAsyncAction } from 'typesafe-actions';
+
 import { USERS_TYPES } from './types';
+
 import { Users } from '../../../models/base/Users';
 
 export const getUsersAsync = createAsyncAction(

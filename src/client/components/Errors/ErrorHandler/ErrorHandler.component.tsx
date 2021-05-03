@@ -1,6 +1,8 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
+
 import { Props, State } from './ErrorHandler.types';
+
 import { DefaultError } from '../DefaultError/DefaultError.component';
 
 class ErrorHandler extends React.Component<Props, State> {

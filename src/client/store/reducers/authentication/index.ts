@@ -1,6 +1,8 @@
 import { createReducer } from 'typesafe-actions';
+
 import { AuthenticationState } from './types';
 import { AuthenticationReducerActionTypes } from './actions.types';
+
 import { authenticateAsync } from './actions';
 
 const initialState: AuthenticationState = {

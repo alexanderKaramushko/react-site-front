@@ -1,4 +1,5 @@
 import { ActionType } from 'typesafe-actions';
+
 import * as usersActions from './actions';
 
 export type UsersActions = typeof usersActions;

@@ -1,11 +1,14 @@
 import React from 'react';
 import { AppBar, Grid, IconButton, MenuItem, Slider, Toolbar, Typography } from '@material-ui/core';
 import { Menu as MenuIcon, LanguageTwoTone as LanguageIcon, Brush as BrushIcon, FormatSize as FormatIcon } from '@material-ui/icons';
-import styles from './style.scss';
+
 import { Props } from './Header.types';
+import { FontSizes, Themes, ThemeTypes } from '../../../store/reducers/settings/types';
+
 import { SupportedLocales } from '../../../localization';
 import OptionsMenu from '../../molecules/OptionsMenu/OptionsMenu';
-import { FontSizes, Themes, ThemeTypes } from '../../../store/reducers/settings/types';
+
+import styles from './style.scss';
 
 const Header: React.FunctionComponent<Props> = (props) => {
   const {

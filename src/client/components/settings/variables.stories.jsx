@@ -1,6 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+
 import classnames from 'classnames';
+
 import * as variables from './styles/stories.scss';
 
 const Vars = Object.keys(variables).map((color) => {

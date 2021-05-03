@@ -6,6 +6,7 @@ import { AuthRequestPayload } from '../../../api/AuthService/types';
 import { Props } from './types';
 
 import { validationSchema } from './validation';
+
 import styles from './style.scss';
 
 const SignInForm: FC<Props> = (props): ReactElement => {

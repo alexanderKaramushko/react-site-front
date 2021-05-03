@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
+
 import { Props } from './DefaultError.types';
+
 import * as styles from './styles.scss';
 
 export const DefaultError: FC<Props> = (props) => {

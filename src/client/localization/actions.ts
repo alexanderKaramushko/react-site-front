@@ -1,5 +1,6 @@
 import { setLocale } from 'react-redux-i18n';
 import { Dispatch } from 'redux';
+
 import { SupportedLocales, fallbackLocale } from './config';
 
 export function setLocaleWithFallback(dispatch: Dispatch) {

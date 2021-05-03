@@ -1,7 +1,8 @@
 import { createSelector } from 'reselect';
-import { RootState } from '../rootReducer';
 
 import { AuthenticationState } from './types';
+
+import { RootState } from '../rootReducer';
 
 const getAuthenticationState = (state: RootState): AuthenticationState => state.authenticationReducer;
 
