@@ -14,3 +14,8 @@ export const getAuthenticationLoading = createSelector(
   getAuthenticationState,
   (authentication: AuthenticationState) => authentication.authenticationLoading,
 );
+
+export const getAuthenticationDecodedJWTToken = createSelector(
+  getAuthenticationState,
+  (authentication: AuthenticationState) => authentication.decodedJWTToken,
+);

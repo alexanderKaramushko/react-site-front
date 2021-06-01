@@ -1,16 +1,17 @@
-import { Route } from 'react-router-dom';
 import React from 'react';
-import { ROUTE_WAYS } from './routes.types';
+import intersection from 'lodash/intersection';
+import compact from 'lodash/compact';
+import uniq from 'lodash/uniq';
+import { Route } from 'react-router-dom';
+
+import { CustomRouteProps, RouteMeta, ROUTE_WAYS } from './routes.types';
+import { Role } from '../common/types/client';
+
 import AboutUs from '../components/pages/AboutUs';
 import AdminSignIn from '../components/pages/AdminSignIn';
 import Contacts from '../components/pages/Contacts';
 import Main from '../components/pages/Main';
-
-interface Routes {
-  component: React.ComponentType;
-  isExact?: boolean;
-  path: ROUTE_WAYS;
-}
+import AdminProfile from '../components/pages/AdminProfile';
 
 export const listItems = [
   { link: ROUTE_WAYS.BASE, title: 'nav.main' },
@@ -18,28 +19,64 @@ export const listItems = [
   { link: ROUTE_WAYS.CONTACTS, title: 'nav.contacts' },
 ];
 
-export const routesArr = [
+export const routes: CustomRouteProps[] = [
   {
     component: Main,
-    isExact: true,
+    exact: true,
+    meta: {
+      role: [Role.PUBLIC],
+    },
     path: ROUTE_WAYS.BASE,
   },
   {
     component: AboutUs,
+    meta: {
+      role: [Role.PUBLIC],
+    },
     path: ROUTE_WAYS.ABOUT,
   },
   {
     component: Contacts,
+    meta: {
+      role: [Role.PUBLIC],
+    },
     path: ROUTE_WAYS.CONTACTS,
   },
   {
     component: AdminSignIn,
+    meta: {
+      role: [Role.PUBLIC],
+    },
     path: ROUTE_WAYS.ADMIN_SIGN_IN,
+  },
+  {
+    component: AdminProfile,
+    meta: {
+      role: [Role.ADMIN],
+    },
+    path: ROUTE_WAYS.ADMIN_PROFILE,
   },
 ];
 
-export const createRoutes = (routesArray: Routes[]): React.ReactNode => routesArray.map((route) => {
-  const { component, isExact, path } = route;
+export function createRoutes(routeProps: CustomRouteProps[], routeMeta: RouteMeta): React.ReactNode {
+  return routeProps.reduce((availableRoutes, route) => {
+    const { component, exact, meta, path } = route;
+    const { role } = routeMeta;
 
-  return <Route key={path} path={path} component={component} exact={isExact} />;
-});
+    const roleWithPublicByDefault = compact(uniq([...role, Role.PUBLIC]));
+    const isRouteAvailable = intersection(roleWithPublicByDefault, meta.role).length > 0;
+
+    if (isRouteAvailable) {
+      return [
+        ...availableRoutes,
+        <Route
+          key={path as string}
+          path={path}
+          component={component}
+          exact={exact}
+        />,
+      ];
+    }
+    return availableRoutes;
+  }, []);
+}

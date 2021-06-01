@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import Header from './Header.component';
-import { StateProps, DispatchProps, OwnProps } from './Header.types';
+import HeaderNav from './HeaderNav.component';
+import { StateProps, DispatchProps, OwnProps } from './HeaderNav.types';
 import { RootState } from '../../../store/reducers/rootReducer';
 import { getActiveTheme, getSelectedLocale, getTextSize } from '../../../store/reducers/settings/selectors';
 import { setLocaleWithFallback } from '../../../localization';
@@ -19,4 +19,4 @@ export default connect<StateProps, DispatchProps, OwnProps, RootState>(
     setLocaleWithFallback: setLocaleWithFallback(dispatch),
     setTheme: (theme: ThemeTypes): ReturnType<typeof toggleThemeAction> => dispatch(toggleThemeAction(theme)),
   }),
-)(Header);
+)(HeaderNav);

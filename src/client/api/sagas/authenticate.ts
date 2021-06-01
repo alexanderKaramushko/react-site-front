@@ -1,11 +1,13 @@
 import { takeEvery, call, put } from 'redux-saga/effects';
 import { SagaIterator } from 'redux-saga';
+import decodeJwt from 'jwt-decode';
 
 import { AuthResponse } from '../AuthService/types';
 import { AUTHENTICATION_TYPES } from '../../store/reducers/authentication/types';
 import { AuthenticationAsyncRequest } from '../../store/reducers/authentication/actions.types';
 
 import { setAccessToken } from '../utils';
+import HistoryWrapper from '../../utils/historyWrapper';
 
 import { AuthService } from '..';
 import { authenticateAsync } from '../../store/reducers/authentication/actions';
@@ -18,8 +20,12 @@ export function* authenticate(action: ReturnType<AuthenticationAsyncRequest>): S
 
     setAccessToken(response.access_token);
 
+    if (HistoryWrapper.history) {
+      yield call(HistoryWrapper.history.push, '/admin-profile');
+    }
+
     // todo remove nulls
-    yield put(authenticateAsync.success(null, null));
+    yield put(authenticateAsync.success(decodeJwt(response.access_token)));
   } catch (error) {
     yield put(authenticateAsync.failure(error.message));
   }
