@@ -2,12 +2,12 @@ import React from 'react';
 import { AppBar, Grid, IconButton, MenuItem, Slider, Toolbar, Typography } from '@material-ui/core';
 import { Menu as MenuIcon, LanguageTwoTone as LanguageIcon, Brush as BrushIcon, FormatSize as FormatIcon } from '@material-ui/icons';
 import styles from './style.scss';
-import { Props } from './Header.types';
+import { Props } from './HeaderNav.types';
 import { SupportedLocales } from '../../../localization';
 import OptionsMenu from '../../molecules/OptionsMenu/OptionsMenu';
 import { FontSizes, Themes, ThemeTypes } from '../../../store/reducers/settings/types';
 
-const Header: React.FunctionComponent<Props> = (props) => {
+const HeaderNav: React.FunctionComponent<Props> = (props) => {
   const {
     activeTheme,
     changeSize,
@@ -93,6 +93,6 @@ const Header: React.FunctionComponent<Props> = (props) => {
   );
 };
 
-Header.displayName = 'Header';
+HeaderNav.displayName = 'HeaderNav';
 
-export default Header;
+export default HeaderNav;

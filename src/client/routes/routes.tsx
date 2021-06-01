@@ -1,12 +1,17 @@
 import React from 'react';
 import intersection from 'lodash/intersection';
+import compact from 'lodash/compact';
+import uniq from 'lodash/uniq';
 import { Route } from 'react-router-dom';
+
 import { CustomRouteProps, RouteMeta, ROUTE_WAYS } from './routes.types';
+import { Role } from '../common/types/client';
+
 import AboutUs from '../components/pages/AboutUs';
 import AdminSignIn from '../components/pages/AdminSignIn';
 import Contacts from '../components/pages/Contacts';
 import Main from '../components/pages/Main';
-import { Role } from '../common/types/client';
+import AdminProfile from '../components/pages/AdminProfile';
 
 export const listItems = [
   { link: ROUTE_WAYS.BASE, title: 'nav.main' },
@@ -40,9 +45,16 @@ export const routes: CustomRouteProps[] = [
   {
     component: AdminSignIn,
     meta: {
-      role: [Role.ADMIN],
+      role: [Role.PUBLIC],
     },
     path: ROUTE_WAYS.ADMIN_SIGN_IN,
+  },
+  {
+    component: AdminProfile,
+    meta: {
+      role: [Role.ADMIN],
+    },
+    path: ROUTE_WAYS.ADMIN_PROFILE,
   },
 ];
 
@@ -51,7 +63,8 @@ export function createRoutes(routeProps: CustomRouteProps[], routeMeta: RouteMet
     const { component, exact, meta, path } = route;
     const { role } = routeMeta;
 
-    const isRouteAvailable = intersection(role, meta.role).length > 0;
+    const roleWithPublicByDefault = compact(uniq([...role, Role.PUBLIC]));
+    const isRouteAvailable = intersection(roleWithPublicByDefault, meta.role).length > 0;
 
     if (isRouteAvailable) {
       return [
