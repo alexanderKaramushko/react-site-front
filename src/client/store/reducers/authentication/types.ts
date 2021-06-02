@@ -1,4 +1,4 @@
-import { DecodedJWTToken } from '../../../models/base/DecodedJWTToken';
+import { DecodedJWTToken } from '@models/base/DecodedJWTToken';
 
 export enum AUTHENTICATION_TYPES {
   AUTHENTICATION_ASYNC_REQUEST = 'AUTHENTICATION_ASYNC_REQUEST',

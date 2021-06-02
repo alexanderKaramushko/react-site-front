@@ -6,10 +6,10 @@ import { StaticRouter, StaticRouterContext } from 'react-router';
 import { ServerStyleSheets, ThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import { createProxyMiddleware } from 'http-proxy-middleware';
-import App from '../client/App/App.container';
-import store from '../client/store/store';
+import App from '@client/App/App.container';
+import store from '@client/store/store';
 import render from './render';
-import getTheme from '../client/utils/getTheme';
+import getTheme from '@client/utils/getTheme';
 
 const server = express();
 

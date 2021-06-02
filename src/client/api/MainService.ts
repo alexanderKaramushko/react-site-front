@@ -1,5 +1,5 @@
 import CrudService from './CrudService';
-import { Users } from '../models/base/Users';
+import { Users } from '@models/base/Users';
 
 class MainService extends CrudService<Users> {
 

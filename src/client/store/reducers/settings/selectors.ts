@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { RootState } from '../rootReducer';
+import { RootState } from '@store/reducers/rootReducer';
 import { SettingsState } from './types';
 
 const getSettings = (state: RootState): SettingsState => state.settingsReducer;

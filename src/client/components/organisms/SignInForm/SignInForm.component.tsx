@@ -2,7 +2,7 @@ import React, { FC, ReactElement } from 'react';
 import { Button, TextField, Box } from '@material-ui/core';
 import { Formik, Form, Field, FieldProps } from 'formik';
 
-import { AuthRequestPayload } from '../../../api/AuthService/types';
+import { AuthRequestPayload } from '@api/AuthService/types';
 import { Props } from './types';
 
 import { validationSchema } from './validation';

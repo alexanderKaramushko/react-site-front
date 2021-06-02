@@ -1,5 +1,5 @@
 import { RouteProps } from 'react-router-dom';
-import { Role } from '../common/types/client';
+import { Role } from '@common/types/client';
 
 export enum ROUTE_WAYS {
   ABOUT = '/about-us',

@@ -1,5 +1,5 @@
 import BaseService from './BaseService';
-import { AbstractEntity } from '../models/base/AbstractEntity';
+import { AbstractEntity } from '@models/base/AbstractEntity';
 
 class CrudService<T extends AbstractEntity> extends BaseService {
 

@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 
 import { StateProps, DispatchProps, OwnProps } from './types';
 
-import { RootState } from '../store/reducers/rootReducer';
-import { getAuthenticationError, getAuthenticationLoading, getAuthenticationDecodedJWTToken } from '../store/reducers/authentication/selectors';
+import { RootState } from '@store/reducers/rootReducer';
+import { getAuthenticationError, getAuthenticationLoading, getAuthenticationDecodedJWTToken } from '@store/reducers/authentication/selectors';
 
 import App from './App.component';
 

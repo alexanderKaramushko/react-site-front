@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Translate } from 'react-redux-i18n';
 import { Button, Typography } from '@material-ui/core';
-import template from '../templates/default/style.scss';
-import ErrorHandler from '../Errors/ErrorHandler/ErrorHandler.component';
+import template from '@components/templates/default/style.scss';
+import ErrorHandler from '@components/Errors/ErrorHandler/ErrorHandler.component';
 
 const Main: FC = () => (
   <section

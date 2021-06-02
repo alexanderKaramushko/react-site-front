@@ -1,4 +1,4 @@
-import BaseService from '../BaseService';
+import BaseService from '@api/BaseService';
 import { AuthRequestPayload, AuthResponse } from './types';
 
 class AuthService extends BaseService {

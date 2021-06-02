@@ -1,24 +1,33 @@
 {
-    "compilerOptions": {
-        "allowJs": true,
-        "allowSyntheticDefaultImports": true,
-        "checkJs": true,
-        "esModuleInterop": true,
-        "jsx": "react",
-        "module": "commonjs",
-        "noImplicitAny": true,
-        "outDir": "./dist/",
-        "sourceMap": true,
-        "target": "es6",
-        "baseUrl": "./src",
-        "paths": {
-            "@client": ["client/*"],
-            "@server": ["server/*"],
-        }
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "./build/",
+    "sourceMap": true,
+    "target": "es6",
+    "baseUrl": "./src",
+    "paths": {
+      "@api/*": ["client/api/*"],
+      "@common/*": ["client/common/*"],
+      "@components/*": ["client/components/*"],
+      "@localization/*": ["client/localization/*"],
+      "@models/*": ["client/models/*"],
+      "@routes/*": ["client/routes/*"],
+      "@store/*": ["client/store/*"],
+      "@utils/*": ["client/utils/*"],
+      "@server/*": ["server/*"],
+      "@client/*": ["client/*"],
     },
-    "exclude": [
-        "build",
-        "node_modules",
-        "webpack",
-    ]
+  },
+  "exclude": [
+    "build",
+    "node_modules",
+    "webpack",
+  ]
 }

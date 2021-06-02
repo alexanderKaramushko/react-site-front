@@ -2,12 +2,12 @@ const nodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const {
-    serverEntry,
-    serverOutputPath,
-    serverOutputFile,
-    resolve,
     loaders,
-    plugins
+    plugins,
+    resolve,
+    serverEntry,
+    serverOutputFile,
+    serverOutputPath
 } = require('./common');
 
 module.exports = {
