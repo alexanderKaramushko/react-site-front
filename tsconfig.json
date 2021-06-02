@@ -22,6 +22,7 @@
       "@store/*": ["client/store/*"],
       "@utils/*": ["client/utils/*"],
       "@server/*": ["server/*"],
+      "@client/*": ["client/*"],
     },
   },
   "exclude": [

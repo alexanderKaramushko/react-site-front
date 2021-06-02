@@ -1,4 +1,4 @@
-import { AuthenticationState } from '../store/reducers/authentication/types';
+import { AuthenticationState } from '@store/reducers/authentication/types';
 
 export type OwnProps = {}
 

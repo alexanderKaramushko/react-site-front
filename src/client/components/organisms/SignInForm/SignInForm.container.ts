@@ -2,12 +2,12 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
 import { StateProps, DispatchProps, OwnProps } from './types';
-import { AuthRequestPayload } from '../../../api/AuthService/types';
-import { AuthenticationAsyncRequest } from '../../../store/reducers/authentication/actions.types';
+import { AuthRequestPayload } from '@api/AuthService/types';
+import { AuthenticationAsyncRequest } from '@store/reducers/authentication/actions.types';
 
-import { RootState } from '../../../store/reducers/rootReducer';
-import { getAuthenticationError, getAuthenticationLoading } from '../../../store/reducers/authentication/selectors';
-import { authenticateAsync } from '../../../store/reducers/authentication/actions';
+import { RootState } from '@store/reducers/rootReducer';
+import { getAuthenticationError, getAuthenticationLoading } from '@store/reducers/authentication/selectors';
+import { authenticateAsync } from '@store/reducers/authentication/actions';
 
 import SignInFormComponent from './SignInForm.component';
 

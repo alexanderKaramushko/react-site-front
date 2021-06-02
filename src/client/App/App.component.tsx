@@ -3,20 +3,18 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 
 import { Props } from './types';
 
-import HistoryWrapper from '../utils/historyWrapper';
+import HistoryWrapper from '@utils/historyWrapper';
+import { createRoutes, routes } from '@routes/routes';
 
-import { createRoutes, routes } from '../routes/routes';
-
-import NotFound from '../components/pages/NotFound';
-// eslint-disable-next-line import/no-unresolved
-import HeaderNav from '../components/organisms/HeaderNav/HeaderNav.container';
+import NotFound from '@components/pages/NotFound';
+import HeaderNavContainer from '@components/organisms/HeaderNav/HeaderNav.container';
 
 const App: FC<Props> = ({ decodedJWTToken }) => {
   HistoryWrapper.initHistory(useHistory());
 
   return (
     <>
-      <HeaderNav />
+      <HeaderNavContainer />
       <Switch>
         {createRoutes(routes, {
           role: [decodedJWTToken?.role],

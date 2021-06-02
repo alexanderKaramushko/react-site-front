@@ -5,13 +5,13 @@ import uniq from 'lodash/uniq';
 import { Route } from 'react-router-dom';
 
 import { CustomRouteProps, RouteMeta, ROUTE_WAYS } from './routes.types';
-import { Role } from '../common/types/client';
+import { Role } from '@common/types/client';
 
-import AboutUs from '../components/pages/AboutUs';
-import AdminSignIn from '../components/pages/AdminSignIn';
-import Contacts from '../components/pages/Contacts';
-import Main from '../components/pages/Main';
-import AdminProfile from '../components/pages/AdminProfile';
+import AboutUs from '@components/pages/AboutUs';
+import AdminSignIn from '@components/pages/AdminSignIn';
+import Contacts from '@components/pages/Contacts';
+import Main from '@components/pages/Main';
+import AdminProfile from '@components/pages/AdminProfile';
 
 export const listItems = [
   { link: ROUTE_WAYS.BASE, title: 'nav.main' },

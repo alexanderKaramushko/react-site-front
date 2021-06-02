@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { RootState } from '../rootReducer';
+import { RootState } from '@store/reducers/rootReducer';
 
 import { AuthenticationState } from './types';
 

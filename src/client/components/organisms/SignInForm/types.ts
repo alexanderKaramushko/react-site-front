@@ -1,5 +1,5 @@
-import { AuthenticationAsyncRequest } from '../../../store/reducers/authentication/actions.types';
-import { AuthenticationState } from '../../../store/reducers/authentication/types';
+import { AuthenticationAsyncRequest } from '@store/reducers/authentication/actions.types';
+import { AuthenticationState } from '@store/reducers/authentication/types';
 
 export type OwnProps = {}
 

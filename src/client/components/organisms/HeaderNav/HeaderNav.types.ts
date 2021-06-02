@@ -1,5 +1,5 @@
-import { ToggleTextSize, ToggleTheme } from '../../../store/reducers/settings/actions.types';
-import { ThemeTypes } from '../../../store/reducers/settings/types';
+import { ToggleTextSize, ToggleTheme } from '@store/reducers/settings/actions.types';
+import { ThemeTypes } from '@store/reducers/settings/types';
 
 export type OwnProps = {}
 

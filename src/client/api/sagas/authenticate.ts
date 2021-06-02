@@ -2,15 +2,15 @@ import { takeEvery, call, put } from 'redux-saga/effects';
 import { SagaIterator } from 'redux-saga';
 import decodeJwt from 'jwt-decode';
 
-import { AuthResponse } from '../AuthService/types';
-import { AUTHENTICATION_TYPES } from '../../store/reducers/authentication/types';
-import { AuthenticationAsyncRequest } from '../../store/reducers/authentication/actions.types';
+import { AuthResponse } from '@api/AuthService/types';
+import { AUTHENTICATION_TYPES } from '@store/reducers/authentication/types';
+import { AuthenticationAsyncRequest } from '@store/reducers/authentication/actions.types';
 
-import { setAccessToken } from '../utils';
-import HistoryWrapper from '../../utils/historyWrapper';
+import { setAccessToken } from '@api/utils';
+import HistoryWrapper from '@utils/historyWrapper';
 
-import { AuthService } from '..';
-import { authenticateAsync } from '../../store/reducers/authentication/actions';
+import { AuthService } from '@api/index';
+import { authenticateAsync } from '@store/reducers/authentication/actions';
 
 const authService = new AuthService();
 

@@ -68,16 +68,18 @@ const config = {
     'import/no-unresolved': [2, {
       ignore: [
         '^@api',
+        '^@client',
         '^@common',
         '^@components',
         '^@localization',
         '^@models',
         '^@routes',
+        '^@server',
         '^@store',
         '^@utils',
-        '^@server',
       ]
     }],
+    'import/order': 'off',
   },
   settings: {
     'import/extensions': ['.ts', '.tsx', '.json'],
