@@ -1,10 +1,10 @@
 const {
     clientEntry,
-    clientOutputPath,
     clientOutputFile,
-    resolve,
+    clientOutputPath,
     loaders,
-    plugins
+    plugins,
+    resolve,
 } = require('./common');
 
 module.exports = {

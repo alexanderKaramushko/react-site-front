@@ -1,7 +1,12 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const aliases = require('./aliases');
 
 const root = path.resolve(__dirname, '..');
+
+const resolvedAliases = Object.fromEntries(
+    Object.entries(aliases('/src')).map(([key, value]) => [key, path.join(root, value)]),
+);
 
 module.exports = {
     serverEntry: path.join(root, 'src/server/server.tsx'),
@@ -13,10 +18,7 @@ module.exports = {
     clientOutputFile: 'client.js',
 
     resolve: {
-        alias: {
-            "@client": path.resolve(__dirname, 'src/client/*'),
-            "@server": path.resolve(__dirname, 'src/server/*'),
-        },
+        alias: resolvedAliases,
         extensions: ['.js', '.ts', '.tsx', '.scss'],
     },
 

@@ -65,6 +65,19 @@ const config = {
     }],
     indent: ['error', 2],
     'newline-after-var': ['error', 'always'],
+    'import/no-unresolved': [2, {
+      ignore: [
+        '^@api',
+        '^@common',
+        '^@components',
+        '^@localization',
+        '^@models',
+        '^@routes',
+        '^@store',
+        '^@utils',
+        '^@server',
+      ]
+    }],
   },
   settings: {
     'import/extensions': ['.ts', '.tsx', '.json'],
