@@ -4,7 +4,9 @@ import { RouteComponentProps } from 'react-router';
 const NotFound: FC<RouteComponentProps> = (props) => {
   const { staticContext } = props;
 
-  staticContext.statusCode = 404;
+  if (staticContext) {
+    staticContext.statusCode = 404;
+  }
 
   return (
     <h1>404</h1>
